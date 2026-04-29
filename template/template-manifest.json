@@ -1,0 +1,1358 @@
+{
+  "templateId": "messenger-core-pages",
+  "version": 1,
+  "name": "Messenger Core Pages Content",
+  "description": "Editable text content only for /, /landing and /chat pages.",
+  "pages": [
+    {
+      "key": "home",
+      "route": "/",
+      "title": "Home"
+    },
+    {
+      "key": "landing",
+      "route": "/landing",
+      "title": "Landing"
+    },
+    {
+      "key": "chat",
+      "route": "/chat",
+      "title": "Chat Hub"
+    }
+  ],
+  "fields": [
+    {
+      "key": "tabs.public.label",
+      "page": "home",
+      "type": "text",
+      "label": "Public tab label",
+      "default": "All",
+      "section": "rooms_tabs",
+      "validation": {
+        "minLength": 1,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "tabs.myRooms.label",
+      "page": "home",
+      "type": "text",
+      "label": "My Rooms tab label",
+      "default": "My Rooms",
+      "section": "rooms_tabs",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "tabs.joined.label",
+      "page": "home",
+      "type": "text",
+      "label": "Joined tab label",
+      "default": "Joined",
+      "section": "rooms_tabs",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "messages.loadError",
+      "page": "home",
+      "type": "text",
+      "label": "Rooms load error text",
+      "default": "Failed to load rooms",
+      "section": "messages",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "header.upgradeCta",
+      "page": "home",
+      "type": "text",
+      "label": "Header upgrade button text",
+      "default": "Upgrade",
+      "section": "header",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 30
+      }
+    },
+    {
+      "key": "header.inbox",
+      "page": "home",
+      "type": "text",
+      "label": "Header inbox label",
+      "default": "Inbox",
+      "section": "header",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 30
+      }
+    },
+    {
+      "key": "header.randomChat",
+      "page": "home",
+      "type": "text",
+      "label": "Header random chat label",
+      "default": "Random Chat",
+      "section": "header",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "header.following",
+      "page": "home",
+      "type": "text",
+      "label": "Header following label",
+      "default": "Following",
+      "section": "header",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "header.login",
+      "page": "home",
+      "type": "text",
+      "label": "Header login button text",
+      "default": "Login",
+      "section": "header",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "header.profileSwitching",
+      "page": "home",
+      "type": "text",
+      "label": "Header profile switching text",
+      "default": "Switching...",
+      "section": "header",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "hero.title",
+      "page": "home",
+      "type": "text",
+      "label": "Home hero fallback title",
+      "default": "Messenger — Online Chat Rooms & Random Text, Audio & Video Chat",
+      "section": "hero",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "hero.subtitle",
+      "page": "home",
+      "type": "textarea",
+      "label": "Home hero fallback subtitle",
+      "default": "Browse public chat rooms, run your own community space, and meet people with random text, audio, or video chat. Real-time messaging, Google sign-in, and plans for creators and teams.",
+      "section": "hero",
+      "validation": {
+        "minLength": 8,
+        "maxLength": 180
+      }
+    },
+    {
+      "key": "hero.createRoomCta",
+      "page": "home",
+      "type": "text",
+      "label": "Home hero create room CTA text",
+      "default": "Create Room",
+      "section": "hero",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 30
+      }
+    },
+    {
+      "key": "roomsDisabled.title",
+      "page": "home",
+      "type": "text",
+      "label": "Rooms disabled modal title",
+      "default": "Chat rooms are not enabled",
+      "section": "messages",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "roomsDisabled.description",
+      "page": "home",
+      "type": "textarea",
+      "label": "Rooms disabled modal description",
+      "default": "This site's plan does not include chat rooms. Contact the administrator if you believe this is a mistake.",
+      "section": "messages",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 280
+      }
+    },
+    {
+      "key": "search.placeholder",
+      "page": "home",
+      "type": "text",
+      "label": "Rooms search placeholder",
+      "default": "Search rooms...",
+      "section": "search",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "sort.membersDescending",
+      "page": "home",
+      "type": "text",
+      "label": "Sort label members descending",
+      "default": "Members descending",
+      "section": "sort",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "sort.membersAscending",
+      "page": "home",
+      "type": "text",
+      "label": "Sort label members ascending",
+      "default": "Members ascending",
+      "section": "sort",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "sort.newestFirst",
+      "page": "home",
+      "type": "text",
+      "label": "Sort label newest first",
+      "default": "Newest first",
+      "section": "sort",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "sort.oldestFirst",
+      "page": "home",
+      "type": "text",
+      "label": "Sort label oldest first",
+      "default": "Oldest first",
+      "section": "sort",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "sort.aToZ",
+      "page": "home",
+      "type": "text",
+      "label": "Sort label A to Z",
+      "default": "A-Z",
+      "section": "sort",
+      "validation": {
+        "minLength": 1,
+        "maxLength": 10
+      }
+    },
+    {
+      "key": "sort.zToA",
+      "page": "home",
+      "type": "text",
+      "label": "Sort label Z to A",
+      "default": "Z-A",
+      "section": "sort",
+      "validation": {
+        "minLength": 1,
+        "maxLength": 10
+      }
+    },
+    {
+      "key": "roomCard.membersSuffix",
+      "page": "home",
+      "type": "text",
+      "label": "Room card members suffix",
+      "default": "members",
+      "section": "room_card",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "roomCard.openCta",
+      "page": "home",
+      "type": "text",
+      "label": "Room card open CTA text",
+      "default": "Open",
+      "section": "room_card",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "roomCard.joinCta",
+      "page": "home",
+      "type": "text",
+      "label": "Room card join CTA text",
+      "default": "Join",
+      "section": "room_card",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "roomCard.pendingCta",
+      "page": "home",
+      "type": "text",
+      "label": "Room card pending CTA text",
+      "default": "Pending",
+      "section": "room_card",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "roomCard.joiningCta",
+      "page": "home",
+      "type": "text",
+      "label": "Room card joining CTA text",
+      "default": "Joining...",
+      "section": "room_card",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 30
+      }
+    },
+    {
+      "key": "pagination.previous",
+      "page": "home",
+      "type": "text",
+      "label": "Pagination previous label",
+      "default": "Previous",
+      "section": "pagination",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "pagination.next",
+      "page": "home",
+      "type": "text",
+      "label": "Pagination next label",
+      "default": "Next",
+      "section": "pagination",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "pagination.pageLabel",
+      "page": "home",
+      "type": "text",
+      "label": "Pagination page indicator template",
+      "default": "Page {current} of {total}",
+      "section": "pagination",
+      "validation": {
+        "minLength": 8,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "upgradeModal.title",
+      "page": "home",
+      "type": "text",
+      "label": "Upgrade modal title",
+      "default": "Upgrade your plan",
+      "section": "upgrade_modal",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "upgradeModal.subtitle",
+      "page": "home",
+      "type": "text",
+      "label": "Upgrade modal subtitle",
+      "default": "Choose a plan that fits your usage.",
+      "section": "upgrade_modal",
+      "validation": {
+        "minLength": 10,
+        "maxLength": 140
+      }
+    },
+    {
+      "key": "upgradeModal.closeCta",
+      "page": "home",
+      "type": "text",
+      "label": "Upgrade modal close button text",
+      "default": "Close",
+      "section": "upgrade_modal",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "upgradeModal.loadingPlans",
+      "page": "home",
+      "type": "text",
+      "label": "Upgrade modal loading plans text",
+      "default": "Loading plans...",
+      "section": "upgrade_modal",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "upgradeModal.noPlans",
+      "page": "home",
+      "type": "text",
+      "label": "Upgrade modal no plans text",
+      "default": "No plans available right now.",
+      "section": "upgrade_modal",
+      "validation": {
+        "minLength": 8,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "upgradeModal.currentPlanBadge",
+      "page": "home",
+      "type": "text",
+      "label": "Upgrade modal current plan badge text",
+      "default": "Current",
+      "section": "upgrade_modal",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "upgradeModal.currentPlanButton",
+      "page": "home",
+      "type": "text",
+      "label": "Upgrade modal current plan button text",
+      "default": "Current Plan",
+      "section": "upgrade_modal",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "upgradeModal.upgradeToTemplate",
+      "page": "home",
+      "type": "text",
+      "label": "Upgrade modal upgrade template text",
+      "default": "Upgrade to {planName}",
+      "section": "upgrade_modal",
+      "validation": {
+        "minLength": 8,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "upgradeModal.priceSuffix",
+      "page": "home",
+      "type": "text",
+      "label": "Upgrade modal monthly price suffix",
+      "default": "/ month",
+      "section": "upgrade_modal",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "couponModal.titleTemplate",
+      "page": "home",
+      "type": "text",
+      "label": "Coupon modal title template",
+      "default": "Upgrade to {planName}",
+      "section": "coupon_modal",
+      "validation": {
+        "minLength": 8,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "couponModal.subtitle",
+      "page": "home",
+      "type": "text",
+      "label": "Coupon modal subtitle",
+      "default": "Enter a coupon code if you have one.",
+      "section": "coupon_modal",
+      "validation": {
+        "minLength": 10,
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "couponModal.inputLabel",
+      "page": "home",
+      "type": "text",
+      "label": "Coupon modal input label",
+      "default": "Coupon code",
+      "section": "coupon_modal",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "couponModal.inputPlaceholder",
+      "page": "home",
+      "type": "text",
+      "label": "Coupon modal input placeholder",
+      "default": "e.g. SAVE20",
+      "section": "coupon_modal",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "couponModal.emptyError",
+      "page": "home",
+      "type": "text",
+      "label": "Coupon modal empty input error",
+      "default": "Please enter a coupon code.",
+      "section": "coupon_modal",
+      "validation": {
+        "minLength": 8,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "couponModal.failedError",
+      "page": "home",
+      "type": "text",
+      "label": "Coupon modal failed redeem error",
+      "default": "Failed to redeem coupon code.",
+      "section": "coupon_modal",
+      "validation": {
+        "minLength": 8,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "couponModal.cancelCta",
+      "page": "home",
+      "type": "text",
+      "label": "Coupon modal cancel button text",
+      "default": "Cancel",
+      "section": "coupon_modal",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "couponModal.continueCta",
+      "page": "home",
+      "type": "text",
+      "label": "Coupon modal continue button text",
+      "default": "Continue",
+      "section": "coupon_modal",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "couponModal.applyingCta",
+      "page": "home",
+      "type": "text",
+      "label": "Coupon modal applying state text",
+      "default": "Applying...",
+      "section": "coupon_modal",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 30
+      }
+    },
+    {
+      "key": "footer.rights",
+      "page": "home",
+      "type": "text",
+      "label": "Footer rights text",
+      "default": "All rights reserved.",
+      "section": "footer",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "footer.privacy",
+      "page": "home",
+      "type": "text",
+      "label": "Footer privacy link text",
+      "default": "Privacy Policy",
+      "section": "footer",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.terms",
+      "page": "home",
+      "type": "text",
+      "label": "Footer terms link text",
+      "default": "Terms & Conditions",
+      "section": "footer",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 50
+      }
+    },
+    {
+      "key": "footer.themeToLightAria",
+      "page": "home",
+      "type": "text",
+      "label": "Theme toggle aria text for light mode",
+      "default": "Switch to light mode",
+      "section": "footer",
+      "validation": {
+        "minLength": 8,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "footer.themeToDarkAria",
+      "page": "home",
+      "type": "text",
+      "label": "Theme toggle aria text for dark mode",
+      "default": "Switch to dark mode",
+      "section": "footer",
+      "validation": {
+        "minLength": 8,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "hero.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Hero title",
+      "required": true,
+      "default": "Connect. Chat. Celebrate.",
+      "section": "hero",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "hero.subtitle",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Hero subtitle",
+      "default": "Experience real-time messaging with group rooms, direct messages, and random video chats. Create communities, connect with friends, or meet new people from around the world.",
+      "section": "hero",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 280
+      }
+    },
+    {
+      "key": "hero.primaryCtaText",
+      "page": "landing",
+      "type": "text",
+      "label": "Hero primary CTA text",
+      "default": "Start Chatting Now",
+      "section": "hero",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "hero.secondaryCtaText",
+      "page": "landing",
+      "type": "text",
+      "label": "Hero secondary CTA text",
+      "default": "Learn More",
+      "section": "hero",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "features.heading",
+      "page": "landing",
+      "type": "text",
+      "label": "Features heading",
+      "default": "Powerful Features",
+      "section": "features",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "features.subheading",
+      "page": "landing",
+      "type": "text",
+      "label": "Features subheading",
+      "default": "Everything you need for modern communication",
+      "section": "features",
+      "validation": {
+        "minLength": 10,
+        "maxLength": 140
+      }
+    },
+    {
+      "key": "features.cards.groupChat.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Group chat card title",
+      "default": "Group Chat Rooms",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "features.cards.groupChat.description",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Group chat card description",
+      "default": "Create public or private rooms with custom settings. Moderate members, set permissions, and build your community with advanced room management tools.",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "features.cards.directMessaging.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Direct messaging card title",
+      "default": "Direct Messaging",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "features.cards.directMessaging.description",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Direct messaging card description",
+      "default": "Private inbox conversations with real-time messaging. Share media, make audio and video calls, and stay connected with friends.",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "features.cards.randomChat.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Random chat card title",
+      "default": "Random Chat",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "features.cards.randomChat.description",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Random chat card description",
+      "default": "Connect with strangers through text, audio, or video chat. Skip to the next person anytime and discover new connections from around the world.",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "features.cards.privacy.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Privacy card title",
+      "default": "Privacy & Security",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "features.cards.privacy.description",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Privacy card description",
+      "default": "Control your privacy with customizable settings. Block users, manage profile visibility, and report inappropriate content with built-in moderation tools.",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "features.cards.roomModeration.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Room moderation card title",
+      "default": "Room Moderation",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "features.cards.roomModeration.description",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Room moderation card description",
+      "default": "Powerful moderation tools including auto-moderation, keyword alerts, slow mode, member roles, ban management, and custom welcome messages.",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "features.cards.richMedia.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Rich media card title",
+      "default": "Rich Media & Interactions",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "features.cards.richMedia.description",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Rich media card description",
+      "default": "Share images, files, and express yourself with emoji reactions. Pin important messages, create announcements, and customize your room with banners and ads.",
+      "section": "features_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "cta.heading",
+      "page": "landing",
+      "type": "text",
+      "label": "Final CTA heading",
+      "default": "Ready to Connect?",
+      "section": "cta",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "cta.description",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Final CTA description",
+      "default": "Join {siteName} today and experience group rooms, direct messaging, random chats, and video calls. Create your account and start connecting with people around the world.",
+      "section": "cta",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 320
+      }
+    },
+    {
+      "key": "header.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat page title",
+      "default": "Random Chat",
+      "section": "header",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "header.subtitle",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat page subtitle",
+      "default": "Choose how you want to chat",
+      "section": "header",
+      "validation": {
+        "minLength": 8,
+        "maxLength": 100
+      }
+    },
+    {
+      "key": "hub.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat hub title",
+      "default": "Choose Your Chat Type",
+      "section": "hub",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "hub.subtitle",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Chat hub subtitle",
+      "default": "Similar to your other project's chat hub, pick between text, audio, or video random chat.",
+      "section": "hub",
+      "validation": {
+        "minLength": 15,
+        "maxLength": 220
+      }
+    },
+    {
+      "key": "chatOptions.text.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Text chat card title",
+      "default": "Text Chat",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "chatOptions.text.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Text chat card description",
+      "default": "Connect with strangers through instant messaging and have fun conversations.",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 15,
+        "maxLength": 180
+      }
+    },
+    {
+      "key": "chatOptions.text.feature1",
+      "page": "chat",
+      "type": "text",
+      "label": "Text chat feature 1",
+      "default": "Real-time messaging",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "chatOptions.text.feature2",
+      "page": "chat",
+      "type": "text",
+      "label": "Text chat feature 2",
+      "default": "Anonymous",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "chatOptions.text.feature3",
+      "page": "chat",
+      "type": "text",
+      "label": "Text chat feature 3",
+      "default": "Typing simulation",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "chatOptions.audio.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Audio chat card title",
+      "default": "Audio Chat",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "chatOptions.audio.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Audio chat card description",
+      "default": "Talk with random people using your voice in a simple mock audio room.",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 15,
+        "maxLength": 180
+      }
+    },
+    {
+      "key": "chatOptions.audio.feature1",
+      "page": "chat",
+      "type": "text",
+      "label": "Audio chat feature 1",
+      "default": "Voice-style UI",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "chatOptions.audio.feature2",
+      "page": "chat",
+      "type": "text",
+      "label": "Audio chat feature 2",
+      "default": "Quick matching",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "chatOptions.audio.feature3",
+      "page": "chat",
+      "type": "text",
+      "label": "Audio chat feature 3",
+      "default": "Lightweight mock",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "chatOptions.video.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Video chat card title",
+      "default": "Video Chat",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "chatOptions.video.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Video chat card description",
+      "default": "Use the existing random video + text chat mock interface with strangers.",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 15,
+        "maxLength": 180
+      }
+    },
+    {
+      "key": "chatOptions.video.feature1",
+      "page": "chat",
+      "type": "text",
+      "label": "Video chat feature 1",
+      "default": "Video layout",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "chatOptions.video.feature2",
+      "page": "chat",
+      "type": "text",
+      "label": "Video chat feature 2",
+      "default": "Text side chat",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "chatOptions.video.feature3",
+      "page": "chat",
+      "type": "text",
+      "label": "Video chat feature 3",
+      "default": "Skip to next",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "chatOptions.startCta",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat option start CTA text",
+      "default": "Start",
+      "section": "chat_options",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 20
+      }
+    },
+    {
+      "key": "featureSection.heading",
+      "page": "chat",
+      "type": "text",
+      "label": "Feature section heading",
+      "default": "Powerful Features",
+      "section": "features",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "featureSection.subheading",
+      "page": "chat",
+      "type": "text",
+      "label": "Feature section subheading",
+      "default": "Everything you need for modern communication",
+      "section": "features",
+      "validation": {
+        "minLength": 10,
+        "maxLength": 140
+      }
+    },
+    {
+      "key": "featureSection.cards.groupChat.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Group chat card title",
+      "default": "Group Chat Rooms",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "featureSection.cards.groupChat.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Group chat card description",
+      "default": "Create public or private rooms with custom settings. Moderate members, set permissions, and build your community with advanced room management tools.",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "featureSection.cards.directMessaging.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Direct messaging card title",
+      "default": "Direct Messaging",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "featureSection.cards.directMessaging.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Direct messaging card description",
+      "default": "Private inbox conversations with real-time messaging. Share media, make audio and video calls, and stay connected with friends.",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "featureSection.cards.randomChat.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Random chat card title",
+      "default": "Random Chat",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "featureSection.cards.randomChat.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Random chat card description",
+      "default": "Connect with strangers through text, audio, or video chat. Skip to the next person anytime and discover new connections from around the world.",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "featureSection.cards.privacy.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Privacy card title",
+      "default": "Privacy & Security",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "featureSection.cards.privacy.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Privacy card description",
+      "default": "Control your privacy with customizable settings. Block users, manage profile visibility, and report inappropriate content with built-in moderation tools.",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "featureSection.cards.roomModeration.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Room moderation card title",
+      "default": "Room Moderation",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "featureSection.cards.roomModeration.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Room moderation card description",
+      "default": "Powerful moderation tools including auto-moderation, keyword alerts, slow mode, member roles, ban management, and custom welcome messages.",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "featureSection.cards.richMedia.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Rich media card title",
+      "default": "Rich Media & Interactions",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "featureSection.cards.richMedia.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Rich media card description",
+      "default": "Share images, files, and express yourself with emoji reactions. Pin important messages, create announcements, and customize your room with banners and ads.",
+      "section": "feature_cards",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "splitSection.badge",
+      "page": "chat",
+      "type": "text",
+      "label": "Split section badge text",
+      "default": "Why people use Messenger",
+      "section": "split_section",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "splitSection.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Split section title",
+      "default": "Chat the way you like, with fast and flexible communication",
+      "section": "split_section",
+      "validation": {
+        "minLength": 10,
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "splitSection.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Split section description",
+      "default": "Start with text, switch to audio, or go live on video whenever you want. Our chat experience is designed to feel simple, quick, and reliable across every device.",
+      "section": "split_section",
+      "validation": {
+        "minLength": 20,
+        "maxLength": 260
+      }
+    },
+    {
+      "key": "splitSection.ctaText",
+      "page": "chat",
+      "type": "text",
+      "label": "Split section CTA text",
+      "default": "Explore Rooms",
+      "section": "split_section",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 40
+      }
+    }
+  ]
+}
