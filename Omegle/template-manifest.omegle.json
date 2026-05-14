@@ -1,0 +1,594 @@
+{
+  "templateId": "omegle-site",
+  "version": 1,
+  "name": "Omegle All Pages Template",
+  "description": "Editable content contract for key Omegle App Router pages. v5: home chat CTAs include chat.cta.*.url (type url) alongside title/subtitle.",
+  "pages": [
+    { "key": "home", "route": "/", "title": "Home" },
+    { "key": "privacy", "route": "/privacy", "title": "Privacy Policy" },
+    { "key": "terms", "route": "/terms", "title": "Terms of Service" }
+  ],
+  "fields": [
+    {
+      "key": "hero.title",
+      "page": "home",
+      "type": "text",
+      "label": "Hero Title",
+      "required": false,
+      "default": "Omegle Web: We Brought Omegle Back to Life!",
+      "section": "hero",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "hero.subtitle",
+      "page": "home",
+      "type": "textarea",
+      "label": "Hero Subtitle",
+      "required": false,
+      "default": "",
+      "section": "hero",
+      "validation": {
+        "maxLength": 180
+      }
+    },
+    {
+      "key": "hero.tagline",
+      "page": "home",
+      "type": "text",
+      "label": "Hero Kicker / Tagline (fallback)",
+      "required": false,
+      "default": "Meet strangers with your interests!",
+      "section": "hero",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "mobile.notice",
+      "page": "home",
+      "type": "textarea",
+      "label": "Mobile Notice",
+      "required": false,
+      "default": "You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.",
+      "section": "notices",
+      "validation": { "maxLength": 220 }
+    },
+    {
+      "key": "chat.banner.title",
+      "page": "home",
+      "type": "text",
+      "label": "Chat Panel — Monitored Banner Title",
+      "required": false,
+      "default": "Chats are monitored.",
+      "section": "chat.panel",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "chat.banner.subtitle",
+      "page": "home",
+      "type": "text",
+      "label": "Chat Panel — Monitored Banner Subtitle",
+      "required": false,
+      "default": "Keep it clean",
+      "section": "chat.panel",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "chat.interests.label",
+      "page": "home",
+      "type": "text",
+      "label": "Chat Panel — Interests Label",
+      "required": false,
+      "default": "What do you want to talk about?",
+      "section": "chat.panel",
+      "validation": { "maxLength": 120 }
+    },
+    {
+      "key": "chat.interests.placeholder",
+      "page": "home",
+      "type": "text",
+      "label": "Chat Panel — Interests Placeholder",
+      "required": false,
+      "default": "Add your interests (optional)",
+      "section": "chat.panel",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "chat.startLabel",
+      "page": "home",
+      "type": "text",
+      "label": "Chat Panel — Start Section Label",
+      "required": false,
+      "default": "Start chatting:",
+      "section": "chat.panel",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "chat.cta.text.title",
+      "page": "home",
+      "type": "text",
+      "label": "CTA — Text chat (button title)",
+      "required": false,
+      "default": "Text",
+      "section": "chat.cta",
+      "helpText": "Primary line on the Text mode button in the home chat grid.",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "chat.cta.text.subtitle",
+      "page": "home",
+      "type": "text",
+      "label": "CTA — Text chat (button subtitle)",
+      "required": false,
+      "default": "No camera · instant",
+      "section": "chat.cta",
+      "helpText": "Smaller uppercase line under the Text CTA title.",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "chat.cta.text.url",
+      "page": "home",
+      "type": "url",
+      "label": "CTA — Text chat (target URL)",
+      "required": false,
+      "default": "/text",
+      "section": "chat.cta",
+      "helpText": "App route or absolute URL when the Text CTA is activated (in-app paths like /text are valid).",
+      "placeholder": "/text"
+    },
+    {
+      "key": "chat.cta.video.title",
+      "page": "home",
+      "type": "text",
+      "label": "CTA — Video chat (button title)",
+      "required": false,
+      "default": "Video",
+      "section": "chat.cta",
+      "helpText": "Primary line on the Video mode button.",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "chat.cta.video.subtitle",
+      "page": "home",
+      "type": "text",
+      "label": "CTA — Video chat (button subtitle)",
+      "required": false,
+      "default": "Webcam · HD ready",
+      "section": "chat.cta",
+      "helpText": "Smaller uppercase line under the Video CTA title.",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "chat.cta.video.url",
+      "page": "home",
+      "type": "url",
+      "label": "CTA — Video chat (target URL)",
+      "required": false,
+      "default": "/video",
+      "section": "chat.cta",
+      "helpText": "App route or absolute URL when the Video CTA is activated.",
+      "placeholder": "/video"
+    },
+    {
+      "key": "chat.cta.risk.title",
+      "page": "home",
+      "type": "text",
+      "label": "CTA — Unmoderated video (button title)",
+      "required": false,
+      "default": "Video (Unmoderated)",
+      "section": "chat.cta",
+      "helpText": "Primary line on the higher-risk / 18+ video CTA (opens terms flow).",
+      "validation": { "maxLength": 60 }
+    },
+    {
+      "key": "chat.cta.risk.subtitle",
+      "page": "home",
+      "type": "text",
+      "label": "CTA — Unmoderated video (button subtitle)",
+      "required": false,
+      "default": "Higher risk · 18+ vibe",
+      "section": "chat.cta",
+      "helpText": "Smaller uppercase line under the unmoderated video CTA title.",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "chat.cta.risk.url",
+      "page": "home",
+      "type": "url",
+      "label": "CTA — Unmoderated video (post-confirm URL)",
+      "required": false,
+      "default": "/coomeet",
+      "section": "chat.cta",
+      "helpText": "Destination after terms acceptance; client may show a terms modal before navigating. Use app path or full URL.",
+      "placeholder": "/coomeet"
+    },
+    {
+      "key": "article.welcome.paragraph1",
+      "page": "home",
+      "type": "textarea",
+      "label": "Welcome Paragraph 1",
+      "required": false,
+      "default": "Hey everyone!",
+      "section": "article.welcome"
+    },
+    {
+      "key": "article.welcome.paragraph2",
+      "page": "home",
+      "type": "textarea",
+      "label": "Welcome Paragraph 2",
+      "required": false,
+      "default": "Missing Omegle? Same here! We were bummed when the original Omegle went dark. But guess what? A bunch of us college kids couldn't let it die, so we created the ultimate Omegle alternative!",
+      "section": "article.welcome"
+    },
+    {
+      "key": "article.welcome.paragraph3",
+      "page": "home",
+      "type": "textarea",
+      "label": "Welcome Paragraph 3",
+      "required": false,
+      "default": "Welcome to Omegle Web — it's like the OG Omegle, but cooler!",
+      "section": "article.welcome"
+    },
+    {
+      "key": "article.deal.title",
+      "page": "home",
+      "type": "text",
+      "label": "Deal Section Title",
+      "required": false,
+      "default": "What's the deal?",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.deal.item1",
+      "page": "home",
+      "type": "text",
+      "label": "Deal Bullet 1",
+      "required": false,
+      "default": "It's the new Omegle for talking to strangers online",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.deal.item2",
+      "page": "home",
+      "type": "text",
+      "label": "Deal Bullet 2",
+      "required": false,
+      "default": "100% anonymous chat — no worries, we got your privacy!",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.deal.item3",
+      "page": "home",
+      "type": "text",
+      "label": "Deal Bullet 3",
+      "required": false,
+      "default": "Works on your browser — no need for an Omegle app",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.deal.item4",
+      "page": "home",
+      "type": "text",
+      "label": "Deal Bullet 4",
+      "required": false,
+      "default": "Way better than Ome TV or Monkey (yeah, we said it!)",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.deal.footer",
+      "page": "home",
+      "type": "textarea",
+      "label": "Deal Footer",
+      "required": false,
+      "default": "Why'd we make it? 'Cause we missed random chats and meeting new people from all over. This Omegle alternative is our way of keeping the spirit alive.",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.perfect.title",
+      "page": "home",
+      "type": "text",
+      "label": "Perfect For Title",
+      "required": false,
+      "default": "Our Omegle Web is perfect for:",
+      "section": "article.perfect"
+    },
+    {
+      "key": "article.perfect.item1",
+      "page": "home",
+      "type": "text",
+      "label": "Perfect For Bullet 1",
+      "required": false,
+      "default": "Killing time between classes",
+      "section": "article.perfect"
+    },
+    {
+      "key": "article.perfect.item2",
+      "page": "home",
+      "type": "text",
+      "label": "Perfect For Bullet 2",
+      "required": false,
+      "default": "Late-night convos with strangers",
+      "section": "article.perfect"
+    },
+    {
+      "key": "article.perfect.item3",
+      "page": "home",
+      "type": "text",
+      "label": "Perfect For Bullet 3",
+      "required": false,
+      "default": "Finding study buddies (or procrastination partners, let's be real)",
+      "section": "article.perfect"
+    },
+    {
+      "key": "article.closing.paragraph1",
+      "page": "home",
+      "type": "textarea",
+      "label": "Closing Paragraph 1",
+      "required": false,
+      "default": "So if you're itching to talk to strangers or just miss the OG Omegle experience, come check us out! It's free, it's fun, and who knows? You might make a new friend or find your soul meme-mate.",
+      "section": "article.closing"
+    },
+    {
+      "key": "article.closing.paragraph2",
+      "page": "home",
+      "type": "textarea",
+      "label": "Closing Paragraph 2",
+      "required": false,
+      "default": "Ready to dive into some anonymous chat online? Let's go!",
+      "section": "article.closing"
+    },
+    {
+      "key": "article.closing.paragraph3",
+      "page": "home",
+      "type": "textarea",
+      "label": "Closing Paragraph 3",
+      "required": false,
+      "default": "P.S. To our professors: This totally counts as a coding project, right? 😋",
+      "section": "article.closing"
+    },
+    {
+      "key": "article.legal.terms.before",
+      "page": "home",
+      "type": "textarea",
+      "label": "Legal Terms Prefix",
+      "required": false,
+      "default": "YOU MUST BE 18 OR OLDER TO USE OMEGLE. See Omegle's ",
+      "section": "article.legal"
+    },
+    {
+      "key": "article.legal.terms.label",
+      "page": "home",
+      "type": "text",
+      "label": "Legal Terms Link Label",
+      "required": false,
+      "default": "Terms of Service",
+      "section": "article.legal"
+    },
+    {
+      "key": "article.legal.terms.href",
+      "page": "home",
+      "type": "url",
+      "label": "Legal Terms Link URL",
+      "required": false,
+      "default": "https://www.omegle.com/terms",
+      "section": "article.legal"
+    },
+    {
+      "key": "article.legal.terms.after",
+      "page": "home",
+      "type": "text",
+      "label": "Legal Terms Suffix",
+      "required": false,
+      "default": " for more info.",
+      "section": "article.legal"
+    },
+    {
+      "key": "article.legal.parental.before",
+      "page": "home",
+      "type": "textarea",
+      "label": "Parental Notice Prefix",
+      "required": false,
+      "default": "Parental control protections that may assist parents are commercially available and you can find more info at ",
+      "section": "article.legal"
+    },
+    {
+      "key": "article.legal.parental.url",
+      "page": "home",
+      "type": "url",
+      "label": "Parental Notice URL",
+      "required": false,
+      "default": "https://www.connectsafely.org/controls/",
+      "section": "article.legal"
+    },
+    {
+      "key": "article.legal.parental.after",
+      "page": "home",
+      "type": "text",
+      "label": "Parental Notice Suffix",
+      "required": false,
+      "default": " as well as other sites.",
+      "section": "article.legal"
+    },
+    {
+      "key": "learnMore.heading",
+      "page": "home",
+      "type": "text",
+      "label": "Learn More Section Heading",
+      "required": false,
+      "default": "Learn more",
+      "section": "learnMore",
+      "helpText": "Small caps heading above the FAQ / tips / changelog cards on the home page.",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "faq.cardTitle",
+      "page": "home",
+      "type": "text",
+      "label": "FAQ Card Title",
+      "required": false,
+      "default": "Frequently Asked Questions",
+      "section": "faq",
+      "validation": { "maxLength": 120 }
+    },
+    {
+      "key": "faq.items",
+      "page": "home",
+      "type": "repeater",
+      "label": "FAQ items",
+      "required": false,
+      "section": "faq",
+      "helpText": "Matches home page FAQ list (question + answer). Keys q/a align with FaqItem in app/content/home-content.ts.",
+      "itemPresentation": "accordion",
+      "validation": { "minItems": 0, "maxItems": 40 },
+      "itemFields": [
+        {
+          "key": "q",
+          "type": "text",
+          "label": "Question",
+          "required": true,
+          "validation": { "maxLength": 200 }
+        },
+        {
+          "key": "a",
+          "type": "textarea",
+          "label": "Answer",
+          "required": true,
+          "validation": { "maxLength": 2000 }
+        }
+      ],
+      "default": [
+        {
+          "q": "Is Omegle Web free?",
+          "a": "Yes — anonymous chat in your browser, no download required."
+        },
+        {
+          "q": "Do I need an app?",
+          "a": "No. The site works on phones, tablets, and desktops in the browser."
+        },
+        {
+          "q": "How do interests work?",
+          "a": "Add topics you care about; we use them to help you meet strangers with similar interests."
+        },
+        {
+          "q": "Is it really anonymous?",
+          "a": "We aim for a simple, no-sign-up flow so you can chat without creating an account."
+        },
+        {
+          "q": "What if someone makes me uncomfortable?",
+          "a": "Skip the chat and stop anytime. Use safer modes if you prefer text only."
+        }
+      ]
+    },
+    {
+      "key": "tips.cardTitle",
+      "page": "home",
+      "type": "text",
+      "label": "Tips Card Title",
+      "required": false,
+      "default": "Tips for Better Conversations",
+      "section": "tips",
+      "validation": { "maxLength": 120 }
+    },
+    {
+      "key": "tips.items",
+      "page": "home",
+      "type": "repeater",
+      "label": "Tips (bullets)",
+      "required": false,
+      "section": "tips",
+      "itemPresentation": "expanded",
+      "validation": { "minItems": 0, "maxItems": 30 },
+      "itemFields": [
+        {
+          "key": "text",
+          "type": "text",
+          "label": "Tip",
+          "required": true,
+          "validation": { "maxLength": 240 }
+        }
+      ],
+      "default": [
+        { "text": "Add interests for better matches" },
+        { "text": "Good lighting helps on video" },
+        { "text": "Be kind — real people on the other side" },
+        { "text": "Skip anytime you want a new partner" }
+      ]
+    },
+    {
+      "key": "changelog.cardTitle",
+      "page": "home",
+      "type": "text",
+      "label": "Changelog Card Title",
+      "required": false,
+      "default": "Recent Updates & Improvements",
+      "section": "changelog",
+      "validation": { "maxLength": 120 }
+    },
+    {
+      "key": "changelog.items",
+      "page": "home",
+      "type": "repeater",
+      "label": "Changelog lines",
+      "required": false,
+      "section": "changelog",
+      "itemPresentation": "expanded",
+      "validation": { "minItems": 0, "maxItems": 40 },
+      "itemFields": [
+        {
+          "key": "text",
+          "type": "text",
+          "label": "Update line",
+          "required": true,
+          "validation": { "maxLength": 300 }
+        }
+      ],
+      "default": [
+        { "text": "Landing copy updated to reflect the Omegle Web-style experience" },
+        { "text": "Interest field and monitored-chat banner on the home panel" },
+        { "text": "Light/dark theme for comfortable reading" }
+      ]
+    },
+    {
+      "key": "legal.title",
+      "page": "privacy",
+      "type": "text",
+      "label": "Privacy Page Title",
+      "required": false,
+      "default": "Privacy Policy",
+      "section": "legal",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "legal.description",
+      "page": "privacy",
+      "type": "textarea",
+      "label": "Privacy Intro",
+      "required": false,
+      "default": "Learn how Omegle handles your data and protects your privacy.",
+      "section": "legal",
+      "validation": { "maxLength": 200 }
+    },
+    {
+      "key": "legal.title",
+      "page": "terms",
+      "type": "text",
+      "label": "Terms Page Title",
+      "required": false,
+      "default": "Terms of Service",
+      "section": "legal",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "legal.description",
+      "page": "terms",
+      "type": "textarea",
+      "label": "Terms Intro",
+      "required": false,
+      "default": "Read the rules and conditions for using Omegle.",
+      "section": "legal",
+      "validation": { "maxLength": 200 }
+    }
+  ]
+}
