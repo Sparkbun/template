@@ -1,12 +1,15 @@
 {
   "templateId": "omegle-site",
-  "version": 1,
+  "version": 2,
   "name": "Omegle All Pages Template",
-  "description": "Editable content contract for key Omegle App Router pages. v5: home chat CTAs include chat.cta.*.url (type url) alongside title/subtitle.",
+  "description": "Editable content for authenticated home (/), guest marketing landing (/landing and / when logged out), privacy, and terms.",
   "pages": [
-    { "key": "home", "route": "/", "title": "Home" },
-    { "key": "privacy", "route": "/privacy", "title": "Privacy Policy" },
-    { "key": "terms", "route": "/terms", "title": "Terms of Service" }
+    { "key": "home", "route": "/", "title": "Home (signed in)" },
+    {
+      "key": "landing",
+      "route": "/landing",
+      "title": "Landing (logged out)"
+    }
   ],
   "fields": [
     {
@@ -551,44 +554,434 @@
       ]
     },
     {
-      "key": "legal.title",
-      "page": "privacy",
-      "type": "text",
-      "label": "Privacy Page Title",
+      "key": "mobile.notice",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — mobile notice",
       "required": false,
-      "default": "Privacy Policy",
-      "section": "legal",
+      "default": "You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.",
+      "section": "landing.hero",
+      "validation": { "maxLength": 220 }
+    },
+    {
+      "key": "hero.tagline",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero tagline (kicker)",
+      "required": false,
+      "default": "Meet strangers with your interests!",
+      "section": "landing.hero",
       "validation": { "maxLength": 80 }
     },
     {
-      "key": "legal.description",
-      "page": "privacy",
-      "type": "textarea",
-      "label": "Privacy Intro",
+      "key": "hero.headlineSuffix",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero headline suffix",
       "required": false,
-      "default": "Learn how Omegle handles your data and protects your privacy.",
-      "section": "legal",
+      "default": ": talk to strangers online",
+      "section": "landing.hero",
+      "helpText": "Appended after the site name wordmark (first word blue, remainder orange). Site name comes from site settings.",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "hero.description",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — hero description (fallback)",
+      "required": false,
+      "default": "Talk to strangers with text and video chat in your browser. Match by interests — no app download required.",
+      "section": "landing.hero",
+      "helpText": "Used when site description / SEO meta description is not set in site settings.",
+      "validation": { "maxLength": 400 }
+    },
+    {
+      "key": "hero.cta.primary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero primary CTA label",
+      "required": false,
+      "default": "Get started free",
+      "section": "landing.hero",
+      "validation": { "maxLength": 60 }
+    },
+    {
+      "key": "hero.cta.primary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — hero primary CTA URL",
+      "required": false,
+      "default": "/signup",
+      "section": "landing.hero",
+      "placeholder": "/signup"
+    },
+    {
+      "key": "hero.cta.secondary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero secondary CTA label",
+      "required": false,
+      "default": "Log in",
+      "section": "landing.hero",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "hero.cta.secondary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — hero secondary CTA URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing.hero",
+      "placeholder": "/login"
+    },
+    {
+      "key": "features.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — features section title",
+      "required": false,
+      "default": "Why {siteName}?",
+      "section": "landing.features",
+      "helpText": "Replace {siteName} with the site name from site settings at render time.",
+      "validation": { "maxLength": 120 }
+    },
+    {
+      "key": "features.subtitle",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — features section subtitle",
+      "required": false,
+      "default": "The Omegle-style experience, rebuilt for today's web.",
+      "section": "landing.features",
       "validation": { "maxLength": 200 }
     },
     {
-      "key": "legal.title",
-      "page": "terms",
+      "key": "features.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — feature cards",
+      "required": false,
+      "section": "landing.features",
+      "itemPresentation": "expanded",
+      "validation": { "minItems": 0, "maxItems": 12 },
+      "itemFields": [
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": { "maxLength": 80 }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": { "maxLength": 400 }
+        }
+      ],
+      "default": [
+        {
+          "title": "Text chat",
+          "description": "Jump into anonymous text conversations with strangers from around the world. Skip anytime for a new match."
+        },
+        {
+          "title": "Video chat",
+          "description": "Face-to-face random video when you want a more personal connection. Works in your browser — no install."
+        },
+        {
+          "title": "Interest matching",
+          "description": "Add topics you care about and get paired with people who share similar interests for better conversations."
+        },
+        {
+          "title": "No app required",
+          "description": "Use on phone, tablet, or desktop. The site is built mobile-first so you can chat anywhere."
+        },
+        {
+          "title": "Monitored and safer modes",
+          "description": "Choose text-only when you prefer, skip partners instantly, and chat in a monitored environment."
+        },
+        {
+          "title": "Inbox for connections",
+          "description": "Sign in to keep chatting with people you meet, manage your profile, and pick up conversations later."
+        }
+      ]
+    },
+    {
+      "key": "howItWorks.title",
+      "page": "landing",
       "type": "text",
-      "label": "Terms Page Title",
+      "label": "Landing — how it works title",
+      "required": false,
+      "default": "How it works",
+      "section": "landing.howItWorks",
+      "validation": { "maxLength": 120 }
+    },
+    {
+      "key": "howItWorks.subtitle",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — how it works subtitle",
+      "required": false,
+      "default": "Start chatting in three simple steps",
+      "section": "landing.howItWorks",
+      "validation": { "maxLength": 200 }
+    },
+    {
+      "key": "howItWorks.steps",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — how it works steps",
+      "required": false,
+      "section": "landing.howItWorks",
+      "itemPresentation": "expanded",
+      "validation": { "minItems": 0, "maxItems": 8 },
+      "itemFields": [
+        {
+          "key": "step",
+          "type": "text",
+          "label": "Step number",
+          "required": true,
+          "validation": { "maxLength": 8 }
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": { "maxLength": 80 }
+        },
+        {
+          "key": "body",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": { "maxLength": 300 }
+        }
+      ],
+      "default": [
+        {
+          "step": "1",
+          "title": "Create an account",
+          "body": "Sign up free with email, Google, or a magic link."
+        },
+        {
+          "step": "2",
+          "title": "Add your interests",
+          "body": "Optional topics help us match you with like-minded strangers."
+        },
+        {
+          "step": "3",
+          "title": "Start chatting",
+          "body": "Pick text or video, agree to the terms, and meet someone new."
+        }
+      ]
+    },
+    {
+      "key": "tips.cardTitle",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — tips card title",
+      "required": false,
+      "default": "Tips for better chats",
+      "section": "landing.tips",
+      "validation": { "maxLength": 120 }
+    },
+    {
+      "key": "tips.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — tips list",
+      "required": false,
+      "section": "landing.tips",
+      "itemPresentation": "expanded",
+      "validation": { "minItems": 0, "maxItems": 30 },
+      "itemFields": [
+        {
+          "key": "text",
+          "type": "text",
+          "label": "Tip",
+          "required": true,
+          "validation": { "maxLength": 240 }
+        }
+      ],
+      "default": [
+        { "text": "Add interests for better matches" },
+        { "text": "Good lighting helps on video" },
+        { "text": "Be kind — real people on the other side" },
+        { "text": "Skip anytime you want a new partner" }
+      ]
+    },
+    {
+      "key": "faqPreview.cardTitle",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — FAQ preview card title",
+      "required": false,
+      "default": "Common questions",
+      "section": "landing.faqPreview",
+      "validation": { "maxLength": 120 }
+    },
+    {
+      "key": "faqPreview.maxItems",
+      "page": "landing",
+      "type": "number",
+      "label": "Landing — FAQ preview count",
+      "required": false,
+      "default": 3,
+      "section": "landing.faqPreview",
+      "helpText": "How many FAQ items to show on the landing page (from the list below, in order).",
+      "validation": { "min": 1, "max": 10 }
+    },
+    {
+      "key": "faqPreview.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — FAQ preview items",
+      "required": false,
+      "section": "landing.faqPreview",
+      "itemPresentation": "accordion",
+      "validation": { "minItems": 0, "maxItems": 40 },
+      "itemFields": [
+        {
+          "key": "q",
+          "type": "text",
+          "label": "Question",
+          "required": true,
+          "validation": { "maxLength": 200 }
+        },
+        {
+          "key": "a",
+          "type": "textarea",
+          "label": "Answer",
+          "required": true,
+          "validation": { "maxLength": 2000 }
+        }
+      ],
+      "default": [
+        {
+          "q": "Is Omegle Web free?",
+          "a": "Yes — anonymous chat in your browser, no download required."
+        },
+        {
+          "q": "Do I need an app?",
+          "a": "No. The site works on phones, tablets, and desktops in the browser."
+        },
+        {
+          "q": "How do interests work?",
+          "a": "Add topics you care about; we use them to help you meet strangers with similar interests."
+        },
+        {
+          "q": "Is it really anonymous?",
+          "a": "We aim for a simple, no-sign-up flow so you can chat without creating an account."
+        },
+        {
+          "q": "What if someone makes me uncomfortable?",
+          "a": "Skip the chat and stop anytime. Use safer modes if you prefer text only."
+        }
+      ]
+    },
+    {
+      "key": "cta.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — bottom CTA title",
+      "required": false,
+      "default": "Ready to meet someone new?",
+      "section": "landing.cta",
+      "validation": { "maxLength": 120 }
+    },
+    {
+      "key": "cta.subtitle",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — bottom CTA subtitle",
+      "required": false,
+      "default": "Join {siteName} and start anonymous text or video chat with strangers in seconds.",
+      "section": "landing.cta",
+      "helpText": "Replace {siteName} with the site name from site settings at render time.",
+      "validation": { "maxLength": 400 }
+    },
+    {
+      "key": "cta.primary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — bottom CTA primary label",
+      "required": false,
+      "default": "Create free account",
+      "section": "landing.cta",
+      "validation": { "maxLength": 60 }
+    },
+    {
+      "key": "cta.primary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — bottom CTA primary URL",
+      "required": false,
+      "default": "/signup",
+      "section": "landing.cta",
+      "placeholder": "/signup"
+    },
+    {
+      "key": "cta.secondary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — bottom CTA secondary label",
+      "required": false,
+      "default": "I already have an account",
+      "section": "landing.cta",
+      "validation": { "maxLength": 60 }
+    },
+    {
+      "key": "cta.secondary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — bottom CTA secondary URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing.cta",
+      "placeholder": "/login"
+    },
+    {
+      "key": "cta.legal.before",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — CTA legal line (before terms link)",
+      "required": false,
+      "default": "You must be 18 or older. See our ",
+      "section": "landing.cta",
+      "validation": { "maxLength": 120 }
+    },
+    {
+      "key": "cta.terms.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — CTA terms link label",
       "required": false,
       "default": "Terms of Service",
-      "section": "legal",
+      "section": "landing.cta",
       "validation": { "maxLength": 80 }
     },
     {
-      "key": "legal.description",
-      "page": "terms",
-      "type": "textarea",
-      "label": "Terms Intro",
+      "key": "cta.terms.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — CTA terms link URL",
       "required": false,
-      "default": "Read the rules and conditions for using Omegle.",
-      "section": "legal",
-      "validation": { "maxLength": 200 }
+      "default": "/terms",
+      "section": "landing.cta",
+      "placeholder": "/terms"
+    },
+    {
+      "key": "cta.legal.after",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — CTA legal line (after terms link)",
+      "required": false,
+      "default": ".",
+      "section": "landing.cta",
+      "validation": { "maxLength": 40 }
     }
   ]
 }

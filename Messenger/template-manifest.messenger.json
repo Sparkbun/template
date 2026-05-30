@@ -1,13 +1,13 @@
 {
   "templateId": "messenger",
-  "version": 3,
+  "version": 7,
   "name": "Messenger",
-  "description": "Editable copy for home (/), FAQ (/faq), marketing landing (/landing), and legal hub (/legal: privacy + terms tabs).",
+  "description": "Editable copy for /chat, /faq, /landing, and global site footer.",
   "pages": [
     {
-      "key": "home",
-      "route": "/",
-      "title": "Home"
+      "key": "chat",
+      "route": "/chat",
+      "title": "Random chat hub"
     },
     {
       "key": "faq",
@@ -20,365 +20,334 @@
       "title": "Landing"
     },
     {
-      "key": "legal",
-      "route": "/legal",
-      "title": "Legal"
+      "key": "footer",
+      "route": "*",
+      "title": "Site footer (global)"
     }
   ],
   "fields": [
     {
-      "key": "errors.loadRooms",
-      "page": "home",
+      "key": "page.title",
+      "page": "chat",
       "type": "text",
-      "label": "Load rooms error (fallback)",
+      "label": "Chat hub — header title",
       "required": false,
-      "default": "Failed to load rooms",
-      "section": "errors",
-      "helpText": "Shown when roomApi.getAllRooms() fails; API may return a more specific message.",
-      "validation": {
-        "maxLength": 200
-      }
-    },
-    {
-      "key": "header.brand.title",
-      "page": "home",
-      "type": "text",
-      "label": "Header — product name",
-      "required": false,
-      "default": "Messenger",
-      "section": "header.brand",
+      "default": "Random Chat",
+      "section": "chat.header",
+      "helpText": "Browser tab title and header heading.",
       "validation": {
         "maxLength": 80
       }
     },
     {
-      "key": "header.brand.tagline",
-      "page": "home",
+      "key": "page.subtitle",
+      "page": "chat",
       "type": "text",
-      "label": "Header — tagline",
+      "label": "Chat hub — header subtitle",
       "required": false,
-      "default": "Connect with your community",
-      "section": "header.brand",
+      "default": "Choose how you want to chat",
+      "section": "chat.header",
       "validation": {
         "maxLength": 120
       }
     },
     {
-      "key": "header.nav.inbox.label",
-      "page": "home",
+      "key": "nav.home.label",
+      "page": "chat",
       "type": "text",
-      "label": "Nav — Inbox (label)",
+      "label": "Chat hub — home button",
       "required": false,
-      "default": "Inbox",
-      "section": "header.nav",
+      "default": "Home",
+      "section": "chat.nav",
       "validation": {
         "maxLength": 40
       }
     },
     {
-      "key": "header.nav.inbox.href",
-      "page": "home",
+      "key": "nav.home.href",
+      "page": "chat",
       "type": "url",
-      "label": "Nav — Inbox (URL)",
+      "label": "Chat hub — home button URL",
       "required": false,
-      "default": "/inbox",
-      "section": "header.nav",
-      "placeholder": "/inbox"
-    },
-    {
-      "key": "header.nav.randomChat.label",
-      "page": "home",
-      "type": "text",
-      "label": "Nav — Random Chat (label)",
-      "required": false,
-      "default": "Random Chat",
-      "section": "header.nav",
-      "validation": {
-        "maxLength": 40
-      }
-    },
-    {
-      "key": "header.nav.randomChat.href",
-      "page": "home",
-      "type": "url",
-      "label": "Nav — Random Chat (URL)",
-      "required": false,
-      "default": "/random-chat",
-      "section": "header.nav",
-      "placeholder": "/random-chat"
-    },
-    {
-      "key": "header.nav.following.label",
-      "page": "home",
-      "type": "text",
-      "label": "Nav — Following (label)",
-      "required": false,
-      "default": "Following",
-      "section": "header.nav",
-      "validation": {
-        "maxLength": 40
-      }
-    },
-    {
-      "key": "header.nav.following.href",
-      "page": "home",
-      "type": "url",
-      "label": "Nav — Following (URL)",
-      "required": false,
-      "default": "/followed-users",
-      "section": "header.nav",
-      "placeholder": "/followed-users"
-    },
-    {
-      "key": "header.auth.login.label",
-      "page": "home",
-      "type": "text",
-      "label": "Auth — Login (label)",
-      "required": false,
-      "default": "Login",
-      "section": "header.auth",
-      "validation": {
-        "maxLength": 40
-      }
-    },
-    {
-      "key": "header.auth.login.href",
-      "page": "home",
-      "type": "url",
-      "label": "Auth — Login (URL)",
-      "required": false,
-      "default": "/login",
-      "section": "header.auth",
-      "placeholder": "/login"
-    },
-    {
-      "key": "header.auth.switching",
-      "page": "home",
-      "type": "text",
-      "label": "Auth — profile switching state",
-      "required": false,
-      "default": "Switching...",
-      "section": "header.auth",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "header.profile.menuAriaLabel",
-      "page": "home",
-      "type": "text",
-      "label": "Profile menu — aria-label",
-      "required": false,
-      "default": "Profile menu",
-      "section": "header.profile",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "header.profile.currentAccount",
-      "page": "home",
-      "type": "text",
-      "label": "Profile menu — current account caption",
-      "required": false,
-      "default": "Current account",
-      "section": "header.profile",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "header.profile.logout",
-      "page": "home",
-      "type": "text",
-      "label": "Profile menu — Logout",
-      "required": false,
-      "default": "Logout",
-      "section": "header.profile",
-      "validation": {
-        "maxLength": 40
-      }
+      "default": "/",
+      "section": "chat.nav"
     },
     {
       "key": "hero.title",
-      "page": "home",
+      "page": "chat",
       "type": "text",
-      "label": "Hero — title",
+      "label": "Chat hub — hero title",
       "required": false,
-      "default": "Chat Rooms",
-      "section": "hero",
-      "helpText": "RoomsHero default title.",
+      "default": "Choose Your Chat Type",
+      "section": "chat.hero",
       "validation": {
         "maxLength": 120
       }
     },
     {
       "key": "hero.subtitle",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
-      "label": "Hero — subtitle",
+      "label": "Chat hub — hero subtitle",
       "required": false,
-      "default": "Join conversations that interest you",
-      "section": "hero",
+      "default": "Similar to your other project's chat hub, pick between text, audio, or video random chat.",
+      "section": "chat.hero",
       "validation": {
-        "maxLength": 240
+        "maxLength": 300
       }
     },
     {
-      "key": "hero.cta.createRoom",
-      "page": "home",
+      "key": "options.startLabel",
+      "page": "chat",
       "type": "text",
-      "label": "Hero — Create Room (button)",
+      "label": "Chat hub — option card CTA",
       "required": false,
-      "default": "Create Room",
-      "section": "hero",
+      "default": "Start",
+      "section": "chat.options",
       "validation": {
-        "maxLength": 60
+        "maxLength": 40
       }
     },
     {
-      "key": "hero.cta.href",
-      "page": "home",
-      "type": "url",
-      "label": "Hero — Create Room (target URL)",
+      "key": "options.items",
+      "page": "chat",
+      "type": "repeater",
+      "label": "Chat hub — chat type cards",
       "required": false,
-      "default": "/create-room",
-      "section": "hero",
-      "placeholder": "/create-room"
+      "section": "chat.options",
+      "itemPresentation": "accordion",
+      "helpText": "Card icon and colors are app-defined. featureKey gates visibility by site plan.",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 6
+      },
+      "itemFields": [
+        {
+          "key": "id",
+          "type": "text",
+          "label": "Stable id",
+          "required": true,
+          "validation": {
+            "maxLength": 20
+          }
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Card title",
+          "required": true,
+          "validation": {
+            "maxLength": 80
+          }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Card description",
+          "required": true,
+          "validation": {
+            "maxLength": 300
+          }
+        },
+        {
+          "key": "href",
+          "type": "url",
+          "label": "Card link URL",
+          "required": true
+        },
+        {
+          "key": "features",
+          "type": "textarea",
+          "label": "Feature bullets",
+          "required": false,
+          "helpText": "One feature per line.",
+          "validation": {
+            "maxLength": 400
+          }
+        },
+        {
+          "key": "featureKey",
+          "type": "select",
+          "label": "Plan feature gate",
+          "required": true,
+          "options": [
+            {
+              "label": "Text chat",
+              "value": "text_chat"
+            },
+            {
+              "label": "Audio chat",
+              "value": "audio_chat"
+            },
+            {
+              "label": "Stranger video chat",
+              "value": "stranger_video_chat"
+            }
+          ]
+        }
+      ],
+      "default": [
+        {
+          "id": "text",
+          "title": "Text Chat",
+          "description": "Connect with strangers through instant messaging and have fun conversations.",
+          "href": "/chat/text",
+          "features": "Real-time messaging\nAnonymous\nTyping simulation",
+          "featureKey": "text_chat"
+        },
+        {
+          "id": "audio",
+          "title": "Audio Chat",
+          "description": "Talk with random people using your voice in a simple mock audio room.",
+          "href": "/chat/audio",
+          "features": "Voice-style UI\nQuick matching\nLightweight mock",
+          "featureKey": "audio_chat"
+        },
+        {
+          "id": "video",
+          "title": "Video Chat",
+          "description": "Use the existing random video + text chat mock interface with strangers.",
+          "href": "/chat/video",
+          "features": "Video layout\nText side chat\nSkip to next",
+          "featureKey": "stranger_video_chat"
+        }
+      ]
     },
     {
-      "key": "search.placeholder",
-      "page": "home",
+      "key": "tagline",
+      "page": "footer",
       "type": "text",
-      "label": "Search — input placeholder",
+      "label": "Footer — tagline",
       "required": false,
-      "default": "Search rooms...",
-      "section": "search",
+      "default": "Connect. Chat. Celebrate.",
+      "section": "footer.brand",
+      "helpText": "Shown under the site name in the footer brand column. Site display name comes from site info.",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "rightsText",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — rights suffix",
+      "required": false,
+      "default": "All rights reserved.",
+      "section": "footer.copyright",
+      "helpText": "Rendered as © {year} {siteName}. {rightsText}. Site display name comes from site info, not this field.",
       "validation": {
         "maxLength": 80
       }
     },
     {
-      "key": "tabs.public.label",
-      "page": "home",
+      "key": "theme.toLightAria",
+      "page": "footer",
       "type": "text",
-      "label": "Tabs — Public Rooms",
+      "label": "Footer — theme toggle (switch to light)",
       "required": false,
-      "default": "Public Rooms",
-      "section": "tabs",
+      "default": "Switch to light mode",
+      "section": "footer.theme",
       "validation": {
-        "maxLength": 60
+        "maxLength": 80
       }
     },
     {
-      "key": "tabs.private.label",
-      "page": "home",
+      "key": "theme.toDarkAria",
+      "page": "footer",
       "type": "text",
-      "label": "Tabs — Private Rooms",
+      "label": "Footer — theme toggle (switch to dark)",
       "required": false,
-      "default": "Private Rooms",
-      "section": "tabs",
+      "default": "Switch to dark mode",
+      "section": "footer.theme",
       "validation": {
-        "maxLength": 60
+        "maxLength": 80
       }
     },
     {
-      "key": "tabs.myRooms.label",
-      "page": "home",
+      "key": "links.faq.label",
+      "page": "footer",
       "type": "text",
-      "label": "Tabs — My Rooms",
+      "label": "Footer — FAQ link text",
       "required": false,
-      "default": "My Rooms",
-      "section": "tabs",
-      "validation": {
-        "maxLength": 60
-      }
-    },
-    {
-      "key": "tabs.joined.label",
-      "page": "home",
-      "type": "text",
-      "label": "Tabs — Joined",
-      "required": false,
-      "default": "Joined",
-      "section": "tabs",
-      "validation": {
-        "maxLength": 60
-      }
-    },
-    {
-      "key": "tabs.action.open",
-      "page": "home",
-      "type": "text",
-      "label": "Tabs — primary room action (Open)",
-      "required": false,
-      "default": "Open",
-      "section": "tabs",
-      "helpText": "Used as actionLabel for all tabs on this page; RoomCard treats this label as navigate-open when user is already a member.",
+      "default": "FAQ",
+      "section": "footer.links",
       "validation": {
         "maxLength": 40
       }
     },
     {
-      "key": "roomCard.badge.private",
-      "page": "home",
-      "type": "text",
-      "label": "Room card — Private badge",
+      "key": "links.faq.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — FAQ link URL",
       "required": false,
-      "default": "Private",
-      "section": "roomCard",
+      "default": "/faq",
+      "section": "footer.links"
+    },
+    {
+      "key": "links.contact.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — Contact link text",
+      "required": false,
+      "default": "Contact",
+      "section": "footer.links",
       "validation": {
         "maxLength": 40
       }
     },
     {
-      "key": "roomCard.badge.pending",
-      "page": "home",
-      "type": "text",
-      "label": "Room card — Pending badge",
+      "key": "links.contact.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — Contact link URL",
       "required": false,
-      "default": "Pending",
-      "section": "roomCard",
+      "default": "/contact",
+      "section": "footer.links"
+    },
+    {
+      "key": "links.privacy.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — privacy link text",
+      "required": false,
+      "default": "Privacy Policy",
+      "section": "footer.links",
       "validation": {
         "maxLength": 40
       }
     },
     {
-      "key": "roomCard.membersSuffix",
-      "page": "home",
-      "type": "text",
-      "label": "Room card — members count suffix",
+      "key": "links.privacy.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — privacy link URL",
       "required": false,
-      "default": "members",
-      "section": "roomCard",
-      "helpText": "Rendered as \"{count} {membersSuffix}\" (e.g. \"0 members\").",
+      "default": "/legal?tab=privacy",
+      "section": "footer.links",
+      "placeholder": "/legal?tab=privacy"
+    },
+    {
+      "key": "links.terms.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — terms link text",
+      "required": false,
+      "default": "Terms & Conditions",
+      "section": "footer.links",
       "validation": {
-        "maxLength": 40
+        "maxLength": 50
       }
     },
     {
-      "key": "roomCard.button.pending",
-      "page": "home",
-      "type": "text",
-      "label": "Room card — button (pending request)",
+      "key": "links.terms.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — terms link URL",
       "required": false,
-      "default": "Pending",
-      "section": "roomCard",
-      "validation": {
-        "maxLength": 40
-      }
-    },
-    {
-      "key": "roomCard.button.joining",
-      "page": "home",
-      "type": "text",
-      "label": "Room card — button (join in progress)",
-      "required": false,
-      "default": "Joining...",
-      "section": "roomCard",
-      "validation": {
-        "maxLength": 40
-      }
+      "default": "/legal?tab=terms",
+      "section": "footer.links",
+      "placeholder": "/legal?tab=terms"
     },
     {
       "key": "page.title",
@@ -1392,277 +1361,6 @@
       "validation": {
         "maxLength": 120
       }
-    },
-    {
-      "key": "page.title",
-      "page": "legal",
-      "type": "text",
-      "label": "Legal — page title",
-      "required": false,
-      "default": "Legal",
-      "section": "legal.header",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "page.subtitle",
-      "page": "legal",
-      "type": "text",
-      "label": "Legal — page subtitle",
-      "required": false,
-      "default": "Privacy Policy & Terms of Service",
-      "section": "legal.header",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "tabs.privacy.label",
-      "page": "legal",
-      "type": "text",
-      "label": "Legal — Privacy tab label",
-      "required": false,
-      "default": "Privacy Policy",
-      "section": "legal.tabs",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "tabs.terms.label",
-      "page": "legal",
-      "type": "text",
-      "label": "Legal — Terms tab label",
-      "required": false,
-      "default": "Terms of Service",
-      "section": "legal.tabs",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "privacy.cardTitle",
-      "page": "legal",
-      "type": "text",
-      "label": "Legal — Privacy card title",
-      "required": false,
-      "default": "Privacy Policy",
-      "section": "legal.privacy",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "privacy.lastUpdated",
-      "page": "legal",
-      "type": "text",
-      "label": "Legal — Privacy last updated",
-      "required": false,
-      "default": "Last updated: December 2024",
-      "section": "legal.privacy",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "privacy.sections",
-      "page": "legal",
-      "type": "repeater",
-      "label": "Legal — Privacy sections",
-      "required": false,
-      "section": "legal.privacy",
-      "itemPresentation": "accordion",
-      "validation": {
-        "minItems": 0,
-        "maxItems": 40
-      },
-      "itemFields": [
-        {
-          "key": "heading",
-          "type": "text",
-          "label": "Heading",
-          "required": true,
-          "validation": {
-            "maxLength": 120
-          }
-        },
-        {
-          "key": "body",
-          "type": "textarea",
-          "label": "Body",
-          "required": false,
-          "validation": {
-            "maxLength": 4000
-          }
-        },
-        {
-          "key": "listItems",
-          "type": "textarea",
-          "label": "Bullet lines (optional)",
-          "required": false,
-          "helpText": "One bullet per line; render as a list under the body when non-empty.",
-          "validation": {
-            "maxLength": 8000
-          }
-        }
-      ],
-      "default": [
-        {
-          "heading": "1. Introduction",
-          "body": "Welcome to our chat application. We are committed to protecting your privacy and ensuring you have a positive experience on our platform. This Privacy Policy explains how we collect, use, and protect your personal information.",
-          "listItems": ""
-        },
-        {
-          "heading": "2. Information We Collect",
-          "body": "We collect information to provide and improve our services:",
-          "listItems": "Account Information: Name, email address, phone number, profile picture, and authentication credentials.\nChat Content: Messages, files, and media you share within rooms and direct messages.\nUsage Data: Information about how you use our platform, including login times, features accessed, and interaction patterns.\nDevice Information: Device type, operating system, browser type, and IP address.\nLocation Data: General location information derived from IP address (not precise GPS location unless explicitly provided)."
-        },
-        {
-          "heading": "3. How We Use Your Information",
-          "body": "We use collected information to:",
-          "listItems": "Provide and maintain our chat services\nPersonalize your experience and improve our platform\nCommunicate with you about service updates and important notices\nModerate content and ensure community safety\nAnalyze usage patterns to enhance features\nComply with legal obligations"
-        },
-        {
-          "heading": "4. Data Security",
-          "body": "We implement industry-standard security measures to protect your personal information, including encryption, secure data centers, and regular security audits. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.",
-          "listItems": ""
-        },
-        {
-          "heading": "5. Your Rights",
-          "body": "You have the right to:",
-          "listItems": "Access your personal data\nRequest correction of inaccurate information\nRequest deletion of your data\nOpt-out of marketing communications\nExport your data in a portable format"
-        },
-        {
-          "heading": "6. Cookies",
-          "body": "We use cookies to improve your experience, remember preferences, and analyze usage patterns. You can control cookie settings through your browser preferences.",
-          "listItems": ""
-        },
-        {
-          "heading": "7. Third-Party Services",
-          "body": "We may share information with trusted third-party service providers who assist in operating our platform. These providers are bound by confidentiality agreements and prohibited from using your information for other purposes.",
-          "listItems": ""
-        },
-        {
-          "heading": "8. Contact Us",
-          "body": "For privacy-related questions or to exercise your rights, please contact us at privacy@chaterio.com or visit our contact page.",
-          "listItems": ""
-        }
-      ]
-    },
-    {
-      "key": "terms.cardTitle",
-      "page": "legal",
-      "type": "text",
-      "label": "Legal — Terms card title",
-      "required": false,
-      "default": "Terms of Service",
-      "section": "legal.terms",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "terms.lastUpdated",
-      "page": "legal",
-      "type": "text",
-      "label": "Legal — Terms last updated",
-      "required": false,
-      "default": "Last updated: December 2024",
-      "section": "legal.terms",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "terms.sections",
-      "page": "legal",
-      "type": "repeater",
-      "label": "Legal — Terms sections",
-      "required": false,
-      "section": "legal.terms",
-      "itemPresentation": "accordion",
-      "validation": {
-        "minItems": 0,
-        "maxItems": 40
-      },
-      "itemFields": [
-        {
-          "key": "heading",
-          "type": "text",
-          "label": "Heading",
-          "required": true,
-          "validation": {
-            "maxLength": 120
-          }
-        },
-        {
-          "key": "body",
-          "type": "textarea",
-          "label": "Body",
-          "required": false,
-          "validation": {
-            "maxLength": 4000
-          }
-        },
-        {
-          "key": "listItems",
-          "type": "textarea",
-          "label": "Bullet lines (optional)",
-          "required": false,
-          "helpText": "One bullet per line.",
-          "validation": {
-            "maxLength": 8000
-          }
-        }
-      ],
-      "default": [
-        {
-          "heading": "1. Acceptance of Terms",
-          "body": "By accessing and using this chat application, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.",
-          "listItems": ""
-        },
-        {
-          "heading": "2. Use License",
-          "body": "Permission is granted to temporarily download one copy of the materials (information or software) on our application for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:",
-          "listItems": "Modifying or copying the materials\nUsing the materials for any commercial purpose or for any public display\nAttempting to decompile or reverse engineer any software contained on the application\nRemoving any copyright or other proprietary notations from the materials\nTransferring the materials to another person or \"mirroring\" the materials on any other server"
-        },
-        {
-          "heading": "3. Disclaimer",
-          "body": "The materials on our application are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.",
-          "listItems": ""
-        },
-        {
-          "heading": "4. User Conduct",
-          "body": "You agree not to:",
-          "listItems": "Engage in any form of harassment, abuse, or discrimination\nPost inappropriate, offensive, or illegal content\nShare personal information of others without consent\nSpam or flood chat rooms with repetitive messages\nAttempt to gain unauthorized access to our systems\nUse automated tools to scrape or collect data"
-        },
-        {
-          "heading": "5. Intellectual Property Rights",
-          "body": "All content included in this application, such as text, graphics, logos, images, and software, is the property of our company or its content suppliers and is protected by international copyright laws. The compilation of all content on this application is the exclusive property of our company.",
-          "listItems": ""
-        },
-        {
-          "heading": "6. Limitations of Liability",
-          "body": "In no event shall our company or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our application.",
-          "listItems": ""
-        },
-        {
-          "heading": "7. Modifications",
-          "body": "We may revise these terms of service for our application at any time without notice. By using this application, you are agreeing to be bound by the then current version of these terms of service.",
-          "listItems": ""
-        },
-        {
-          "heading": "8. Governing Law",
-          "body": "These terms and conditions are governed by and construed in accordance with the laws of the jurisdiction in which the company operates, and you irrevocably submit to the exclusive jurisdiction of the courts in that location.",
-          "listItems": ""
-        },
-        {
-          "heading": "9. Contact Information",
-          "body": "If you have any questions about these Terms of Service, please contact us at support@chaterio.com.",
-          "listItems": ""
-        }
-      ]
     }
   ]
 }
