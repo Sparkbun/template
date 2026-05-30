@@ -1,20 +1,39 @@
 {
   "templateId": "omegle-site",
-  "version": 2,
+  "version": 1,
   "name": "Omegle All Pages Template",
-  "description": "Editable content for authenticated home (/), guest marketing landing (/landing and / when logged out), privacy, and terms.",
+  "description": "Editable copy for /chat, /coomeet embed, /landing, /faq, and global site footer.",
   "pages": [
-    { "key": "home", "route": "/", "title": "Home (signed in)" },
+    {
+      "key": "chat",
+      "route": "/chat",
+      "title": "Chat hub (signed in)"
+    },
+    {
+      "key": "coomeet",
+      "route": "/coomeet",
+      "title": "Coomeet embed"
+    },
     {
       "key": "landing",
       "route": "/landing",
       "title": "Landing (logged out)"
+    },
+    {
+      "key": "faq",
+      "route": "/faq",
+      "title": "FAQ"
+    },
+    {
+      "key": "footer",
+      "route": "*",
+      "title": "Site footer (global)"
     }
   ],
   "fields": [
     {
       "key": "hero.title",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Hero Title",
       "required": false,
@@ -26,7 +45,7 @@
     },
     {
       "key": "hero.subtitle",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
       "label": "Hero Subtitle",
       "required": false,
@@ -38,7 +57,7 @@
     },
     {
       "key": "hero.tagline",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Hero Kicker / Tagline (fallback)",
       "required": false,
@@ -50,155 +69,179 @@
     },
     {
       "key": "mobile.notice",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
       "label": "Mobile Notice",
       "required": false,
       "default": "You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.",
       "section": "notices",
-      "validation": { "maxLength": 220 }
+      "validation": {
+        "maxLength": 220
+      }
     },
     {
       "key": "chat.banner.title",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Chat Panel — Monitored Banner Title",
       "required": false,
       "default": "Chats are monitored.",
       "section": "chat.panel",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "chat.banner.subtitle",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Chat Panel — Monitored Banner Subtitle",
       "required": false,
       "default": "Keep it clean",
       "section": "chat.panel",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "chat.interests.label",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Chat Panel — Interests Label",
       "required": false,
       "default": "What do you want to talk about?",
       "section": "chat.panel",
-      "validation": { "maxLength": 120 }
+      "validation": {
+        "maxLength": 120
+      }
     },
     {
       "key": "chat.interests.placeholder",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Chat Panel — Interests Placeholder",
       "required": false,
       "default": "Add your interests (optional)",
       "section": "chat.panel",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "chat.startLabel",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Chat Panel — Start Section Label",
       "required": false,
       "default": "Start chatting:",
       "section": "chat.panel",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "chat.cta.text.title",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "CTA — Text chat (button title)",
       "required": false,
       "default": "Text",
       "section": "chat.cta",
-      "helpText": "Primary line on the Text mode button in the home chat grid.",
-      "validation": { "maxLength": 40 }
+      "helpText": "Primary line on the Text mode button in the /chat hub grid.",
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "chat.cta.text.subtitle",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "CTA — Text chat (button subtitle)",
       "required": false,
       "default": "No camera · instant",
       "section": "chat.cta",
       "helpText": "Smaller uppercase line under the Text CTA title.",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "chat.cta.text.url",
-      "page": "home",
+      "page": "chat",
       "type": "url",
       "label": "CTA — Text chat (target URL)",
       "required": false,
-      "default": "/text",
+      "default": "/chat/text",
       "section": "chat.cta",
-      "helpText": "App route or absolute URL when the Text CTA is activated (in-app paths like /text are valid).",
-      "placeholder": "/text"
+      "helpText": "App route or absolute URL when the Text CTA is activated (e.g. /chat/text).",
+      "placeholder": "/chat/text"
     },
     {
       "key": "chat.cta.video.title",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "CTA — Video chat (button title)",
       "required": false,
       "default": "Video",
       "section": "chat.cta",
       "helpText": "Primary line on the Video mode button.",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "chat.cta.video.subtitle",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "CTA — Video chat (button subtitle)",
       "required": false,
       "default": "Webcam · HD ready",
       "section": "chat.cta",
       "helpText": "Smaller uppercase line under the Video CTA title.",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "chat.cta.video.url",
-      "page": "home",
+      "page": "chat",
       "type": "url",
       "label": "CTA — Video chat (target URL)",
       "required": false,
-      "default": "/video",
+      "default": "/chat/video",
       "section": "chat.cta",
       "helpText": "App route or absolute URL when the Video CTA is activated.",
-      "placeholder": "/video"
+      "placeholder": "/chat/video"
     },
     {
       "key": "chat.cta.risk.title",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "CTA — Unmoderated video (button title)",
       "required": false,
       "default": "Video (Unmoderated)",
       "section": "chat.cta",
       "helpText": "Primary line on the higher-risk / 18+ video CTA (opens terms flow).",
-      "validation": { "maxLength": 60 }
+      "validation": {
+        "maxLength": 60
+      }
     },
     {
       "key": "chat.cta.risk.subtitle",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "CTA — Unmoderated video (button subtitle)",
       "required": false,
       "default": "Higher risk · 18+ vibe",
       "section": "chat.cta",
       "helpText": "Smaller uppercase line under the unmoderated video CTA title.",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "chat.cta.risk.url",
-      "page": "home",
+      "page": "chat",
       "type": "url",
       "label": "CTA — Unmoderated video (post-confirm URL)",
       "required": false,
@@ -208,8 +251,41 @@
       "placeholder": "/coomeet"
     },
     {
+      "key": "embed.site_lang",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — site_lang",
+      "required": false,
+      "default": "en",
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.site_lang",
+      "validation": { "maxLength": 12 }
+    },
+    {
+      "key": "embed.partnerId",
+      "page": "coomeet",
+      "type": "number",
+      "label": "Coomeet — PartnerId",
+      "required": false,
+      "default": 16222069095837,
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.PartnerId",
+      "validation": { "min": 1 }
+    },
+    {
+      "key": "embed.channelName",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — ChannelName",
+      "required": false,
+      "default": "omegletv_chat",
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.ChannelName",
+      "validation": { "maxLength": 120 }
+    },
+    {
       "key": "article.welcome.paragraph1",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
       "label": "Welcome Paragraph 1",
       "required": false,
@@ -218,7 +294,7 @@
     },
     {
       "key": "article.welcome.paragraph2",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
       "label": "Welcome Paragraph 2",
       "required": false,
@@ -227,7 +303,7 @@
     },
     {
       "key": "article.welcome.paragraph3",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
       "label": "Welcome Paragraph 3",
       "required": false,
@@ -236,7 +312,7 @@
     },
     {
       "key": "article.deal.title",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Deal Section Title",
       "required": false,
@@ -245,7 +321,7 @@
     },
     {
       "key": "article.deal.item1",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Deal Bullet 1",
       "required": false,
@@ -254,7 +330,7 @@
     },
     {
       "key": "article.deal.item2",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Deal Bullet 2",
       "required": false,
@@ -263,7 +339,7 @@
     },
     {
       "key": "article.deal.item3",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Deal Bullet 3",
       "required": false,
@@ -272,7 +348,7 @@
     },
     {
       "key": "article.deal.item4",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Deal Bullet 4",
       "required": false,
@@ -281,7 +357,7 @@
     },
     {
       "key": "article.deal.footer",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
       "label": "Deal Footer",
       "required": false,
@@ -290,7 +366,7 @@
     },
     {
       "key": "article.perfect.title",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Perfect For Title",
       "required": false,
@@ -299,7 +375,7 @@
     },
     {
       "key": "article.perfect.item1",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Perfect For Bullet 1",
       "required": false,
@@ -308,7 +384,7 @@
     },
     {
       "key": "article.perfect.item2",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Perfect For Bullet 2",
       "required": false,
@@ -317,7 +393,7 @@
     },
     {
       "key": "article.perfect.item3",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Perfect For Bullet 3",
       "required": false,
@@ -326,7 +402,7 @@
     },
     {
       "key": "article.closing.paragraph1",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
       "label": "Closing Paragraph 1",
       "required": false,
@@ -335,7 +411,7 @@
     },
     {
       "key": "article.closing.paragraph2",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
       "label": "Closing Paragraph 2",
       "required": false,
@@ -344,7 +420,7 @@
     },
     {
       "key": "article.closing.paragraph3",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
       "label": "Closing Paragraph 3",
       "required": false,
@@ -353,7 +429,7 @@
     },
     {
       "key": "article.legal.terms.before",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
       "label": "Legal Terms Prefix",
       "required": false,
@@ -362,7 +438,7 @@
     },
     {
       "key": "article.legal.terms.label",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Legal Terms Link Label",
       "required": false,
@@ -371,7 +447,7 @@
     },
     {
       "key": "article.legal.terms.href",
-      "page": "home",
+      "page": "chat",
       "type": "url",
       "label": "Legal Terms Link URL",
       "required": false,
@@ -380,7 +456,7 @@
     },
     {
       "key": "article.legal.terms.after",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Legal Terms Suffix",
       "required": false,
@@ -389,7 +465,7 @@
     },
     {
       "key": "article.legal.parental.before",
-      "page": "home",
+      "page": "chat",
       "type": "textarea",
       "label": "Parental Notice Prefix",
       "required": false,
@@ -398,7 +474,7 @@
     },
     {
       "key": "article.legal.parental.url",
-      "page": "home",
+      "page": "chat",
       "type": "url",
       "label": "Parental Notice URL",
       "required": false,
@@ -407,7 +483,7 @@
     },
     {
       "key": "article.legal.parental.after",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Parental Notice Suffix",
       "required": false,
@@ -416,49 +492,60 @@
     },
     {
       "key": "learnMore.heading",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Learn More Section Heading",
       "required": false,
       "default": "Learn more",
       "section": "learnMore",
-      "helpText": "Small caps heading above the FAQ / tips / changelog cards on the home page.",
-      "validation": { "maxLength": 80 }
+      "helpText": "Small caps heading above the FAQ / tips / changelog cards on the /chat hub.",
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "faq.cardTitle",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "FAQ Card Title",
       "required": false,
       "default": "Frequently Asked Questions",
       "section": "faq",
-      "validation": { "maxLength": 120 }
+      "validation": {
+        "maxLength": 120
+      }
     },
     {
       "key": "faq.items",
-      "page": "home",
+      "page": "chat",
       "type": "repeater",
       "label": "FAQ items",
       "required": false,
       "section": "faq",
-      "helpText": "Matches home page FAQ list (question + answer). Keys q/a align with FaqItem in app/content/home-content.ts.",
+      "helpText": "FAQ card on /chat (question + answer). Keys q/a align with FaqItem in app/content/home-content.ts.",
       "itemPresentation": "accordion",
-      "validation": { "minItems": 0, "maxItems": 40 },
+      "validation": {
+        "minItems": 0,
+        "maxItems": 40
+      },
       "itemFields": [
         {
           "key": "q",
           "type": "text",
           "label": "Question",
           "required": true,
-          "validation": { "maxLength": 200 }
+          "validation": {
+            "maxLength": 200
+          }
         },
         {
           "key": "a",
           "type": "textarea",
           "label": "Answer",
           "required": true,
-          "validation": { "maxLength": 2000 }
+          "validation": {
+            "maxLength": 2000
+          }
         }
       ],
       "default": [
@@ -486,71 +573,99 @@
     },
     {
       "key": "tips.cardTitle",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Tips Card Title",
       "required": false,
       "default": "Tips for Better Conversations",
       "section": "tips",
-      "validation": { "maxLength": 120 }
+      "validation": {
+        "maxLength": 120
+      }
     },
     {
       "key": "tips.items",
-      "page": "home",
+      "page": "chat",
       "type": "repeater",
       "label": "Tips (bullets)",
       "required": false,
       "section": "tips",
       "itemPresentation": "expanded",
-      "validation": { "minItems": 0, "maxItems": 30 },
+      "validation": {
+        "minItems": 0,
+        "maxItems": 30
+      },
       "itemFields": [
         {
           "key": "text",
           "type": "text",
           "label": "Tip",
           "required": true,
-          "validation": { "maxLength": 240 }
+          "validation": {
+            "maxLength": 240
+          }
         }
       ],
       "default": [
-        { "text": "Add interests for better matches" },
-        { "text": "Good lighting helps on video" },
-        { "text": "Be kind — real people on the other side" },
-        { "text": "Skip anytime you want a new partner" }
+        {
+          "text": "Add interests for better matches"
+        },
+        {
+          "text": "Good lighting helps on video"
+        },
+        {
+          "text": "Be kind — real people on the other side"
+        },
+        {
+          "text": "Skip anytime you want a new partner"
+        }
       ]
     },
     {
       "key": "changelog.cardTitle",
-      "page": "home",
+      "page": "chat",
       "type": "text",
       "label": "Changelog Card Title",
       "required": false,
       "default": "Recent Updates & Improvements",
       "section": "changelog",
-      "validation": { "maxLength": 120 }
+      "validation": {
+        "maxLength": 120
+      }
     },
     {
       "key": "changelog.items",
-      "page": "home",
+      "page": "chat",
       "type": "repeater",
       "label": "Changelog lines",
       "required": false,
       "section": "changelog",
       "itemPresentation": "expanded",
-      "validation": { "minItems": 0, "maxItems": 40 },
+      "validation": {
+        "minItems": 0,
+        "maxItems": 40
+      },
       "itemFields": [
         {
           "key": "text",
           "type": "text",
           "label": "Update line",
           "required": true,
-          "validation": { "maxLength": 300 }
+          "validation": {
+            "maxLength": 300
+          }
         }
       ],
       "default": [
-        { "text": "Landing copy updated to reflect the Omegle Web-style experience" },
-        { "text": "Interest field and monitored-chat banner on the home panel" },
-        { "text": "Light/dark theme for comfortable reading" }
+        {
+          "text": "Landing copy updated to reflect the Omegle Web-style experience"
+        },
+        {
+          "text": "Interest field and monitored-chat banner on the /chat hub panel"
+        },
+        {
+          "text": "Light/dark theme for comfortable reading"
+        }
       ]
     },
     {
@@ -561,7 +676,9 @@
       "required": false,
       "default": "You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.",
       "section": "landing.hero",
-      "validation": { "maxLength": 220 }
+      "validation": {
+        "maxLength": 220
+      }
     },
     {
       "key": "hero.tagline",
@@ -571,7 +688,9 @@
       "required": false,
       "default": "Meet strangers with your interests!",
       "section": "landing.hero",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "hero.headlineSuffix",
@@ -582,7 +701,9 @@
       "default": ": talk to strangers online",
       "section": "landing.hero",
       "helpText": "Appended after the site name wordmark (first word blue, remainder orange). Site name comes from site settings.",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "hero.description",
@@ -593,7 +714,9 @@
       "default": "Talk to strangers with text and video chat in your browser. Match by interests — no app download required.",
       "section": "landing.hero",
       "helpText": "Used when site description / SEO meta description is not set in site settings.",
-      "validation": { "maxLength": 400 }
+      "validation": {
+        "maxLength": 400
+      }
     },
     {
       "key": "hero.cta.primary.label",
@@ -603,7 +726,9 @@
       "required": false,
       "default": "Get started free",
       "section": "landing.hero",
-      "validation": { "maxLength": 60 }
+      "validation": {
+        "maxLength": 60
+      }
     },
     {
       "key": "hero.cta.primary.href",
@@ -623,7 +748,9 @@
       "required": false,
       "default": "Log in",
       "section": "landing.hero",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "hero.cta.secondary.href",
@@ -636,6 +763,28 @@
       "placeholder": "/login"
     },
     {
+      "key": "nav.faq.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav FAQ link",
+      "required": false,
+      "default": "FAQ",
+      "section": "landing.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.faq.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav FAQ URL",
+      "required": false,
+      "default": "/faq",
+      "section": "landing.nav",
+      "placeholder": "/faq"
+    },
+    {
       "key": "features.title",
       "page": "landing",
       "type": "text",
@@ -644,7 +793,9 @@
       "default": "Why {siteName}?",
       "section": "landing.features",
       "helpText": "Replace {siteName} with the site name from site settings at render time.",
-      "validation": { "maxLength": 120 }
+      "validation": {
+        "maxLength": 120
+      }
     },
     {
       "key": "features.subtitle",
@@ -654,7 +805,9 @@
       "required": false,
       "default": "The Omegle-style experience, rebuilt for today's web.",
       "section": "landing.features",
-      "validation": { "maxLength": 200 }
+      "validation": {
+        "maxLength": 200
+      }
     },
     {
       "key": "features.items",
@@ -664,21 +817,28 @@
       "required": false,
       "section": "landing.features",
       "itemPresentation": "expanded",
-      "validation": { "minItems": 0, "maxItems": 12 },
+      "validation": {
+        "minItems": 0,
+        "maxItems": 12
+      },
       "itemFields": [
         {
           "key": "title",
           "type": "text",
           "label": "Title",
           "required": true,
-          "validation": { "maxLength": 80 }
+          "validation": {
+            "maxLength": 80
+          }
         },
         {
           "key": "description",
           "type": "textarea",
           "label": "Description",
           "required": true,
-          "validation": { "maxLength": 400 }
+          "validation": {
+            "maxLength": 400
+          }
         }
       ],
       "default": [
@@ -716,7 +876,9 @@
       "required": false,
       "default": "How it works",
       "section": "landing.howItWorks",
-      "validation": { "maxLength": 120 }
+      "validation": {
+        "maxLength": 120
+      }
     },
     {
       "key": "howItWorks.subtitle",
@@ -726,7 +888,9 @@
       "required": false,
       "default": "Start chatting in three simple steps",
       "section": "landing.howItWorks",
-      "validation": { "maxLength": 200 }
+      "validation": {
+        "maxLength": 200
+      }
     },
     {
       "key": "howItWorks.steps",
@@ -736,28 +900,37 @@
       "required": false,
       "section": "landing.howItWorks",
       "itemPresentation": "expanded",
-      "validation": { "minItems": 0, "maxItems": 8 },
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
       "itemFields": [
         {
           "key": "step",
           "type": "text",
           "label": "Step number",
           "required": true,
-          "validation": { "maxLength": 8 }
+          "validation": {
+            "maxLength": 8
+          }
         },
         {
           "key": "title",
           "type": "text",
           "label": "Title",
           "required": true,
-          "validation": { "maxLength": 80 }
+          "validation": {
+            "maxLength": 80
+          }
         },
         {
           "key": "body",
           "type": "textarea",
           "label": "Description",
           "required": true,
-          "validation": { "maxLength": 300 }
+          "validation": {
+            "maxLength": 300
+          }
         }
       ],
       "default": [
@@ -786,7 +959,9 @@
       "required": false,
       "default": "Tips for better chats",
       "section": "landing.tips",
-      "validation": { "maxLength": 120 }
+      "validation": {
+        "maxLength": 120
+      }
     },
     {
       "key": "tips.items",
@@ -796,21 +971,34 @@
       "required": false,
       "section": "landing.tips",
       "itemPresentation": "expanded",
-      "validation": { "minItems": 0, "maxItems": 30 },
+      "validation": {
+        "minItems": 0,
+        "maxItems": 30
+      },
       "itemFields": [
         {
           "key": "text",
           "type": "text",
           "label": "Tip",
           "required": true,
-          "validation": { "maxLength": 240 }
+          "validation": {
+            "maxLength": 240
+          }
         }
       ],
       "default": [
-        { "text": "Add interests for better matches" },
-        { "text": "Good lighting helps on video" },
-        { "text": "Be kind — real people on the other side" },
-        { "text": "Skip anytime you want a new partner" }
+        {
+          "text": "Add interests for better matches"
+        },
+        {
+          "text": "Good lighting helps on video"
+        },
+        {
+          "text": "Be kind — real people on the other side"
+        },
+        {
+          "text": "Skip anytime you want a new partner"
+        }
       ]
     },
     {
@@ -821,7 +1009,9 @@
       "required": false,
       "default": "Common questions",
       "section": "landing.faqPreview",
-      "validation": { "maxLength": 120 }
+      "validation": {
+        "maxLength": 120
+      }
     },
     {
       "key": "faqPreview.maxItems",
@@ -832,7 +1022,10 @@
       "default": 3,
       "section": "landing.faqPreview",
       "helpText": "How many FAQ items to show on the landing page (from the list below, in order).",
-      "validation": { "min": 1, "max": 10 }
+      "validation": {
+        "min": 1,
+        "max": 10
+      }
     },
     {
       "key": "faqPreview.items",
@@ -842,21 +1035,28 @@
       "required": false,
       "section": "landing.faqPreview",
       "itemPresentation": "accordion",
-      "validation": { "minItems": 0, "maxItems": 40 },
+      "validation": {
+        "minItems": 0,
+        "maxItems": 40
+      },
       "itemFields": [
         {
           "key": "q",
           "type": "text",
           "label": "Question",
           "required": true,
-          "validation": { "maxLength": 200 }
+          "validation": {
+            "maxLength": 200
+          }
         },
         {
           "key": "a",
           "type": "textarea",
           "label": "Answer",
           "required": true,
-          "validation": { "maxLength": 2000 }
+          "validation": {
+            "maxLength": 2000
+          }
         }
       ],
       "default": [
@@ -890,7 +1090,9 @@
       "required": false,
       "default": "Ready to meet someone new?",
       "section": "landing.cta",
-      "validation": { "maxLength": 120 }
+      "validation": {
+        "maxLength": 120
+      }
     },
     {
       "key": "cta.subtitle",
@@ -901,7 +1103,9 @@
       "default": "Join {siteName} and start anonymous text or video chat with strangers in seconds.",
       "section": "landing.cta",
       "helpText": "Replace {siteName} with the site name from site settings at render time.",
-      "validation": { "maxLength": 400 }
+      "validation": {
+        "maxLength": 400
+      }
     },
     {
       "key": "cta.primary.label",
@@ -911,7 +1115,9 @@
       "required": false,
       "default": "Create free account",
       "section": "landing.cta",
-      "validation": { "maxLength": 60 }
+      "validation": {
+        "maxLength": 60
+      }
     },
     {
       "key": "cta.primary.href",
@@ -931,7 +1137,9 @@
       "required": false,
       "default": "I already have an account",
       "section": "landing.cta",
-      "validation": { "maxLength": 60 }
+      "validation": {
+        "maxLength": 60
+      }
     },
     {
       "key": "cta.secondary.href",
@@ -951,7 +1159,9 @@
       "required": false,
       "default": "You must be 18 or older. See our ",
       "section": "landing.cta",
-      "validation": { "maxLength": 120 }
+      "validation": {
+        "maxLength": 120
+      }
     },
     {
       "key": "cta.terms.label",
@@ -961,7 +1171,9 @@
       "required": false,
       "default": "Terms of Service",
       "section": "landing.cta",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "cta.terms.href",
@@ -981,7 +1193,336 @@
       "required": false,
       "default": ".",
       "section": "landing.cta",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "page.title",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — page title",
+      "required": false,
+      "default": "Frequently Asked Questions",
+      "section": "faq.header",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "page.subtitle",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — page subtitle",
+      "required": false,
+      "default": "Find answers about anonymous text and video chat",
+      "section": "faq.header",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "search.placeholder",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — search placeholder",
+      "required": false,
+      "default": "Search FAQs...",
+      "section": "faq.search",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "empty.message",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — no results message",
+      "required": false,
+      "default": "No questions match your search.",
+      "section": "faq.empty",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "empty.clearSearch",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — clear search button",
+      "required": false,
+      "default": "Clear search",
+      "section": "faq.empty",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "contact.title",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — contact card title",
+      "required": false,
+      "default": "Still have questions?",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "contact.subtitle",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — contact card subtitle",
+      "required": false,
+      "default": "We're here to help.",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "contact.body",
+      "page": "faq",
+      "type": "textarea",
+      "label": "FAQ — contact card body",
+      "required": false,
+      "default": "If you can't find what you need, sign in and use inbox support or review our policies below.",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "contact.login.label",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — log in button",
+      "required": false,
+      "default": "Log in",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "contact.login.href",
+      "page": "faq",
+      "type": "url",
+      "label": "FAQ — log in URL",
+      "required": false,
+      "default": "/login",
+      "section": "faq.contact",
+      "placeholder": "/login"
+    },
+    {
+      "key": "contact.privacy.label",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — privacy link",
+      "required": false,
+      "default": "Privacy Policy",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "contact.privacy.href",
+      "page": "faq",
+      "type": "url",
+      "label": "FAQ — privacy URL",
+      "required": false,
+      "default": "/privacy",
+      "section": "faq.contact",
+      "placeholder": "/privacy"
+    },
+    {
+      "key": "items",
+      "page": "faq",
+      "type": "repeater",
+      "label": "FAQ — Q&A items",
+      "required": false,
+      "section": "faq.content",
+      "helpText": "Full /faq page list. The /chat hub can show a shorter FAQ card via chat.faq.items.",
+      "itemPresentation": "accordion",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 80
+      },
+      "itemFields": [
+        {
+          "key": "q",
+          "type": "text",
+          "label": "Question",
+          "required": true,
+          "validation": {
+            "maxLength": 200
+          }
+        },
+        {
+          "key": "a",
+          "type": "textarea",
+          "label": "Answer",
+          "required": true,
+          "validation": {
+            "maxLength": 2000
+          }
+        }
+      ],
+      "default": [
+        {
+          "q": "Is Omegle Web free?",
+          "a": "Yes — anonymous chat in your browser, no download required."
+        },
+        {
+          "q": "Do I need an app?",
+          "a": "No. The site works on phones, tablets, and desktops in the browser."
+        },
+        {
+          "q": "How do interests work?",
+          "a": "Add topics you care about; we use them to help you meet strangers with similar interests."
+        },
+        {
+          "q": "Is it really anonymous?",
+          "a": "We aim for a simple, no-sign-up flow so you can chat without creating an account."
+        },
+        {
+          "q": "What if someone makes me uncomfortable?",
+          "a": "Skip the chat and stop anytime. Use safer modes if you prefer text only."
+        },
+        {
+          "q": "What is the difference between moderated and unmoderated video?",
+          "a": "Moderated video chat follows site rules and monitoring. Unmoderated video requires accepting terms and is intended for adults."
+        },
+        {
+          "q": "How do I start text or video chat?",
+          "a": "Sign in, open the chat hub at /chat, then choose Text or Video. Text goes to /chat/text; video goes to /chat/video."
+        }
+      ]
+    },
+    {
+      "key": "rightsText",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — rights suffix",
+      "required": false,
+      "default": "All rights reserved.",
+      "section": "footer.copyright",
+      "helpText": "Rendered as © {year} {siteName}. {rightsText} Site name comes from site info.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "links.login.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — log in link",
+      "required": false,
+      "default": "Log in",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.login.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — log in URL",
+      "required": false,
+      "default": "/login",
+      "section": "footer.links",
+      "placeholder": "/login"
+    },
+    {
+      "key": "links.signup.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — sign up link",
+      "required": false,
+      "default": "Sign up",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.signup.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — sign up URL",
+      "required": false,
+      "default": "/signup",
+      "section": "footer.links",
+      "placeholder": "/signup"
+    },
+    {
+      "key": "links.faq.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — FAQ link",
+      "required": false,
+      "default": "FAQ",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.faq.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — FAQ URL",
+      "required": false,
+      "default": "/faq",
+      "section": "footer.links",
+      "placeholder": "/faq"
+    },
+    {
+      "key": "links.privacy.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — privacy link",
+      "required": false,
+      "default": "Privacy Policy",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.privacy.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — privacy URL",
+      "required": false,
+      "default": "/privacy",
+      "section": "footer.links",
+      "placeholder": "/privacy"
+    },
+    {
+      "key": "links.terms.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — terms link",
+      "required": false,
+      "default": "Terms of Service",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 50
+      }
+    },
+    {
+      "key": "links.terms.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — terms URL",
+      "required": false,
+      "default": "/terms",
+      "section": "footer.links",
+      "placeholder": "/terms"
     }
   ]
 }
