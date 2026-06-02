@@ -1,6 +1,6 @@
 {
   "templateId": "omegle-site",
-  "version": 2,
+  "version": 5,
   "name": "Omegle All Pages Template",
   "description": "Editable copy for landing layouts, /chat, /coomeet, /faq, and global site footer.",
   "pages": [
@@ -1790,7 +1790,7 @@
       "type": "textarea",
       "label": "Landing 3 — hero description (fallback)",
       "required": false,
-      "default": "Talk to strangers with text and video chat in your browser. Match by interests — no app download required.",
+      "default": "Text and video with strangers worldwide — right in your browser. No app store, no install.",
       "section": "landing3.hero",
       "helpText": "Used when site description / SEO meta description is not set in site settings.",
       "validation": {
@@ -1825,7 +1825,7 @@
       "type": "text",
       "label": "Landing 3 — hero secondary CTA label",
       "required": false,
-      "default": "Log in",
+      "default": "Try text chat",
       "section": "landing3.hero",
       "validation": {
         "maxLength": 40
@@ -1837,9 +1837,9 @@
       "type": "url",
       "label": "Landing 3 — hero secondary CTA URL",
       "required": false,
-      "default": "/login",
+      "default": "/text",
       "section": "landing3.hero",
-      "placeholder": "/login"
+      "placeholder": "/text"
     },
     {
       "key": "nav.faq.label",
@@ -1869,7 +1869,7 @@
       "type": "text",
       "label": "Landing 3 — features section title",
       "required": false,
-      "default": "Why {siteName}?",
+      "default": "Save your time meeting new people online",
       "section": "landing3.features",
       "helpText": "Replace {siteName} with the site name from site settings at render time.",
       "validation": {
@@ -1882,7 +1882,7 @@
       "type": "text",
       "label": "Landing 3 — features section subtitle",
       "required": false,
-      "default": "The Omegle-style experience, rebuilt for today's web.",
+      "default": "Skip the app store and long sign-up flows. Open your browser, pick text or video, and get matched with someone new in seconds — with safety tools built in from the first message.",
       "section": "landing3.features",
       "validation": {
         "maxLength": 200
@@ -1922,28 +1922,16 @@
       ],
       "default": [
         {
-          "title": "Text chat",
-          "description": "Jump into anonymous text conversations with strangers from around the world. Skip anytime for a new match."
+          "title": "Fast random chat",
+          "description": "Become a place for text, video, and voice chat."
         },
         {
-          "title": "Video chat",
-          "description": "Face-to-face random video when you want a more personal connection. Works in your browser — no install."
+          "title": "Language-friendly matching",
+          "description": "Help people practice languages with strangers."
         },
         {
-          "title": "Interest matching",
-          "description": "Add topics you care about and get paired with people who share similar interests for better conversations."
-        },
-        {
-          "title": "No app required",
-          "description": "Use on phone, tablet, or desktop. The site is built mobile-first so you can chat anywhere."
-        },
-        {
-          "title": "Monitored and safer modes",
-          "description": "Choose text-only when you prefer, skip partners instantly, and chat in a monitored environment."
-        },
-        {
-          "title": "Inbox for connections",
-          "description": "Sign in to keep chatting with people you meet, manage your profile, and pick up conversations later."
+          "title": "Ephemeral by default",
+          "description": "Keep sessions ephemeral unless both users opt in."
         }
       ]
     },
@@ -1953,7 +1941,7 @@
       "type": "text",
       "label": "Landing 3 — how it works title",
       "required": false,
-      "default": "How it works",
+      "default": "Experience connection through four easy steps",
       "section": "landing3.howItWorks",
       "validation": {
         "maxLength": 120
@@ -1965,7 +1953,7 @@
       "type": "text",
       "label": "Landing 3 — how it works subtitle",
       "required": false,
-      "default": "Start chatting in three simple steps",
+      "default": "Open the site, pick a mode, and start chatting in minutes.",
       "section": "landing3.howItWorks",
       "validation": {
         "maxLength": 200
@@ -2014,19 +2002,24 @@
       ],
       "default": [
         {
-          "step": "1",
-          "title": "Create an account",
-          "body": "Sign up free with email, Google, or a magic link."
+          "step": "01",
+          "title": "Open the site",
+          "body": "Visit in any modern browser on desktop or mobile. No install step."
         },
         {
-          "step": "2",
-          "title": "Add your interests",
-          "body": "Optional topics help us match you with like-minded strangers."
+          "step": "02",
+          "title": "Pick text or video",
+          "body": "Choose how you want to connect. You can switch modes anytime."
         },
         {
-          "step": "3",
-          "title": "Start chatting",
-          "body": "Pick text or video, agree to the terms, and meet someone new."
+          "step": "03",
+          "title": "Get matched",
+          "body": "Our pool pairs you with someone online. Add interests to refine matches."
+        },
+        {
+          "step": "04",
+          "title": "Chat or skip",
+          "body": "Talk as long as you like, then skip to the next person in one click."
         }
       ]
     },
@@ -2086,7 +2079,7 @@
       "type": "text",
       "label": "Landing 3 — FAQ preview card title",
       "required": false,
-      "default": "Common questions",
+      "default": "How can we help?",
       "section": "landing3.faqPreview",
       "validation": {
         "maxLength": 120
@@ -2098,7 +2091,7 @@
       "type": "number",
       "label": "Landing 3 — FAQ preview count",
       "required": false,
-      "default": 3,
+      "default": 4,
       "section": "landing3.faqPreview",
       "helpText": "How many FAQ items to show on the landing page (from the list below, in order).",
       "validation": {
@@ -2140,24 +2133,20 @@
       ],
       "default": [
         {
-          "q": "Is Omegle Web free?",
-          "a": "Yes — anonymous chat in your browser, no download required."
+          "q": "Getting started with random chat",
+          "a": "Open the site in your browser, choose text or video, and tap start. No app download is required — you can match in seconds and skip anytime."
         },
         {
-          "q": "Do I need an app?",
-          "a": "No. The site works on phones, tablets, and desktops in the browser."
+          "q": "What's included in text and video?",
+          "a": "Text chat is instant typing with strangers. Video adds a camera when both sides are ready. Interest tags, skip, report, and block are available in every mode."
         },
         {
-          "q": "How do interests work?",
-          "a": "Add topics you care about; we use them to help you meet strangers with similar interests."
+          "q": "How do I stay safe while chatting?",
+          "a": "Never share personal details you want to keep private. Use report and block if someone crosses the line. Read the community rules before your first match."
         },
         {
-          "q": "Is it really anonymous?",
-          "a": "We aim for a simple, no-sign-up flow so you can chat without creating an account."
-        },
-        {
-          "q": "What if someone makes me uncomfortable?",
-          "a": "Skip the chat and stop anytime. Use safer modes if you prefer text only."
+          "q": "How does the site handle my privacy?",
+          "a": "Random sessions are ephemeral unless both people choose to connect further. See our Privacy Policy for how account data, cookies, and moderation logs are handled."
         }
       ]
     },
@@ -2167,7 +2156,7 @@
       "type": "text",
       "label": "Landing 3 — bottom CTA title",
       "required": false,
-      "default": "Ready to meet someone new?",
+      "default": "Ready for your next random chat?",
       "section": "landing3.cta",
       "validation": {
         "maxLength": 120
@@ -2179,7 +2168,7 @@
       "type": "textarea",
       "label": "Landing 3 — bottom CTA subtitle",
       "required": false,
-      "default": "Join {siteName} and start anonymous text or video chat with strangers in seconds.",
+      "default": "Text now, switch to video when you're comfortable, and meet new people in seconds.",
       "section": "landing3.cta",
       "helpText": "Replace {siteName} with the site name from site settings at render time.",
       "validation": {
@@ -2192,7 +2181,7 @@
       "type": "text",
       "label": "Landing 3 — bottom CTA primary label",
       "required": false,
-      "default": "Create free account",
+      "default": "Get started now",
       "section": "landing3.cta",
       "validation": {
         "maxLength": 60
@@ -2214,7 +2203,7 @@
       "type": "text",
       "label": "Landing 3 — bottom CTA secondary label",
       "required": false,
-      "default": "I already have an account",
+      "default": "Browse full FAQ",
       "section": "landing3.cta",
       "validation": {
         "maxLength": 60
@@ -2226,9 +2215,9 @@
       "type": "url",
       "label": "Landing 3 — bottom CTA secondary URL",
       "required": false,
-      "default": "/login",
+      "default": "/faq",
       "section": "landing3.cta",
-      "placeholder": "/login"
+      "placeholder": "/faq"
     },
     {
       "key": "cta.legal.before",
