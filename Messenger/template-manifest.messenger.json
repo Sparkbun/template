@@ -2,7 +2,6 @@
   "templateId": "messenger",
   "version": 7,
   "name": "Messenger",
-  "description": "Editable copy for /chat, /faq, /landing, and global site footer.",
   "description": "Editable copy for landing, landing2, landing3 layouts, /chat, /faq, and global site footer.",
   "pages": [
     {
