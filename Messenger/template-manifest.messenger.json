@@ -3,7 +3,28 @@
   "version": 7,
   "name": "Messenger",
   "description": "Editable copy for /chat, /faq, /landing, and global site footer.",
+  "description": "Editable copy for landing, landing2, landing3 layouts, /chat, /faq, and global site footer.",
   "pages": [
+    {
+      "key": "landing",
+      "route": "/landing",
+      "title": "Landing — Classic hero"
+    },
+    {
+      "key": "landing2",
+      "route": "/landing2",
+      "title": "Landing — Centered hero"
+    },
+    {
+      "key": "landing3",
+      "route": "/landing3",
+      "title": "Landing — Split hero"
+    },
+    {
+      "key": "landing-settings",
+      "route": "/",
+      "title": "Active landing page"
+    },
     {
       "key": "chat",
       "route": "/chat",
@@ -13,11 +34,6 @@
       "key": "faq",
       "route": "/faq",
       "title": "FAQ"
-    },
-    {
-      "key": "landing",
-      "route": "/landing",
-      "title": "Landing"
     },
     {
       "key": "footer",
@@ -1361,6 +1377,1424 @@
       "validation": {
         "maxLength": 120
       }
+    },
+    {
+      "key": "nav.brandName",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — nav brand name",
+      "required": false,
+      "default": "Chaterio",
+      "section": "landing2.nav",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "nav.homeHref",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — nav brand link",
+      "required": false,
+      "default": "/",
+      "section": "landing2.nav"
+    },
+    {
+      "key": "nav.features.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — nav Features",
+      "required": false,
+      "default": "Features",
+      "section": "landing2.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.features.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — nav Features URL",
+      "required": false,
+      "default": "#features",
+      "section": "landing2.nav",
+      "helpText": "In-app anchor or path."
+    },
+    {
+      "key": "nav.howItWorks.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — nav How it Works",
+      "required": false,
+      "default": "How it Works",
+      "section": "landing2.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.howItWorks.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — nav How it Works URL",
+      "required": false,
+      "default": "#how-it-works",
+      "section": "landing2.nav"
+    },
+    {
+      "key": "nav.faq.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — nav FAQ",
+      "required": false,
+      "default": "FAQ",
+      "section": "landing2.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.faq.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — nav FAQ URL",
+      "required": false,
+      "default": "/faq",
+      "section": "landing2.nav"
+    },
+    {
+      "key": "nav.signIn.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — nav Sign In",
+      "required": false,
+      "default": "Sign In",
+      "section": "landing2.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.signIn.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — nav Sign In URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing2.nav"
+    },
+    {
+      "key": "nav.getStarted.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — nav Get Started",
+      "required": false,
+      "default": "Get Started",
+      "section": "landing2.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.getStarted.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — nav Get Started URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing2.nav"
+    },
+    {
+      "key": "hero.titlePrefix",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — hero title (before accent)",
+      "required": false,
+      "default": "Connect. Chat.",
+      "section": "landing2.hero",
+      "helpText": "Shown before the accent word; keep trailing punctuation/spacing as desired.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "hero.titleAccent",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — hero title accent",
+      "required": false,
+      "default": "Celebrate.",
+      "section": "landing2.hero",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "hero.subtitle",
+      "page": "landing2",
+      "type": "textarea",
+      "label": "Landing 2 — hero subtitle",
+      "required": false,
+      "default": "Join millions of users in real-time conversations. Create rooms, chat with friends, video call strangers, and build your community.",
+      "section": "landing2.hero",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "hero.cta.primary.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — hero primary CTA",
+      "required": false,
+      "default": "Start Chatting Now",
+      "section": "landing2.hero",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "hero.cta.primary.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — hero primary CTA URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing2.hero"
+    },
+    {
+      "key": "hero.cta.secondary.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — hero secondary CTA",
+      "required": false,
+      "default": "Learn More",
+      "section": "landing2.hero",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "hero.cta.secondary.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — hero secondary CTA URL",
+      "required": false,
+      "default": "#features",
+      "section": "landing2.hero"
+    },
+    {
+      "key": "features.title",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — features section title",
+      "required": false,
+      "default": "Powerful Features",
+      "section": "landing2.features",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "features.subtitle",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — features section subtitle",
+      "required": false,
+      "default": "Everything you need for modern communication",
+      "section": "landing2.features",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "features.items",
+      "page": "landing2",
+      "type": "repeater",
+      "label": "Landing 2 — feature cards",
+      "required": false,
+      "section": "landing2.features",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 12
+      },
+      "itemFields": [
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "maxLength": 120
+          }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": {
+            "maxLength": 400
+          }
+        }
+      ],
+      "default": [
+        {
+          "title": "Group Chat Rooms",
+          "description": "Create and join thousands of chat rooms organized by category. Connect with like-minded people in real-time."
+        },
+        {
+          "title": "Direct Messaging",
+          "description": "Private 1-to-1 conversations with text, voice, and video calls. Your messages stay secure and encrypted."
+        },
+        {
+          "title": "Random Video Chat",
+          "description": "Meet strangers from around the world with our Omegle-style random video chat feature. New connections every time."
+        },
+        {
+          "title": "Secure & Private",
+          "description": "End-to-end encryption protects all your conversations. Your data is yours and stays private."
+        },
+        {
+          "title": "Advanced Moderation",
+          "description": "Room owners have full control with moderation tools, user management, and content filtering."
+        },
+        {
+          "title": "Rich Media Support",
+          "description": "Share images, videos, files, and reactions. Express yourself with emoji reactions and pins."
+        }
+      ]
+    },
+    {
+      "key": "howItWorks.title",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — how it works title",
+      "required": false,
+      "default": "How It Works",
+      "section": "landing2.howItWorks",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "howItWorks.subtitle",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — how it works subtitle",
+      "required": false,
+      "default": "Get started in three simple steps",
+      "section": "landing2.howItWorks",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "howItWorks.steps",
+      "page": "landing2",
+      "type": "repeater",
+      "label": "Landing 2 — steps",
+      "required": false,
+      "section": "landing2.howItWorks",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "step",
+          "type": "text",
+          "label": "Step number",
+          "required": true,
+          "validation": {
+            "maxLength": 8
+          }
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "maxLength": 80
+          }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": {
+            "maxLength": 300
+          }
+        }
+      ],
+      "default": [
+        {
+          "step": "1",
+          "title": "Sign Up",
+          "description": "Create your account in seconds with just an email and password."
+        },
+        {
+          "step": "2",
+          "title": "Explore",
+          "description": "Browse and join rooms that match your interests or start a direct message."
+        },
+        {
+          "step": "3",
+          "title": "Connect",
+          "description": "Start chatting, make friends, and build your community today."
+        }
+      ]
+    },
+    {
+      "key": "stats.items",
+      "page": "landing2",
+      "type": "repeater",
+      "label": "Landing 2 — stats row",
+      "required": false,
+      "section": "landing2.stats",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "value",
+          "type": "text",
+          "label": "Value",
+          "required": true,
+          "validation": {
+            "maxLength": 20
+          }
+        },
+        {
+          "key": "label",
+          "type": "text",
+          "label": "Label",
+          "required": true,
+          "validation": {
+            "maxLength": 60
+          }
+        }
+      ],
+      "default": [
+        {
+          "value": "2M+",
+          "label": "Active Users"
+        },
+        {
+          "value": "50K+",
+          "label": "Chat Rooms"
+        },
+        {
+          "value": "100M+",
+          "label": "Messages Daily"
+        },
+        {
+          "value": "24/7",
+          "label": "Support"
+        }
+      ]
+    },
+    {
+      "key": "cta.title",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — bottom CTA title",
+      "required": false,
+      "default": "Ready to Connect?",
+      "section": "landing2.cta",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "cta.subtitle",
+      "page": "landing2",
+      "type": "textarea",
+      "label": "Landing 2 — bottom CTA subtitle",
+      "required": false,
+      "default": "Join millions of users communicating on Chaterio. Sign up today and start building your community.",
+      "section": "landing2.cta",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "cta.primary.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — bottom CTA primary",
+      "required": false,
+      "default": "Get Started Free",
+      "section": "landing2.cta",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "cta.primary.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — bottom CTA primary URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing2.cta"
+    },
+    {
+      "key": "cta.secondary.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — bottom CTA secondary",
+      "required": false,
+      "default": "Learn More",
+      "section": "landing2.cta",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "cta.secondary.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — bottom CTA secondary URL",
+      "required": false,
+      "default": "/faq",
+      "section": "landing2.cta"
+    },
+    {
+      "key": "footer.brandName",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer brand",
+      "required": false,
+      "default": "Chaterio",
+      "section": "landing2.footer",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "footer.brandHref",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — footer brand URL",
+      "required": false,
+      "default": "/",
+      "section": "landing2.footer"
+    },
+    {
+      "key": "footer.tagline",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer tagline",
+      "required": false,
+      "default": "Connect. Chat. Celebrate.",
+      "section": "landing2.footer",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "footer.column.product.title",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer Product column title",
+      "required": false,
+      "default": "Product",
+      "section": "landing2.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.features.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer Features link",
+      "required": false,
+      "default": "Features",
+      "section": "landing2.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.features.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — footer Features URL",
+      "required": false,
+      "default": "/",
+      "section": "landing2.footer"
+    },
+    {
+      "key": "footer.links.faq.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer FAQ link",
+      "required": false,
+      "default": "FAQ",
+      "section": "landing2.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.faq.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — footer FAQ URL",
+      "required": false,
+      "default": "/faq",
+      "section": "landing2.footer"
+    },
+    {
+      "key": "footer.column.company.title",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer Company column title",
+      "required": false,
+      "default": "Company",
+      "section": "landing2.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.privacy.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer Privacy link",
+      "required": false,
+      "default": "Privacy",
+      "section": "landing2.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.privacy.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — footer Privacy URL",
+      "required": false,
+      "default": "/legal",
+      "section": "landing2.footer"
+    },
+    {
+      "key": "footer.links.terms.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer Terms link",
+      "required": false,
+      "default": "Terms",
+      "section": "landing2.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.terms.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — footer Terms URL",
+      "required": false,
+      "default": "/legal",
+      "section": "landing2.footer"
+    },
+    {
+      "key": "footer.column.connect.title",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer Connect column title",
+      "required": false,
+      "default": "Connect",
+      "section": "landing2.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.support.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer Support link",
+      "required": false,
+      "default": "Support",
+      "section": "landing2.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.support.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — footer Support URL",
+      "required": false,
+      "default": "mailto:support@chaterio.com",
+      "section": "landing2.footer"
+    },
+    {
+      "key": "footer.links.contact.label",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer Contact link",
+      "required": false,
+      "default": "Contact",
+      "section": "landing2.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.contact.href",
+      "page": "landing2",
+      "type": "url",
+      "label": "Landing 2 — footer Contact URL",
+      "required": false,
+      "default": "/contact",
+      "section": "landing2.footer"
+    },
+    {
+      "key": "footer.copyright",
+      "page": "landing2",
+      "type": "text",
+      "label": "Landing 2 — footer copyright line",
+      "required": false,
+      "default": "© 2025 Chaterio. All rights reserved.",
+      "section": "landing2.footer",
+      "helpText": "App currently uses HTML entity in JSX; use plain text or entities per your renderer.",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "nav.brandName",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — nav brand name",
+      "required": false,
+      "default": "Chaterio",
+      "section": "landing3.nav",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "nav.homeHref",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — nav brand link",
+      "required": false,
+      "default": "/",
+      "section": "landing3.nav"
+    },
+    {
+      "key": "nav.features.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — nav Features",
+      "required": false,
+      "default": "Features",
+      "section": "landing3.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.features.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — nav Features URL",
+      "required": false,
+      "default": "#features",
+      "section": "landing3.nav",
+      "helpText": "In-app anchor or path."
+    },
+    {
+      "key": "nav.howItWorks.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — nav How it Works",
+      "required": false,
+      "default": "How it Works",
+      "section": "landing3.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.howItWorks.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — nav How it Works URL",
+      "required": false,
+      "default": "#how-it-works",
+      "section": "landing3.nav"
+    },
+    {
+      "key": "nav.faq.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — nav FAQ",
+      "required": false,
+      "default": "FAQ",
+      "section": "landing3.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.faq.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — nav FAQ URL",
+      "required": false,
+      "default": "/faq",
+      "section": "landing3.nav"
+    },
+    {
+      "key": "nav.signIn.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — nav Sign In",
+      "required": false,
+      "default": "Sign In",
+      "section": "landing3.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.signIn.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — nav Sign In URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing3.nav"
+    },
+    {
+      "key": "nav.getStarted.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — nav Get Started",
+      "required": false,
+      "default": "Get Started",
+      "section": "landing3.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.getStarted.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — nav Get Started URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing3.nav"
+    },
+    {
+      "key": "hero.titlePrefix",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — hero title (before accent)",
+      "required": false,
+      "default": "Connect. Chat.",
+      "section": "landing3.hero",
+      "helpText": "Shown before the accent word; keep trailing punctuation/spacing as desired.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "hero.titleAccent",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — hero title accent",
+      "required": false,
+      "default": "Celebrate.",
+      "section": "landing3.hero",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "hero.subtitle",
+      "page": "landing3",
+      "type": "textarea",
+      "label": "Landing 3 — hero subtitle",
+      "required": false,
+      "default": "Join millions of users in real-time conversations. Create rooms, chat with friends, video call strangers, and build your community.",
+      "section": "landing3.hero",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "hero.cta.primary.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — hero primary CTA",
+      "required": false,
+      "default": "Start Chatting Now",
+      "section": "landing3.hero",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "hero.cta.primary.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — hero primary CTA URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing3.hero"
+    },
+    {
+      "key": "hero.cta.secondary.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — hero secondary CTA",
+      "required": false,
+      "default": "Learn More",
+      "section": "landing3.hero",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "hero.cta.secondary.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — hero secondary CTA URL",
+      "required": false,
+      "default": "#features",
+      "section": "landing3.hero"
+    },
+    {
+      "key": "features.title",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — features section title",
+      "required": false,
+      "default": "Powerful Features",
+      "section": "landing3.features",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "features.subtitle",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — features section subtitle",
+      "required": false,
+      "default": "Everything you need for modern communication",
+      "section": "landing3.features",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "features.items",
+      "page": "landing3",
+      "type": "repeater",
+      "label": "Landing 3 — feature cards",
+      "required": false,
+      "section": "landing3.features",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 12
+      },
+      "itemFields": [
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "maxLength": 120
+          }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": {
+            "maxLength": 400
+          }
+        }
+      ],
+      "default": [
+        {
+          "title": "Group Chat Rooms",
+          "description": "Create and join thousands of chat rooms organized by category. Connect with like-minded people in real-time."
+        },
+        {
+          "title": "Direct Messaging",
+          "description": "Private 1-to-1 conversations with text, voice, and video calls. Your messages stay secure and encrypted."
+        },
+        {
+          "title": "Random Video Chat",
+          "description": "Meet strangers from around the world with our Omegle-style random video chat feature. New connections every time."
+        },
+        {
+          "title": "Secure & Private",
+          "description": "End-to-end encryption protects all your conversations. Your data is yours and stays private."
+        },
+        {
+          "title": "Advanced Moderation",
+          "description": "Room owners have full control with moderation tools, user management, and content filtering."
+        },
+        {
+          "title": "Rich Media Support",
+          "description": "Share images, videos, files, and reactions. Express yourself with emoji reactions and pins."
+        }
+      ]
+    },
+    {
+      "key": "howItWorks.title",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — how it works title",
+      "required": false,
+      "default": "How It Works",
+      "section": "landing3.howItWorks",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "howItWorks.subtitle",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — how it works subtitle",
+      "required": false,
+      "default": "Get started in three simple steps",
+      "section": "landing3.howItWorks",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "howItWorks.steps",
+      "page": "landing3",
+      "type": "repeater",
+      "label": "Landing 3 — steps",
+      "required": false,
+      "section": "landing3.howItWorks",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "step",
+          "type": "text",
+          "label": "Step number",
+          "required": true,
+          "validation": {
+            "maxLength": 8
+          }
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "maxLength": 80
+          }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": {
+            "maxLength": 300
+          }
+        }
+      ],
+      "default": [
+        {
+          "step": "1",
+          "title": "Sign Up",
+          "description": "Create your account in seconds with just an email and password."
+        },
+        {
+          "step": "2",
+          "title": "Explore",
+          "description": "Browse and join rooms that match your interests or start a direct message."
+        },
+        {
+          "step": "3",
+          "title": "Connect",
+          "description": "Start chatting, make friends, and build your community today."
+        }
+      ]
+    },
+    {
+      "key": "stats.items",
+      "page": "landing3",
+      "type": "repeater",
+      "label": "Landing 3 — stats row",
+      "required": false,
+      "section": "landing3.stats",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "value",
+          "type": "text",
+          "label": "Value",
+          "required": true,
+          "validation": {
+            "maxLength": 20
+          }
+        },
+        {
+          "key": "label",
+          "type": "text",
+          "label": "Label",
+          "required": true,
+          "validation": {
+            "maxLength": 60
+          }
+        }
+      ],
+      "default": [
+        {
+          "value": "2M+",
+          "label": "Active Users"
+        },
+        {
+          "value": "50K+",
+          "label": "Chat Rooms"
+        },
+        {
+          "value": "100M+",
+          "label": "Messages Daily"
+        },
+        {
+          "value": "24/7",
+          "label": "Support"
+        }
+      ]
+    },
+    {
+      "key": "cta.title",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — bottom CTA title",
+      "required": false,
+      "default": "Ready to Connect?",
+      "section": "landing3.cta",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "cta.subtitle",
+      "page": "landing3",
+      "type": "textarea",
+      "label": "Landing 3 — bottom CTA subtitle",
+      "required": false,
+      "default": "Join millions of users communicating on Chaterio. Sign up today and start building your community.",
+      "section": "landing3.cta",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "cta.primary.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — bottom CTA primary",
+      "required": false,
+      "default": "Get Started Free",
+      "section": "landing3.cta",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "cta.primary.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — bottom CTA primary URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing3.cta"
+    },
+    {
+      "key": "cta.secondary.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — bottom CTA secondary",
+      "required": false,
+      "default": "Learn More",
+      "section": "landing3.cta",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "cta.secondary.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — bottom CTA secondary URL",
+      "required": false,
+      "default": "/faq",
+      "section": "landing3.cta"
+    },
+    {
+      "key": "footer.brandName",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer brand",
+      "required": false,
+      "default": "Chaterio",
+      "section": "landing3.footer",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "footer.brandHref",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — footer brand URL",
+      "required": false,
+      "default": "/",
+      "section": "landing3.footer"
+    },
+    {
+      "key": "footer.tagline",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer tagline",
+      "required": false,
+      "default": "Connect. Chat. Celebrate.",
+      "section": "landing3.footer",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "footer.column.product.title",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer Product column title",
+      "required": false,
+      "default": "Product",
+      "section": "landing3.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.features.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer Features link",
+      "required": false,
+      "default": "Features",
+      "section": "landing3.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.features.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — footer Features URL",
+      "required": false,
+      "default": "/",
+      "section": "landing3.footer"
+    },
+    {
+      "key": "footer.links.faq.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer FAQ link",
+      "required": false,
+      "default": "FAQ",
+      "section": "landing3.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.faq.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — footer FAQ URL",
+      "required": false,
+      "default": "/faq",
+      "section": "landing3.footer"
+    },
+    {
+      "key": "footer.column.company.title",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer Company column title",
+      "required": false,
+      "default": "Company",
+      "section": "landing3.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.privacy.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer Privacy link",
+      "required": false,
+      "default": "Privacy",
+      "section": "landing3.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.privacy.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — footer Privacy URL",
+      "required": false,
+      "default": "/legal",
+      "section": "landing3.footer"
+    },
+    {
+      "key": "footer.links.terms.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer Terms link",
+      "required": false,
+      "default": "Terms",
+      "section": "landing3.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.terms.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — footer Terms URL",
+      "required": false,
+      "default": "/legal",
+      "section": "landing3.footer"
+    },
+    {
+      "key": "footer.column.connect.title",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer Connect column title",
+      "required": false,
+      "default": "Connect",
+      "section": "landing3.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.support.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer Support link",
+      "required": false,
+      "default": "Support",
+      "section": "landing3.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.support.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — footer Support URL",
+      "required": false,
+      "default": "mailto:support@chaterio.com",
+      "section": "landing3.footer"
+    },
+    {
+      "key": "footer.links.contact.label",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer Contact link",
+      "required": false,
+      "default": "Contact",
+      "section": "landing3.footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.contact.href",
+      "page": "landing3",
+      "type": "url",
+      "label": "Landing 3 — footer Contact URL",
+      "required": false,
+      "default": "/contact",
+      "section": "landing3.footer"
+    },
+    {
+      "key": "footer.copyright",
+      "page": "landing3",
+      "type": "text",
+      "label": "Landing 3 — footer copyright line",
+      "required": false,
+      "default": "© 2025 Chaterio. All rights reserved.",
+      "section": "landing3.footer",
+      "helpText": "App currently uses HTML entity in JSX; use plain text or entities per your renderer.",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "layout.active",
+      "page": "landing-settings",
+      "type": "select",
+      "label": "Active landing page",
+      "required": false,
+      "default": "landing",
+      "section": "landing.layout",
+      "helpText": "Choose which landing page layout above is shown at / for signed-out visitors.",
+      "options": [
+        {
+          "label": "Landing — Classic hero",
+          "value": "landing"
+        },
+        {
+          "label": "Landing — Centered hero",
+          "value": "landing2"
+        },
+        {
+          "label": "Landing — Split hero",
+          "value": "landing3"
+        }
+      ]
     }
   ]
 }
