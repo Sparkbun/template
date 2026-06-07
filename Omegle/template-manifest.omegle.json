@@ -1,28 +1,13 @@
 {
   "templateId": "omegle-site",
   "version": 5,
-  "name": "Omegle All Pages Template",
-  "description": "Editable copy for landing layouts, /chat, /coomeet, /faq, and global site footer.",
+  "name": "Omegle Site Template",
+  "description": "Landing page content and layout picker, plus /chat, /coomeet, /faq, and site footer.",
   "pages": [
     {
       "key": "landing",
       "route": "/landing",
-      "title": "Landing — Classic hero"
-    },
-    {
-      "key": "landing2",
-      "route": "/landing2",
-      "title": "Landing — Centered hero"
-    },
-    {
-      "key": "landing3",
-      "route": "/landing3",
-      "title": "Landing — Split hero"
-    },
-    {
-      "key": "landing-settings",
-      "route": "/",
-      "title": "Active landing page"
+      "title": "Landing page"
     },
     {
       "key": "chat",
@@ -46,6 +31,34 @@
     }
   ],
   "fields": [
+    {
+      "key": "layout.active",
+      "page": "landing",
+      "type": "select",
+      "label": "Active layout (classic, centered, split, colorful)",
+      "required": false,
+      "default": "classic",
+      "section": "landing.layout",
+      "helpText": "Layout shown at / and /landing for signed-out visitors. All layouts share the content fields above.",
+      "options": [
+        {
+          "label": "Classic",
+          "value": "classic"
+        },
+        {
+          "label": "Centered",
+          "value": "centered"
+        },
+        {
+          "label": "Split",
+          "value": "split"
+        },
+        {
+          "label": "Colorful",
+          "value": "colorful"
+        }
+      ]
+    },
     {
       "key": "hero.title",
       "page": "chat",
@@ -458,15 +471,6 @@
       "section": "article.legal"
     },
     {
-      "key": "article.legal.terms.label",
-      "page": "chat",
-      "type": "text",
-      "label": "Legal Terms Link Label",
-      "required": false,
-      "default": "Terms of Service",
-      "section": "article.legal"
-    },
-    {
       "key": "article.legal.terms.href",
       "page": "chat",
       "type": "url",
@@ -523,74 +527,6 @@
       "validation": {
         "maxLength": 80
       }
-    },
-    {
-      "key": "faq.cardTitle",
-      "page": "chat",
-      "type": "text",
-      "label": "FAQ Card Title",
-      "required": false,
-      "default": "Frequently Asked Questions",
-      "section": "faq",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "faq.items",
-      "page": "chat",
-      "type": "repeater",
-      "label": "FAQ items",
-      "required": false,
-      "section": "faq",
-      "helpText": "FAQ card on /chat (question + answer). Keys q/a align with FaqItem in app/content/home-content.ts.",
-      "itemPresentation": "accordion",
-      "validation": {
-        "minItems": 0,
-        "maxItems": 40
-      },
-      "itemFields": [
-        {
-          "key": "q",
-          "type": "text",
-          "label": "Question",
-          "required": true,
-          "validation": {
-            "maxLength": 200
-          }
-        },
-        {
-          "key": "a",
-          "type": "textarea",
-          "label": "Answer",
-          "required": true,
-          "validation": {
-            "maxLength": 2000
-          }
-        }
-      ],
-      "default": [
-        {
-          "q": "Is Omegle Web free?",
-          "a": "Yes — anonymous chat in your browser, no download required."
-        },
-        {
-          "q": "Do I need an app?",
-          "a": "No. The site works on phones, tablets, and desktops in the browser."
-        },
-        {
-          "q": "How do interests work?",
-          "a": "Add topics you care about; we use them to help you meet strangers with similar interests."
-        },
-        {
-          "q": "Is it really anonymous?",
-          "a": "We aim for a simple, no-sign-up flow so you can chat without creating an account."
-        },
-        {
-          "q": "What if someone makes me uncomfortable?",
-          "a": "Skip the chat and stop anytime. Use safer modes if you prefer text only."
-        }
-      ]
     },
     {
       "key": "tips.cardTitle",
@@ -690,34 +626,10 @@
       ]
     },
     {
-      "key": "mobile.notice",
-      "page": "landing",
-      "type": "textarea",
-      "label": "Landing — mobile notice",
-      "required": false,
-      "default": "You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.",
-      "section": "landing.hero",
-      "validation": {
-        "maxLength": 220
-      }
-    },
-    {
-      "key": "hero.tagline",
-      "page": "landing",
-      "type": "text",
-      "label": "Landing — hero tagline (kicker)",
-      "required": false,
-      "default": "Meet strangers with your interests!",
-      "section": "landing.hero",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
       "key": "hero.headlineSuffix",
       "page": "landing",
       "type": "text",
-      "label": "Landing — hero headline suffix",
+      "label": "Landing — Hero headline suffix",
       "required": false,
       "default": ": talk to strangers online",
       "section": "landing.hero",
@@ -730,7 +642,7 @@
       "key": "hero.description",
       "page": "landing",
       "type": "textarea",
-      "label": "Landing — hero description (fallback)",
+      "label": "Landing — Hero description (fallback)",
       "required": false,
       "default": "Talk to strangers with text and video chat in your browser. Match by interests — no app download required.",
       "section": "landing.hero",
@@ -743,7 +655,7 @@
       "key": "hero.cta.primary.label",
       "page": "landing",
       "type": "text",
-      "label": "Landing — hero primary CTA label",
+      "label": "Landing — Hero primary CTA label",
       "required": false,
       "default": "Get started free",
       "section": "landing.hero",
@@ -755,17 +667,17 @@
       "key": "hero.cta.primary.href",
       "page": "landing",
       "type": "url",
-      "label": "Landing — hero primary CTA URL",
+      "label": "Landing — Hero primary CTA URL",
       "required": false,
-      "default": "/signup",
+      "default": "/login",
       "section": "landing.hero",
-      "placeholder": "/signup"
+      "placeholder": "/login"
     },
     {
       "key": "hero.cta.secondary.label",
       "page": "landing",
       "type": "text",
-      "label": "Landing — hero secondary CTA label",
+      "label": "Landing — Hero secondary CTA label",
       "required": false,
       "default": "Log in",
       "section": "landing.hero",
@@ -777,17 +689,356 @@
       "key": "hero.cta.secondary.href",
       "page": "landing",
       "type": "url",
-      "label": "Landing — hero secondary CTA URL",
+      "label": "Landing — Hero secondary CTA URL",
       "required": false,
       "default": "/login",
       "section": "landing.hero",
       "placeholder": "/login"
     },
     {
+      "key": "chatDemo.messages",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — Chat demo messages",
+      "required": false,
+      "section": "landing.chatDemo",
+      "helpText": "Hero chat bubbles with Incoming (left) and Outgoing (right) sides.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "side",
+          "type": "select",
+          "label": "Bubble side",
+          "required": true,
+          "default": "in",
+          "options": [
+            {
+              "label": "Incoming (left)",
+              "value": "in"
+            },
+            {
+              "label": "Outgoing (right)",
+              "value": "out"
+            }
+          ]
+        },
+        {
+          "key": "text",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "validation": {
+            "maxLength": 280
+          }
+        }
+      ],
+      "default": [
+        {
+          "side": "in",
+          "text": "Hey! How's your day going?"
+        },
+        {
+          "side": "out",
+          "text": "Pretty good! Just exploring new hobbies. You?"
+        },
+        {
+          "side": "in",
+          "text": "Same here! I love meeting new people online 💬"
+        }
+      ]
+    },
+    {
+      "key": "chatDemo.labeledMessages",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — Chat demo messages (with speaker labels)",
+      "required": false,
+      "section": "landing.chatDemo",
+      "helpText": "Hero chat bubbles with a speaker label per row (e.g. New Connection, You). Used on layouts that show names above each bubble.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "side",
+          "type": "select",
+          "label": "Bubble side",
+          "required": true,
+          "default": "in",
+          "options": [
+            {
+              "label": "Incoming (left)",
+              "value": "in"
+            },
+            {
+              "label": "Outgoing (right)",
+              "value": "out"
+            }
+          ]
+        },
+        {
+          "key": "label",
+          "type": "text",
+          "label": "Speaker label",
+          "required": true,
+          "validation": {
+            "maxLength": 40
+          }
+        },
+        {
+          "key": "text",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "validation": {
+            "maxLength": 280
+          }
+        }
+      ],
+      "default": [
+        {
+          "side": "in",
+          "label": "New Connection",
+          "text": "Hey! What's up? I'm from Paris 👋"
+        },
+        {
+          "side": "out",
+          "label": "You",
+          "text": "That's cool! I'm excited to chat 🎉"
+        }
+      ]
+    },
+    {
+      "key": "stats.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — Stats row",
+      "required": false,
+      "section": "stats",
+      "helpText": "Stat counters (value + label pairs) for layouts that show a metrics row.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "value",
+          "type": "text",
+          "label": "Stat value",
+          "required": true,
+          "validation": {
+            "maxLength": 24
+          }
+        },
+        {
+          "key": "label",
+          "type": "text",
+          "label": "Stat label",
+          "required": true,
+          "validation": {
+            "maxLength": 60
+          }
+        }
+      ],
+      "default": [
+        {
+          "value": "1M+",
+          "label": "Active users"
+        },
+        {
+          "value": "145+",
+          "label": "Countries"
+        },
+        {
+          "value": "24/7",
+          "label": "Live matching"
+        },
+        {
+          "value": "Free",
+          "label": "To get started"
+        }
+      ]
+    },
+    {
+      "key": "communityGrid.images",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — Community photo grid",
+      "required": false,
+      "section": "communityGrid",
+      "helpText": "Portrait photos in the 2×2 grid beside the tips list.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "url",
+          "type": "url",
+          "label": "Image URL",
+          "required": true,
+          "placeholder": "https://…"
+        }
+      ],
+      "default": [
+        {
+          "url": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80"
+        }
+      ]
+    },
+    {
+      "key": "images.heroPerson",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Hero person photo",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80",
+      "section": "landing.images",
+      "helpText": "Portrait used in hero and marketing sections across landing layouts.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.heroChat",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Hero chat / team photo",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
+      "section": "landing.images",
+      "helpText": "Group or chat-themed hero image.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.phoneMockup",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Phone mockup",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+      "section": "landing.images",
+      "helpText": "Mobile device or app screenshot.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.teamPhoto",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Team photo",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+      "section": "landing.images",
+      "helpText": "Team or community photo.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.blog1",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Blog card image 1",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+      "section": "landing.images",
+      "helpText": "First blog or article teaser image on landing pages.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.blog2",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Blog card image 2",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80",
+      "section": "landing.images",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.blog3",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Blog card image 3",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
+      "section": "landing.images",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
       "key": "nav.faq.label",
       "page": "landing",
       "type": "text",
-      "label": "Landing — nav FAQ link",
+      "label": "Landing — Nav FAQ link",
       "required": false,
       "default": "FAQ",
       "section": "landing.nav",
@@ -799,7 +1050,7 @@
       "key": "nav.faq.href",
       "page": "landing",
       "type": "url",
-      "label": "Landing — nav FAQ URL",
+      "label": "Landing — Nav FAQ URL",
       "required": false,
       "default": "/faq",
       "section": "landing.nav",
@@ -809,7 +1060,7 @@
       "key": "features.title",
       "page": "landing",
       "type": "text",
-      "label": "Landing — features section title",
+      "label": "Landing — Features section title",
       "required": false,
       "default": "Why {siteName}?",
       "section": "landing.features",
@@ -822,7 +1073,7 @@
       "key": "features.subtitle",
       "page": "landing",
       "type": "text",
-      "label": "Landing — features section subtitle",
+      "label": "Landing — Features section subtitle",
       "required": false,
       "default": "The Omegle-style experience, rebuilt for today's web.",
       "section": "landing.features",
@@ -834,7 +1085,7 @@
       "key": "features.items",
       "page": "landing",
       "type": "repeater",
-      "label": "Landing — feature cards",
+      "label": "Landing — Feature cards",
       "required": false,
       "section": "landing.features",
       "itemPresentation": "expanded",
@@ -893,7 +1144,7 @@
       "key": "howItWorks.title",
       "page": "landing",
       "type": "text",
-      "label": "Landing — how it works title",
+      "label": "Landing — How it works title",
       "required": false,
       "default": "How it works",
       "section": "landing.howItWorks",
@@ -905,7 +1156,7 @@
       "key": "howItWorks.subtitle",
       "page": "landing",
       "type": "text",
-      "label": "Landing — how it works subtitle",
+      "label": "Landing — How it works subtitle",
       "required": false,
       "default": "Start chatting in three simple steps",
       "section": "landing.howItWorks",
@@ -917,7 +1168,7 @@
       "key": "howItWorks.steps",
       "page": "landing",
       "type": "repeater",
-      "label": "Landing — how it works steps",
+      "label": "Landing — How it works steps",
       "required": false,
       "section": "landing.howItWorks",
       "itemPresentation": "expanded",
@@ -976,7 +1227,7 @@
       "key": "tips.cardTitle",
       "page": "landing",
       "type": "text",
-      "label": "Landing — tips card title",
+      "label": "Landing — Tips card title",
       "required": false,
       "default": "Tips for better chats",
       "section": "landing.tips",
@@ -988,7 +1239,7 @@
       "key": "tips.items",
       "page": "landing",
       "type": "repeater",
-      "label": "Landing — tips list",
+      "label": "Landing — Tips list",
       "required": false,
       "section": "landing.tips",
       "itemPresentation": "expanded",
@@ -1042,7 +1293,7 @@
       "required": false,
       "default": 3,
       "section": "landing.faqPreview",
-      "helpText": "How many FAQ items to show on the landing page (from the list below, in order).",
+      "helpText": "How many FAQ items to show in the preview (from the list below, in order).",
       "validation": {
         "min": 1,
         "max": 10
@@ -1107,7 +1358,7 @@
       "key": "cta.title",
       "page": "landing",
       "type": "text",
-      "label": "Landing — bottom CTA title",
+      "label": "Landing — Bottom CTA title",
       "required": false,
       "default": "Ready to meet someone new?",
       "section": "landing.cta",
@@ -1119,7 +1370,7 @@
       "key": "cta.subtitle",
       "page": "landing",
       "type": "textarea",
-      "label": "Landing — bottom CTA subtitle",
+      "label": "Landing — Bottom CTA subtitle",
       "required": false,
       "default": "Join {siteName} and start anonymous text or video chat with strangers in seconds.",
       "section": "landing.cta",
@@ -1132,7 +1383,7 @@
       "key": "cta.primary.label",
       "page": "landing",
       "type": "text",
-      "label": "Landing — bottom CTA primary label",
+      "label": "Landing — Bottom CTA primary label",
       "required": false,
       "default": "Create free account",
       "section": "landing.cta",
@@ -1144,17 +1395,17 @@
       "key": "cta.primary.href",
       "page": "landing",
       "type": "url",
-      "label": "Landing — bottom CTA primary URL",
+      "label": "Landing — Bottom CTA primary URL",
       "required": false,
-      "default": "/signup",
+      "default": "/login",
       "section": "landing.cta",
-      "placeholder": "/signup"
+      "placeholder": "/login"
     },
     {
       "key": "cta.secondary.label",
       "page": "landing",
       "type": "text",
-      "label": "Landing — bottom CTA secondary label",
+      "label": "Landing — Bottom CTA secondary label",
       "required": false,
       "default": "I already have an account",
       "section": "landing.cta",
@@ -1166,7 +1417,7 @@
       "key": "cta.secondary.href",
       "page": "landing",
       "type": "url",
-      "label": "Landing — bottom CTA secondary URL",
+      "label": "Landing — Bottom CTA secondary URL",
       "required": false,
       "default": "/login",
       "section": "landing.cta",
@@ -1214,1053 +1465,6 @@
       "required": false,
       "default": ".",
       "section": "landing.cta",
-      "validation": {
-        "maxLength": 40
-      }
-    },
-    {
-      "key": "mobile.notice",
-      "page": "landing2",
-      "type": "textarea",
-      "label": "Landing 2 — mobile notice",
-      "required": false,
-      "default": "You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.",
-      "section": "landing2.hero",
-      "validation": {
-        "maxLength": 220
-      }
-    },
-    {
-      "key": "hero.tagline",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — hero tagline (kicker)",
-      "required": false,
-      "default": "Meet strangers with your interests!",
-      "section": "landing2.hero",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "hero.headlineSuffix",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — hero headline suffix",
-      "required": false,
-      "default": ": talk to strangers online",
-      "section": "landing2.hero",
-      "helpText": "Appended after the site name wordmark (first word blue, remainder orange). Site name comes from site settings.",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "hero.description",
-      "page": "landing2",
-      "type": "textarea",
-      "label": "Landing 2 — hero description (fallback)",
-      "required": false,
-      "default": "Talk to strangers with text and video chat in your browser. Match by interests — no app download required.",
-      "section": "landing2.hero",
-      "helpText": "Used when site description / SEO meta description is not set in site settings.",
-      "validation": {
-        "maxLength": 400
-      }
-    },
-    {
-      "key": "hero.cta.primary.label",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — hero primary CTA label",
-      "required": false,
-      "default": "Get started free",
-      "section": "landing2.hero",
-      "validation": {
-        "maxLength": 60
-      }
-    },
-    {
-      "key": "hero.cta.primary.href",
-      "page": "landing2",
-      "type": "url",
-      "label": "Landing 2 — hero primary CTA URL",
-      "required": false,
-      "default": "/signup",
-      "section": "landing2.hero",
-      "placeholder": "/signup"
-    },
-    {
-      "key": "hero.cta.secondary.label",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — hero secondary CTA label",
-      "required": false,
-      "default": "Log in",
-      "section": "landing2.hero",
-      "validation": {
-        "maxLength": 40
-      }
-    },
-    {
-      "key": "hero.cta.secondary.href",
-      "page": "landing2",
-      "type": "url",
-      "label": "Landing 2 — hero secondary CTA URL",
-      "required": false,
-      "default": "/login",
-      "section": "landing2.hero",
-      "placeholder": "/login"
-    },
-    {
-      "key": "nav.faq.label",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — nav FAQ link",
-      "required": false,
-      "default": "FAQ",
-      "section": "landing2.nav",
-      "validation": {
-        "maxLength": 40
-      }
-    },
-    {
-      "key": "nav.faq.href",
-      "page": "landing2",
-      "type": "url",
-      "label": "Landing 2 — nav FAQ URL",
-      "required": false,
-      "default": "/faq",
-      "section": "landing2.nav",
-      "placeholder": "/faq"
-    },
-    {
-      "key": "features.title",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — features section title",
-      "required": false,
-      "default": "Why {siteName}?",
-      "section": "landing2.features",
-      "helpText": "Replace {siteName} with the site name from site settings at render time.",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "features.subtitle",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — features section subtitle",
-      "required": false,
-      "default": "The Omegle-style experience, rebuilt for today's web.",
-      "section": "landing2.features",
-      "validation": {
-        "maxLength": 200
-      }
-    },
-    {
-      "key": "features.items",
-      "page": "landing2",
-      "type": "repeater",
-      "label": "Landing 2 — feature cards",
-      "required": false,
-      "section": "landing2.features",
-      "itemPresentation": "expanded",
-      "validation": {
-        "minItems": 0,
-        "maxItems": 12
-      },
-      "itemFields": [
-        {
-          "key": "title",
-          "type": "text",
-          "label": "Title",
-          "required": true,
-          "validation": {
-            "maxLength": 80
-          }
-        },
-        {
-          "key": "description",
-          "type": "textarea",
-          "label": "Description",
-          "required": true,
-          "validation": {
-            "maxLength": 400
-          }
-        }
-      ],
-      "default": [
-        {
-          "title": "Text chat",
-          "description": "Jump into anonymous text conversations with strangers from around the world. Skip anytime for a new match."
-        },
-        {
-          "title": "Video chat",
-          "description": "Face-to-face random video when you want a more personal connection. Works in your browser — no install."
-        },
-        {
-          "title": "Interest matching",
-          "description": "Add topics you care about and get paired with people who share similar interests for better conversations."
-        },
-        {
-          "title": "No app required",
-          "description": "Use on phone, tablet, or desktop. The site is built mobile-first so you can chat anywhere."
-        },
-        {
-          "title": "Monitored and safer modes",
-          "description": "Choose text-only when you prefer, skip partners instantly, and chat in a monitored environment."
-        },
-        {
-          "title": "Inbox for connections",
-          "description": "Sign in to keep chatting with people you meet, manage your profile, and pick up conversations later."
-        }
-      ]
-    },
-    {
-      "key": "howItWorks.title",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — how it works title",
-      "required": false,
-      "default": "How it works",
-      "section": "landing2.howItWorks",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "howItWorks.subtitle",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — how it works subtitle",
-      "required": false,
-      "default": "Start chatting in three simple steps",
-      "section": "landing2.howItWorks",
-      "validation": {
-        "maxLength": 200
-      }
-    },
-    {
-      "key": "howItWorks.steps",
-      "page": "landing2",
-      "type": "repeater",
-      "label": "Landing 2 — how it works steps",
-      "required": false,
-      "section": "landing2.howItWorks",
-      "itemPresentation": "expanded",
-      "validation": {
-        "minItems": 0,
-        "maxItems": 8
-      },
-      "itemFields": [
-        {
-          "key": "step",
-          "type": "text",
-          "label": "Step number",
-          "required": true,
-          "validation": {
-            "maxLength": 8
-          }
-        },
-        {
-          "key": "title",
-          "type": "text",
-          "label": "Title",
-          "required": true,
-          "validation": {
-            "maxLength": 80
-          }
-        },
-        {
-          "key": "body",
-          "type": "textarea",
-          "label": "Description",
-          "required": true,
-          "validation": {
-            "maxLength": 300
-          }
-        }
-      ],
-      "default": [
-        {
-          "step": "1",
-          "title": "Create an account",
-          "body": "Sign up free with email, Google, or a magic link."
-        },
-        {
-          "step": "2",
-          "title": "Add your interests",
-          "body": "Optional topics help us match you with like-minded strangers."
-        },
-        {
-          "step": "3",
-          "title": "Start chatting",
-          "body": "Pick text or video, agree to the terms, and meet someone new."
-        }
-      ]
-    },
-    {
-      "key": "tips.cardTitle",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — tips card title",
-      "required": false,
-      "default": "Tips for better chats",
-      "section": "landing2.tips",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "tips.items",
-      "page": "landing2",
-      "type": "repeater",
-      "label": "Landing 2 — tips list",
-      "required": false,
-      "section": "landing2.tips",
-      "itemPresentation": "expanded",
-      "validation": {
-        "minItems": 0,
-        "maxItems": 30
-      },
-      "itemFields": [
-        {
-          "key": "text",
-          "type": "text",
-          "label": "Tip",
-          "required": true,
-          "validation": {
-            "maxLength": 240
-          }
-        }
-      ],
-      "default": [
-        {
-          "text": "Add interests for better matches"
-        },
-        {
-          "text": "Good lighting helps on video"
-        },
-        {
-          "text": "Be kind — real people on the other side"
-        },
-        {
-          "text": "Skip anytime you want a new partner"
-        }
-      ]
-    },
-    {
-      "key": "faqPreview.cardTitle",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — FAQ preview card title",
-      "required": false,
-      "default": "Common questions",
-      "section": "landing2.faqPreview",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "faqPreview.maxItems",
-      "page": "landing2",
-      "type": "number",
-      "label": "Landing 2 — FAQ preview count",
-      "required": false,
-      "default": 3,
-      "section": "landing2.faqPreview",
-      "helpText": "How many FAQ items to show on the landing page (from the list below, in order).",
-      "validation": {
-        "min": 1,
-        "max": 10
-      }
-    },
-    {
-      "key": "faqPreview.items",
-      "page": "landing2",
-      "type": "repeater",
-      "label": "Landing 2 — FAQ preview items",
-      "required": false,
-      "section": "landing2.faqPreview",
-      "itemPresentation": "accordion",
-      "validation": {
-        "minItems": 0,
-        "maxItems": 40
-      },
-      "itemFields": [
-        {
-          "key": "q",
-          "type": "text",
-          "label": "Question",
-          "required": true,
-          "validation": {
-            "maxLength": 200
-          }
-        },
-        {
-          "key": "a",
-          "type": "textarea",
-          "label": "Answer",
-          "required": true,
-          "validation": {
-            "maxLength": 2000
-          }
-        }
-      ],
-      "default": [
-        {
-          "q": "Is Omegle Web free?",
-          "a": "Yes — anonymous chat in your browser, no download required."
-        },
-        {
-          "q": "Do I need an app?",
-          "a": "No. The site works on phones, tablets, and desktops in the browser."
-        },
-        {
-          "q": "How do interests work?",
-          "a": "Add topics you care about; we use them to help you meet strangers with similar interests."
-        },
-        {
-          "q": "Is it really anonymous?",
-          "a": "We aim for a simple, no-sign-up flow so you can chat without creating an account."
-        },
-        {
-          "q": "What if someone makes me uncomfortable?",
-          "a": "Skip the chat and stop anytime. Use safer modes if you prefer text only."
-        }
-      ]
-    },
-    {
-      "key": "cta.title",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — bottom CTA title",
-      "required": false,
-      "default": "Ready to meet someone new?",
-      "section": "landing2.cta",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "cta.subtitle",
-      "page": "landing2",
-      "type": "textarea",
-      "label": "Landing 2 — bottom CTA subtitle",
-      "required": false,
-      "default": "Join {siteName} and start anonymous text or video chat with strangers in seconds.",
-      "section": "landing2.cta",
-      "helpText": "Replace {siteName} with the site name from site settings at render time.",
-      "validation": {
-        "maxLength": 400
-      }
-    },
-    {
-      "key": "cta.primary.label",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — bottom CTA primary label",
-      "required": false,
-      "default": "Create free account",
-      "section": "landing2.cta",
-      "validation": {
-        "maxLength": 60
-      }
-    },
-    {
-      "key": "cta.primary.href",
-      "page": "landing2",
-      "type": "url",
-      "label": "Landing 2 — bottom CTA primary URL",
-      "required": false,
-      "default": "/signup",
-      "section": "landing2.cta",
-      "placeholder": "/signup"
-    },
-    {
-      "key": "cta.secondary.label",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — bottom CTA secondary label",
-      "required": false,
-      "default": "I already have an account",
-      "section": "landing2.cta",
-      "validation": {
-        "maxLength": 60
-      }
-    },
-    {
-      "key": "cta.secondary.href",
-      "page": "landing2",
-      "type": "url",
-      "label": "Landing 2 — bottom CTA secondary URL",
-      "required": false,
-      "default": "/login",
-      "section": "landing2.cta",
-      "placeholder": "/login"
-    },
-    {
-      "key": "cta.legal.before",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — CTA legal line (before terms link)",
-      "required": false,
-      "default": "You must be 18 or older. See our ",
-      "section": "landing2.cta",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "cta.terms.label",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — CTA terms link label",
-      "required": false,
-      "default": "Terms of Service",
-      "section": "landing2.cta",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "cta.terms.href",
-      "page": "landing2",
-      "type": "url",
-      "label": "Landing 2 — CTA terms link URL",
-      "required": false,
-      "default": "/terms",
-      "section": "landing2.cta",
-      "placeholder": "/terms"
-    },
-    {
-      "key": "cta.legal.after",
-      "page": "landing2",
-      "type": "text",
-      "label": "Landing 2 — CTA legal line (after terms link)",
-      "required": false,
-      "default": ".",
-      "section": "landing2.cta",
-      "validation": {
-        "maxLength": 40
-      }
-    },
-    {
-      "key": "mobile.notice",
-      "page": "landing3",
-      "type": "textarea",
-      "label": "Landing 3 — mobile notice",
-      "required": false,
-      "default": "You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.",
-      "section": "landing3.hero",
-      "validation": {
-        "maxLength": 220
-      }
-    },
-    {
-      "key": "hero.tagline",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — hero tagline (kicker)",
-      "required": false,
-      "default": "Meet strangers with your interests!",
-      "section": "landing3.hero",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "hero.headlineSuffix",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — hero headline suffix",
-      "required": false,
-      "default": ": talk to strangers online",
-      "section": "landing3.hero",
-      "helpText": "Appended after the site name wordmark (first word blue, remainder orange). Site name comes from site settings.",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "hero.description",
-      "page": "landing3",
-      "type": "textarea",
-      "label": "Landing 3 — hero description (fallback)",
-      "required": false,
-      "default": "Text and video with strangers worldwide — right in your browser. No app store, no install.",
-      "section": "landing3.hero",
-      "helpText": "Used when site description / SEO meta description is not set in site settings.",
-      "validation": {
-        "maxLength": 400
-      }
-    },
-    {
-      "key": "hero.cta.primary.label",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — hero primary CTA label",
-      "required": false,
-      "default": "Get started free",
-      "section": "landing3.hero",
-      "validation": {
-        "maxLength": 60
-      }
-    },
-    {
-      "key": "hero.cta.primary.href",
-      "page": "landing3",
-      "type": "url",
-      "label": "Landing 3 — hero primary CTA URL",
-      "required": false,
-      "default": "/signup",
-      "section": "landing3.hero",
-      "placeholder": "/signup"
-    },
-    {
-      "key": "hero.cta.secondary.label",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — hero secondary CTA label",
-      "required": false,
-      "default": "Try text chat",
-      "section": "landing3.hero",
-      "validation": {
-        "maxLength": 40
-      }
-    },
-    {
-      "key": "hero.cta.secondary.href",
-      "page": "landing3",
-      "type": "url",
-      "label": "Landing 3 — hero secondary CTA URL",
-      "required": false,
-      "default": "/text",
-      "section": "landing3.hero",
-      "placeholder": "/text"
-    },
-    {
-      "key": "nav.faq.label",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — nav FAQ link",
-      "required": false,
-      "default": "FAQ",
-      "section": "landing3.nav",
-      "validation": {
-        "maxLength": 40
-      }
-    },
-    {
-      "key": "nav.faq.href",
-      "page": "landing3",
-      "type": "url",
-      "label": "Landing 3 — nav FAQ URL",
-      "required": false,
-      "default": "/faq",
-      "section": "landing3.nav",
-      "placeholder": "/faq"
-    },
-    {
-      "key": "features.title",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — features section title",
-      "required": false,
-      "default": "Save your time meeting new people online",
-      "section": "landing3.features",
-      "helpText": "Replace {siteName} with the site name from site settings at render time.",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "features.subtitle",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — features section subtitle",
-      "required": false,
-      "default": "Skip the app store and long sign-up flows. Open your browser, pick text or video, and get matched with someone new in seconds — with safety tools built in from the first message.",
-      "section": "landing3.features",
-      "validation": {
-        "maxLength": 200
-      }
-    },
-    {
-      "key": "features.items",
-      "page": "landing3",
-      "type": "repeater",
-      "label": "Landing 3 — feature cards",
-      "required": false,
-      "section": "landing3.features",
-      "itemPresentation": "expanded",
-      "validation": {
-        "minItems": 0,
-        "maxItems": 12
-      },
-      "itemFields": [
-        {
-          "key": "title",
-          "type": "text",
-          "label": "Title",
-          "required": true,
-          "validation": {
-            "maxLength": 80
-          }
-        },
-        {
-          "key": "description",
-          "type": "textarea",
-          "label": "Description",
-          "required": true,
-          "validation": {
-            "maxLength": 400
-          }
-        }
-      ],
-      "default": [
-        {
-          "title": "Fast random chat",
-          "description": "Become a place for text, video, and voice chat."
-        },
-        {
-          "title": "Language-friendly matching",
-          "description": "Help people practice languages with strangers."
-        },
-        {
-          "title": "Ephemeral by default",
-          "description": "Keep sessions ephemeral unless both users opt in."
-        }
-      ]
-    },
-    {
-      "key": "howItWorks.title",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — how it works title",
-      "required": false,
-      "default": "Experience connection through four easy steps",
-      "section": "landing3.howItWorks",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "howItWorks.subtitle",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — how it works subtitle",
-      "required": false,
-      "default": "Open the site, pick a mode, and start chatting in minutes.",
-      "section": "landing3.howItWorks",
-      "validation": {
-        "maxLength": 200
-      }
-    },
-    {
-      "key": "howItWorks.steps",
-      "page": "landing3",
-      "type": "repeater",
-      "label": "Landing 3 — how it works steps",
-      "required": false,
-      "section": "landing3.howItWorks",
-      "itemPresentation": "expanded",
-      "validation": {
-        "minItems": 0,
-        "maxItems": 8
-      },
-      "itemFields": [
-        {
-          "key": "step",
-          "type": "text",
-          "label": "Step number",
-          "required": true,
-          "validation": {
-            "maxLength": 8
-          }
-        },
-        {
-          "key": "title",
-          "type": "text",
-          "label": "Title",
-          "required": true,
-          "validation": {
-            "maxLength": 80
-          }
-        },
-        {
-          "key": "body",
-          "type": "textarea",
-          "label": "Description",
-          "required": true,
-          "validation": {
-            "maxLength": 300
-          }
-        }
-      ],
-      "default": [
-        {
-          "step": "01",
-          "title": "Open the site",
-          "body": "Visit in any modern browser on desktop or mobile. No install step."
-        },
-        {
-          "step": "02",
-          "title": "Pick text or video",
-          "body": "Choose how you want to connect. You can switch modes anytime."
-        },
-        {
-          "step": "03",
-          "title": "Get matched",
-          "body": "Our pool pairs you with someone online. Add interests to refine matches."
-        },
-        {
-          "step": "04",
-          "title": "Chat or skip",
-          "body": "Talk as long as you like, then skip to the next person in one click."
-        }
-      ]
-    },
-    {
-      "key": "tips.cardTitle",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — tips card title",
-      "required": false,
-      "default": "Tips for better chats",
-      "section": "landing3.tips",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "tips.items",
-      "page": "landing3",
-      "type": "repeater",
-      "label": "Landing 3 — tips list",
-      "required": false,
-      "section": "landing3.tips",
-      "itemPresentation": "expanded",
-      "validation": {
-        "minItems": 0,
-        "maxItems": 30
-      },
-      "itemFields": [
-        {
-          "key": "text",
-          "type": "text",
-          "label": "Tip",
-          "required": true,
-          "validation": {
-            "maxLength": 240
-          }
-        }
-      ],
-      "default": [
-        {
-          "text": "Add interests for better matches"
-        },
-        {
-          "text": "Good lighting helps on video"
-        },
-        {
-          "text": "Be kind — real people on the other side"
-        },
-        {
-          "text": "Skip anytime you want a new partner"
-        }
-      ]
-    },
-    {
-      "key": "faqPreview.cardTitle",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — FAQ preview card title",
-      "required": false,
-      "default": "How can we help?",
-      "section": "landing3.faqPreview",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "faqPreview.maxItems",
-      "page": "landing3",
-      "type": "number",
-      "label": "Landing 3 — FAQ preview count",
-      "required": false,
-      "default": 4,
-      "section": "landing3.faqPreview",
-      "helpText": "How many FAQ items to show on the landing page (from the list below, in order).",
-      "validation": {
-        "min": 1,
-        "max": 10
-      }
-    },
-    {
-      "key": "faqPreview.items",
-      "page": "landing3",
-      "type": "repeater",
-      "label": "Landing 3 — FAQ preview items",
-      "required": false,
-      "section": "landing3.faqPreview",
-      "itemPresentation": "accordion",
-      "validation": {
-        "minItems": 0,
-        "maxItems": 40
-      },
-      "itemFields": [
-        {
-          "key": "q",
-          "type": "text",
-          "label": "Question",
-          "required": true,
-          "validation": {
-            "maxLength": 200
-          }
-        },
-        {
-          "key": "a",
-          "type": "textarea",
-          "label": "Answer",
-          "required": true,
-          "validation": {
-            "maxLength": 2000
-          }
-        }
-      ],
-      "default": [
-        {
-          "q": "Getting started with random chat",
-          "a": "Open the site in your browser, choose text or video, and tap start. No app download is required — you can match in seconds and skip anytime."
-        },
-        {
-          "q": "What's included in text and video?",
-          "a": "Text chat is instant typing with strangers. Video adds a camera when both sides are ready. Interest tags, skip, report, and block are available in every mode."
-        },
-        {
-          "q": "How do I stay safe while chatting?",
-          "a": "Never share personal details you want to keep private. Use report and block if someone crosses the line. Read the community rules before your first match."
-        },
-        {
-          "q": "How does the site handle my privacy?",
-          "a": "Random sessions are ephemeral unless both people choose to connect further. See our Privacy Policy for how account data, cookies, and moderation logs are handled."
-        }
-      ]
-    },
-    {
-      "key": "cta.title",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — bottom CTA title",
-      "required": false,
-      "default": "Ready for your next random chat?",
-      "section": "landing3.cta",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "cta.subtitle",
-      "page": "landing3",
-      "type": "textarea",
-      "label": "Landing 3 — bottom CTA subtitle",
-      "required": false,
-      "default": "Text now, switch to video when you're comfortable, and meet new people in seconds.",
-      "section": "landing3.cta",
-      "helpText": "Replace {siteName} with the site name from site settings at render time.",
-      "validation": {
-        "maxLength": 400
-      }
-    },
-    {
-      "key": "cta.primary.label",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — bottom CTA primary label",
-      "required": false,
-      "default": "Get started now",
-      "section": "landing3.cta",
-      "validation": {
-        "maxLength": 60
-      }
-    },
-    {
-      "key": "cta.primary.href",
-      "page": "landing3",
-      "type": "url",
-      "label": "Landing 3 — bottom CTA primary URL",
-      "required": false,
-      "default": "/signup",
-      "section": "landing3.cta",
-      "placeholder": "/signup"
-    },
-    {
-      "key": "cta.secondary.label",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — bottom CTA secondary label",
-      "required": false,
-      "default": "Browse full FAQ",
-      "section": "landing3.cta",
-      "validation": {
-        "maxLength": 60
-      }
-    },
-    {
-      "key": "cta.secondary.href",
-      "page": "landing3",
-      "type": "url",
-      "label": "Landing 3 — bottom CTA secondary URL",
-      "required": false,
-      "default": "/faq",
-      "section": "landing3.cta",
-      "placeholder": "/faq"
-    },
-    {
-      "key": "cta.legal.before",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — CTA legal line (before terms link)",
-      "required": false,
-      "default": "You must be 18 or older. See our ",
-      "section": "landing3.cta",
-      "validation": {
-        "maxLength": 120
-      }
-    },
-    {
-      "key": "cta.terms.label",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — CTA terms link label",
-      "required": false,
-      "default": "Terms of Service",
-      "section": "landing3.cta",
-      "validation": {
-        "maxLength": 80
-      }
-    },
-    {
-      "key": "cta.terms.href",
-      "page": "landing3",
-      "type": "url",
-      "label": "Landing 3 — CTA terms link URL",
-      "required": false,
-      "default": "/terms",
-      "section": "landing3.cta",
-      "placeholder": "/terms"
-    },
-    {
-      "key": "cta.legal.after",
-      "page": "landing3",
-      "type": "text",
-      "label": "Landing 3 — CTA legal line (after terms link)",
-      "required": false,
-      "default": ".",
-      "section": "landing3.cta",
       "validation": {
         "maxLength": 40
       }
@@ -2360,50 +1564,6 @@
       "validation": {
         "maxLength": 400
       }
-    },
-    {
-      "key": "contact.login.label",
-      "page": "faq",
-      "type": "text",
-      "label": "FAQ — log in button",
-      "required": false,
-      "default": "Log in",
-      "section": "faq.contact",
-      "validation": {
-        "maxLength": 40
-      }
-    },
-    {
-      "key": "contact.login.href",
-      "page": "faq",
-      "type": "url",
-      "label": "FAQ — log in URL",
-      "required": false,
-      "default": "/login",
-      "section": "faq.contact",
-      "placeholder": "/login"
-    },
-    {
-      "key": "contact.privacy.label",
-      "page": "faq",
-      "type": "text",
-      "label": "FAQ — privacy link",
-      "required": false,
-      "default": "Privacy Policy",
-      "section": "faq.contact",
-      "validation": {
-        "maxLength": 60
-      }
-    },
-    {
-      "key": "contact.privacy.href",
-      "page": "faq",
-      "type": "url",
-      "label": "FAQ — privacy URL",
-      "required": false,
-      "default": "/privacy",
-      "section": "faq.contact",
-      "placeholder": "/privacy"
     },
     {
       "key": "items",
@@ -2593,28 +1753,28 @@
       "placeholder": "/terms"
     },
     {
-      "key": "layout.active",
-      "page": "landing-settings",
-      "type": "select",
-      "label": "Active landing page",
+      "key": "mobile.notice",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — Mobile notice",
       "required": false,
-      "default": "landing",
-      "section": "landing.layout",
-      "helpText": "Choose which landing page layout above is shown at / for signed-out visitors.",
-      "options": [
-        {
-          "label": "Landing — Classic hero",
-          "value": "landing"
-        },
-        {
-          "label": "Landing — Centered hero",
-          "value": "landing2"
-        },
-        {
-          "label": "Landing — Split hero",
-          "value": "landing3"
-        }
-      ]
+      "default": "You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.",
+      "section": "landing.hero",
+      "validation": {
+        "maxLength": 220
+      }
+    },
+    {
+      "key": "hero.tagline",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Hero tagline (kicker)",
+      "required": false,
+      "default": "Meet strangers with your interests!",
+      "section": "landing.hero",
+      "validation": {
+        "maxLength": 80
+      }
     }
   ]
 }
