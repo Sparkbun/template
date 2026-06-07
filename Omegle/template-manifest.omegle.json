@@ -1,6 +1,6 @@
 {
   "templateId": "omegle-site",
-  "version": 5,
+  "version": 6,
   "name": "Omegle Site Template",
   "description": "Landing page content and layout picker, plus /chat, /coomeet, /faq, and site footer.",
   "pages": [
