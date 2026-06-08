@@ -1,6 +1,6 @@
 {
   "templateId": "messenger",
-  "version": 10,
+  "version": 11,
   "name": "Messenger",
   "description": "Landing page content and layout picker, plus /chat, /faq, and global site footer.",
   "pages": [
@@ -894,6 +894,61 @@
       "required": false,
       "default": "#features",
       "section": "hero"
+    },
+    {
+      "key": "images.hero",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — hero image",
+      "required": false,
+      "default": "/imagehero.png",
+      "section": "hero",
+      "helpText": "Hero image for classic, centered, and split layouts.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "chatDemo.bubbles",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — hero chat demo bubbles",
+      "required": false,
+      "section": "chatDemo",
+      "helpText": "Floating chat bubbles on the hero image (centered and split layouts). First three items use preset positions.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 6
+      },
+      "itemFields": [
+        {
+          "key": "text",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "validation": {
+            "maxLength": 280
+          }
+        }
+      ],
+      "default": [
+        {
+          "text": "Hey! How's your day going? 😊"
+        },
+        {
+          "text": "Pretty good! Just chillin. You?"
+        },
+        {
+          "text": "Same here. Nice to meet you! 👋"
+        }
+      ]
     },
     {
       "key": "features.title",
