@@ -258,7 +258,7 @@
       "required": false,
       "default": "All rights reserved.",
       "section": "footer.copyright",
-      "helpText": "Rendered as © {year} {siteName}. {rightsText}. Site display name comes from site info, not this field.",
+      "helpText": "Rendered as © {year} StrangoX. All rights reserved.",
       "validation": {
         "maxLength": 80
       }

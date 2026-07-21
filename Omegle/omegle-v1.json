@@ -1,0 +1,1780 @@
+{
+  "templateId": "omegle-site",
+  "version": 6,
+  "name": "Omegle Site Template",
+  "description": "Landing page content and layout picker, plus /chat, /coomeet, /faq, and site footer.",
+  "pages": [
+    {
+      "key": "landing",
+      "route": "/landing",
+      "title": "Landing page"
+    },
+    {
+      "key": "chat",
+      "route": "/chat",
+      "title": "Chat hub (signed in)"
+    },
+    {
+      "key": "coomeet",
+      "route": "/coomeet",
+      "title": "Coomeet embed"
+    },
+    {
+      "key": "faq",
+      "route": "/faq",
+      "title": "FAQ"
+    },
+    {
+      "key": "footer",
+      "route": "*",
+      "title": "Site footer (global)"
+    }
+  ],
+  "fields": [
+    {
+      "key": "layout.active",
+      "page": "landing",
+      "type": "select",
+      "label": "Active layout (classic, centered, split, colorful)",
+      "required": false,
+      "default": "classic",
+      "section": "landing.layout",
+      "helpText": "Layout shown at / and /landing for signed-out visitors. All layouts share the content fields above.",
+      "options": [
+        {
+          "label": "Classic",
+          "value": "classic"
+        },
+        {
+          "label": "Centered",
+          "value": "centered"
+        },
+        {
+          "label": "Split",
+          "value": "split"
+        },
+        {
+          "label": "Colorful",
+          "value": "colorful"
+        }
+      ]
+    },
+    {
+      "key": "hero.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Hero Title",
+      "required": false,
+      "default": "Omegle Web: We Brought Omegle Back to Life!",
+      "section": "hero",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "hero.subtitle",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Hero Subtitle",
+      "required": false,
+      "default": "",
+      "section": "hero",
+      "validation": {
+        "maxLength": 180
+      }
+    },
+    {
+      "key": "hero.tagline",
+      "page": "chat",
+      "type": "text",
+      "label": "Hero Kicker / Tagline (fallback)",
+      "required": false,
+      "default": "Meet strangers with your interests!",
+      "section": "hero",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "mobile.notice",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Mobile Notice",
+      "required": false,
+      "default": "You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.",
+      "section": "notices",
+      "validation": {
+        "maxLength": 220
+      }
+    },
+    {
+      "key": "chat.banner.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat Panel — Monitored Banner Title",
+      "required": false,
+      "default": "Chats are monitored.",
+      "section": "chat.panel",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "chat.banner.subtitle",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat Panel — Monitored Banner Subtitle",
+      "required": false,
+      "default": "Keep it clean",
+      "section": "chat.panel",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "chat.interests.label",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat Panel — Interests Label",
+      "required": false,
+      "default": "What do you want to talk about?",
+      "section": "chat.panel",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "chat.interests.placeholder",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat Panel — Interests Placeholder",
+      "required": false,
+      "default": "Add your interests (optional)",
+      "section": "chat.panel",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "chat.startLabel",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat Panel — Start Section Label",
+      "required": false,
+      "default": "Start chatting:",
+      "section": "chat.panel",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "chat.cta.text.title",
+      "page": "chat",
+      "type": "text",
+      "label": "CTA — Text chat (button title)",
+      "required": false,
+      "default": "Text",
+      "section": "chat.cta",
+      "helpText": "Primary line on the Text mode button in the /chat hub grid.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "chat.cta.text.subtitle",
+      "page": "chat",
+      "type": "text",
+      "label": "CTA — Text chat (button subtitle)",
+      "required": false,
+      "default": "No camera · instant",
+      "section": "chat.cta",
+      "helpText": "Smaller uppercase line under the Text CTA title.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "chat.cta.text.url",
+      "page": "chat",
+      "type": "url",
+      "label": "CTA — Text chat (target URL)",
+      "required": false,
+      "default": "/chat/text",
+      "section": "chat.cta",
+      "helpText": "App route or absolute URL when the Text CTA is activated (e.g. /chat/text).",
+      "placeholder": "/chat/text"
+    },
+    {
+      "key": "chat.cta.video.title",
+      "page": "chat",
+      "type": "text",
+      "label": "CTA — Video chat (button title)",
+      "required": false,
+      "default": "Video",
+      "section": "chat.cta",
+      "helpText": "Primary line on the Video mode button.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "chat.cta.video.subtitle",
+      "page": "chat",
+      "type": "text",
+      "label": "CTA — Video chat (button subtitle)",
+      "required": false,
+      "default": "Webcam · HD ready",
+      "section": "chat.cta",
+      "helpText": "Smaller uppercase line under the Video CTA title.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "chat.cta.video.url",
+      "page": "chat",
+      "type": "url",
+      "label": "CTA — Video chat (target URL)",
+      "required": false,
+      "default": "/chat/video",
+      "section": "chat.cta",
+      "helpText": "App route or absolute URL when the Video CTA is activated.",
+      "placeholder": "/chat/video"
+    },
+    {
+      "key": "chat.cta.risk.title",
+      "page": "chat",
+      "type": "text",
+      "label": "CTA — Unmoderated video (button title)",
+      "required": false,
+      "default": "Video (Unmoderated)",
+      "section": "chat.cta",
+      "helpText": "Primary line on the higher-risk / 18+ video CTA (opens terms flow).",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "chat.cta.risk.subtitle",
+      "page": "chat",
+      "type": "text",
+      "label": "CTA — Unmoderated video (button subtitle)",
+      "required": false,
+      "default": "Higher risk · 18+ vibe",
+      "section": "chat.cta",
+      "helpText": "Smaller uppercase line under the unmoderated video CTA title.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "chat.cta.risk.url",
+      "page": "chat",
+      "type": "url",
+      "label": "CTA — Unmoderated video (post-confirm URL)",
+      "required": false,
+      "default": "/coomeet",
+      "section": "chat.cta",
+      "helpText": "Destination after terms acceptance; client may show a terms modal before navigating. Use app path or full URL.",
+      "placeholder": "/coomeet"
+    },
+    {
+      "key": "embed.site_lang",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — site_lang",
+      "required": false,
+      "default": "en",
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.site_lang",
+      "validation": {
+        "maxLength": 12
+      }
+    },
+    {
+      "key": "embed.partnerId",
+      "page": "coomeet",
+      "type": "number",
+      "label": "Coomeet — PartnerId",
+      "required": false,
+      "default": 16222069095837,
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.PartnerId",
+      "validation": {
+        "min": 1
+      }
+    },
+    {
+      "key": "embed.channelName",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — ChannelName",
+      "required": false,
+      "default": "omegletv_chat",
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.ChannelName",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "article.welcome.paragraph1",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Welcome Paragraph 1",
+      "required": false,
+      "default": "Hey everyone!",
+      "section": "article.welcome"
+    },
+    {
+      "key": "article.welcome.paragraph2",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Welcome Paragraph 2",
+      "required": false,
+      "default": "Missing Omegle? Same here! We were bummed when the original Omegle went dark. But guess what? A bunch of us college kids couldn't let it die, so we created the ultimate Omegle alternative!",
+      "section": "article.welcome"
+    },
+    {
+      "key": "article.welcome.paragraph3",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Welcome Paragraph 3",
+      "required": false,
+      "default": "Welcome to Omegle Web — it's like the OG Omegle, but cooler!",
+      "section": "article.welcome"
+    },
+    {
+      "key": "article.deal.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Deal Section Title",
+      "required": false,
+      "default": "What's the deal?",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.deal.item1",
+      "page": "chat",
+      "type": "text",
+      "label": "Deal Bullet 1",
+      "required": false,
+      "default": "It's the new Omegle for talking to strangers online",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.deal.item2",
+      "page": "chat",
+      "type": "text",
+      "label": "Deal Bullet 2",
+      "required": false,
+      "default": "100% anonymous chat — no worries, we got your privacy!",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.deal.item3",
+      "page": "chat",
+      "type": "text",
+      "label": "Deal Bullet 3",
+      "required": false,
+      "default": "Works on your browser — no need for an Omegle app",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.deal.item4",
+      "page": "chat",
+      "type": "text",
+      "label": "Deal Bullet 4",
+      "required": false,
+      "default": "Way better than Ome TV or Monkey (yeah, we said it!)",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.deal.footer",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Deal Footer",
+      "required": false,
+      "default": "Why'd we make it? 'Cause we missed random chats and meeting new people from all over. This Omegle alternative is our way of keeping the spirit alive.",
+      "section": "article.deal"
+    },
+    {
+      "key": "article.perfect.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Perfect For Title",
+      "required": false,
+      "default": "Our Omegle Web is perfect for:",
+      "section": "article.perfect"
+    },
+    {
+      "key": "article.perfect.item1",
+      "page": "chat",
+      "type": "text",
+      "label": "Perfect For Bullet 1",
+      "required": false,
+      "default": "Killing time between classes",
+      "section": "article.perfect"
+    },
+    {
+      "key": "article.perfect.item2",
+      "page": "chat",
+      "type": "text",
+      "label": "Perfect For Bullet 2",
+      "required": false,
+      "default": "Late-night convos with strangers",
+      "section": "article.perfect"
+    },
+    {
+      "key": "article.perfect.item3",
+      "page": "chat",
+      "type": "text",
+      "label": "Perfect For Bullet 3",
+      "required": false,
+      "default": "Finding study buddies (or procrastination partners, let's be real)",
+      "section": "article.perfect"
+    },
+    {
+      "key": "article.closing.paragraph1",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Closing Paragraph 1",
+      "required": false,
+      "default": "So if you're itching to talk to strangers or just miss the OG Omegle experience, come check us out! It's free, it's fun, and who knows? You might make a new friend or find your soul meme-mate.",
+      "section": "article.closing"
+    },
+    {
+      "key": "article.closing.paragraph2",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Closing Paragraph 2",
+      "required": false,
+      "default": "Ready to dive into some anonymous chat online? Let's go!",
+      "section": "article.closing"
+    },
+    {
+      "key": "article.closing.paragraph3",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Closing Paragraph 3",
+      "required": false,
+      "default": "P.S. To our professors: This totally counts as a coding project, right? 😋",
+      "section": "article.closing"
+    },
+    {
+      "key": "article.legal.terms.before",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Legal Terms Prefix",
+      "required": false,
+      "default": "YOU MUST BE 18 OR OLDER TO USE OMEGLE. See Omegle's ",
+      "section": "article.legal"
+    },
+    {
+      "key": "article.legal.terms.href",
+      "page": "chat",
+      "type": "url",
+      "label": "Legal Terms Link URL",
+      "required": false,
+      "default": "https://www.omegle.com/terms",
+      "section": "article.legal"
+    },
+    {
+      "key": "article.legal.terms.after",
+      "page": "chat",
+      "type": "text",
+      "label": "Legal Terms Suffix",
+      "required": false,
+      "default": " for more info.",
+      "section": "article.legal"
+    },
+    {
+      "key": "article.legal.parental.before",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Parental Notice Prefix",
+      "required": false,
+      "default": "Parental control protections that may assist parents are commercially available and you can find more info at ",
+      "section": "article.legal"
+    },
+    {
+      "key": "article.legal.parental.url",
+      "page": "chat",
+      "type": "url",
+      "label": "Parental Notice URL",
+      "required": false,
+      "default": "https://www.connectsafely.org/controls/",
+      "section": "article.legal"
+    },
+    {
+      "key": "article.legal.parental.after",
+      "page": "chat",
+      "type": "text",
+      "label": "Parental Notice Suffix",
+      "required": false,
+      "default": " as well as other sites.",
+      "section": "article.legal"
+    },
+    {
+      "key": "learnMore.heading",
+      "page": "chat",
+      "type": "text",
+      "label": "Learn More Section Heading",
+      "required": false,
+      "default": "Learn more",
+      "section": "learnMore",
+      "helpText": "Small caps heading above the FAQ / tips / changelog cards on the /chat hub.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "tips.cardTitle",
+      "page": "chat",
+      "type": "text",
+      "label": "Tips Card Title",
+      "required": false,
+      "default": "Tips for Better Conversations",
+      "section": "tips",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "tips.items",
+      "page": "chat",
+      "type": "repeater",
+      "label": "Tips (bullets)",
+      "required": false,
+      "section": "tips",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 30
+      },
+      "itemFields": [
+        {
+          "key": "text",
+          "type": "text",
+          "label": "Tip",
+          "required": true,
+          "validation": {
+            "maxLength": 240
+          }
+        }
+      ],
+      "default": [
+        {
+          "text": "Add interests for better matches"
+        },
+        {
+          "text": "Good lighting helps on video"
+        },
+        {
+          "text": "Be kind — real people on the other side"
+        },
+        {
+          "text": "Skip anytime you want a new partner"
+        }
+      ]
+    },
+    {
+      "key": "changelog.cardTitle",
+      "page": "chat",
+      "type": "text",
+      "label": "Changelog Card Title",
+      "required": false,
+      "default": "Recent Updates & Improvements",
+      "section": "changelog",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "changelog.items",
+      "page": "chat",
+      "type": "repeater",
+      "label": "Changelog lines",
+      "required": false,
+      "section": "changelog",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 40
+      },
+      "itemFields": [
+        {
+          "key": "text",
+          "type": "text",
+          "label": "Update line",
+          "required": true,
+          "validation": {
+            "maxLength": 300
+          }
+        }
+      ],
+      "default": [
+        {
+          "text": "Landing copy updated to reflect the Omegle Web-style experience"
+        },
+        {
+          "text": "Interest field and monitored-chat banner on the /chat hub panel"
+        },
+        {
+          "text": "Light/dark theme for comfortable reading"
+        }
+      ]
+    },
+    {
+      "key": "hero.headlineSuffix",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Hero headline suffix",
+      "required": false,
+      "default": ": talk to strangers online",
+      "section": "landing.hero",
+      "helpText": "Appended after the site name wordmark (first word blue, remainder orange). Site name comes from site settings.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "hero.description",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — Hero description (fallback)",
+      "required": false,
+      "default": "Talk to strangers with text and video chat in your browser. Match by interests — no app download required.",
+      "section": "landing.hero",
+      "helpText": "Used when site description / SEO meta description is not set in site settings.",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "hero.cta.primary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Hero primary CTA label",
+      "required": false,
+      "default": "Get started free",
+      "section": "landing.hero",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "hero.cta.primary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — Hero primary CTA URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing.hero",
+      "placeholder": "/login"
+    },
+    {
+      "key": "hero.cta.secondary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Hero secondary CTA label",
+      "required": false,
+      "default": "Log in",
+      "section": "landing.hero",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "hero.cta.secondary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — Hero secondary CTA URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing.hero",
+      "placeholder": "/login"
+    },
+    {
+      "key": "chatDemo.messages",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — Chat demo messages",
+      "required": false,
+      "section": "landing.chatDemo",
+      "helpText": "Hero chat bubbles with Incoming (left) and Outgoing (right) sides.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "side",
+          "type": "select",
+          "label": "Bubble side",
+          "required": true,
+          "default": "in",
+          "options": [
+            {
+              "label": "Incoming (left)",
+              "value": "in"
+            },
+            {
+              "label": "Outgoing (right)",
+              "value": "out"
+            }
+          ]
+        },
+        {
+          "key": "text",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "validation": {
+            "maxLength": 280
+          }
+        }
+      ],
+      "default": [
+        {
+          "side": "in",
+          "text": "Hey! How's your day going?"
+        },
+        {
+          "side": "out",
+          "text": "Pretty good! Just exploring new hobbies. You?"
+        },
+        {
+          "side": "in",
+          "text": "Same here! I love meeting new people online 💬"
+        }
+      ]
+    },
+    {
+      "key": "chatDemo.labeledMessages",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — Chat demo messages (with speaker labels)",
+      "required": false,
+      "section": "landing.chatDemo",
+      "helpText": "Hero chat bubbles with a speaker label per row (e.g. New Connection, You). Used on layouts that show names above each bubble.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "side",
+          "type": "select",
+          "label": "Bubble side",
+          "required": true,
+          "default": "in",
+          "options": [
+            {
+              "label": "Incoming (left)",
+              "value": "in"
+            },
+            {
+              "label": "Outgoing (right)",
+              "value": "out"
+            }
+          ]
+        },
+        {
+          "key": "label",
+          "type": "text",
+          "label": "Speaker label",
+          "required": true,
+          "validation": {
+            "maxLength": 40
+          }
+        },
+        {
+          "key": "text",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "validation": {
+            "maxLength": 280
+          }
+        }
+      ],
+      "default": [
+        {
+          "side": "in",
+          "label": "New Connection",
+          "text": "Hey! What's up? I'm from Paris 👋"
+        },
+        {
+          "side": "out",
+          "label": "You",
+          "text": "That's cool! I'm excited to chat 🎉"
+        }
+      ]
+    },
+    {
+      "key": "stats.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — Stats row",
+      "required": false,
+      "section": "stats",
+      "helpText": "Stat counters (value + label pairs) for layouts that show a metrics row.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "value",
+          "type": "text",
+          "label": "Stat value",
+          "required": true,
+          "validation": {
+            "maxLength": 24
+          }
+        },
+        {
+          "key": "label",
+          "type": "text",
+          "label": "Stat label",
+          "required": true,
+          "validation": {
+            "maxLength": 60
+          }
+        }
+      ],
+      "default": [
+        {
+          "value": "1M+",
+          "label": "Active users"
+        },
+        {
+          "value": "145+",
+          "label": "Countries"
+        },
+        {
+          "value": "24/7",
+          "label": "Live matching"
+        },
+        {
+          "value": "Free",
+          "label": "To get started"
+        }
+      ]
+    },
+    {
+      "key": "communityGrid.images",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — Community photo grid",
+      "required": false,
+      "section": "communityGrid",
+      "helpText": "Portrait photos in the 2×2 grid beside the tips list.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "url",
+          "type": "url",
+          "label": "Image URL",
+          "required": true,
+          "placeholder": "https://…"
+        }
+      ],
+      "default": [
+        {
+          "url": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80"
+        }
+      ]
+    },
+    {
+      "key": "images.heroPerson",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Hero person photo",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80",
+      "section": "landing.images",
+      "helpText": "Portrait used in hero and marketing sections across landing layouts.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.heroChat",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Hero chat / team photo",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
+      "section": "landing.images",
+      "helpText": "Group or chat-themed hero image.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.phoneMockup",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Phone mockup",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+      "section": "landing.images",
+      "helpText": "Mobile device or app screenshot.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.teamPhoto",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Team photo",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+      "section": "landing.images",
+      "helpText": "Team or community photo.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.blog1",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Blog card image 1",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+      "section": "landing.images",
+      "helpText": "First blog or article teaser image on landing pages.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.blog2",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Blog card image 2",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80",
+      "section": "landing.images",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "images.blog3",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — Blog card image 3",
+      "required": false,
+      "default": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
+      "section": "landing.images",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "nav.faq.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Nav FAQ link",
+      "required": false,
+      "default": "FAQ",
+      "section": "landing.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.faq.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — Nav FAQ URL",
+      "required": false,
+      "default": "/faq",
+      "section": "landing.nav",
+      "placeholder": "/faq"
+    },
+    {
+      "key": "features.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Features section title",
+      "required": false,
+      "default": "Why StrangoX?",
+      "section": "landing.features",
+      "helpText": "Replace StrangoX with the site name from site settings at render time.",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "features.subtitle",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Features section subtitle",
+      "required": false,
+      "default": "The Omegle-style experience, rebuilt for today's web.",
+      "section": "landing.features",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "features.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — Feature cards",
+      "required": false,
+      "section": "landing.features",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 12
+      },
+      "itemFields": [
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "maxLength": 80
+          }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": {
+            "maxLength": 400
+          }
+        }
+      ],
+      "default": [
+        {
+          "title": "Text chat",
+          "description": "Jump into anonymous text conversations with strangers from around the world. Skip anytime for a new match."
+        },
+        {
+          "title": "Video chat",
+          "description": "Face-to-face random video when you want a more personal connection. Works in your browser — no install."
+        },
+        {
+          "title": "Interest matching",
+          "description": "Add topics you care about and get paired with people who share similar interests for better conversations."
+        },
+        {
+          "title": "No app required",
+          "description": "Use on phone, tablet, or desktop. The site is built mobile-first so you can chat anywhere."
+        },
+        {
+          "title": "Monitored and safer modes",
+          "description": "Choose text-only when you prefer, skip partners instantly, and chat in a monitored environment."
+        },
+        {
+          "title": "Inbox for connections",
+          "description": "Sign in to keep chatting with people you meet, manage your profile, and pick up conversations later."
+        }
+      ]
+    },
+    {
+      "key": "howItWorks.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — How it works title",
+      "required": false,
+      "default": "How it works",
+      "section": "landing.howItWorks",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "howItWorks.subtitle",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — How it works subtitle",
+      "required": false,
+      "default": "Start chatting in three simple steps",
+      "section": "landing.howItWorks",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "howItWorks.steps",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — How it works steps",
+      "required": false,
+      "section": "landing.howItWorks",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "step",
+          "type": "text",
+          "label": "Step number",
+          "required": true,
+          "validation": {
+            "maxLength": 8
+          }
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "maxLength": 80
+          }
+        },
+        {
+          "key": "body",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": {
+            "maxLength": 300
+          }
+        }
+      ],
+      "default": [
+        {
+          "step": "1",
+          "title": "Create an account",
+          "body": "Sign up free with email, Google, or a magic link."
+        },
+        {
+          "step": "2",
+          "title": "Add your interests",
+          "body": "Optional topics help us match you with like-minded strangers."
+        },
+        {
+          "step": "3",
+          "title": "Start chatting",
+          "body": "Pick text or video, agree to the terms, and meet someone new."
+        }
+      ]
+    },
+    {
+      "key": "tips.cardTitle",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Tips card title",
+      "required": false,
+      "default": "Tips for better chats",
+      "section": "landing.tips",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "tips.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — Tips list",
+      "required": false,
+      "section": "landing.tips",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 30
+      },
+      "itemFields": [
+        {
+          "key": "text",
+          "type": "text",
+          "label": "Tip",
+          "required": true,
+          "validation": {
+            "maxLength": 240
+          }
+        }
+      ],
+      "default": [
+        {
+          "text": "Add interests for better matches"
+        },
+        {
+          "text": "Good lighting helps on video"
+        },
+        {
+          "text": "Be kind — real people on the other side"
+        },
+        {
+          "text": "Skip anytime you want a new partner"
+        }
+      ]
+    },
+    {
+      "key": "faqPreview.cardTitle",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — FAQ preview card title",
+      "required": false,
+      "default": "Common questions",
+      "section": "landing.faqPreview",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "faqPreview.maxItems",
+      "page": "landing",
+      "type": "number",
+      "label": "Landing — FAQ preview count",
+      "required": false,
+      "default": 3,
+      "section": "landing.faqPreview",
+      "helpText": "How many FAQ items to show in the preview (from the list below, in order).",
+      "validation": {
+        "min": 1,
+        "max": 10
+      }
+    },
+    {
+      "key": "faqPreview.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — FAQ preview items",
+      "required": false,
+      "section": "landing.faqPreview",
+      "itemPresentation": "accordion",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 40
+      },
+      "itemFields": [
+        {
+          "key": "q",
+          "type": "text",
+          "label": "Question",
+          "required": true,
+          "validation": {
+            "maxLength": 200
+          }
+        },
+        {
+          "key": "a",
+          "type": "textarea",
+          "label": "Answer",
+          "required": true,
+          "validation": {
+            "maxLength": 2000
+          }
+        }
+      ],
+      "default": [
+        {
+          "q": "Is Omegle Web free?",
+          "a": "Yes — anonymous chat in your browser, no download required."
+        },
+        {
+          "q": "Do I need an app?",
+          "a": "No. The site works on phones, tablets, and desktops in the browser."
+        },
+        {
+          "q": "How do interests work?",
+          "a": "Add topics you care about; we use them to help you meet strangers with similar interests."
+        },
+        {
+          "q": "Is it really anonymous?",
+          "a": "We aim for a simple, no-sign-up flow so you can chat without creating an account."
+        },
+        {
+          "q": "What if someone makes me uncomfortable?",
+          "a": "Skip the chat and stop anytime. Use safer modes if you prefer text only."
+        }
+      ]
+    },
+    {
+      "key": "cta.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Bottom CTA title",
+      "required": false,
+      "default": "Ready to meet someone new?",
+      "section": "landing.cta",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "cta.subtitle",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — Bottom CTA subtitle",
+      "required": false,
+      "default": "Join StrangoX and start anonymous text or video chat with strangers in seconds.",
+      "section": "landing.cta",
+      "helpText": "Replace StrangoX with the site name from site settings at render time.",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "cta.primary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Bottom CTA primary label",
+      "required": false,
+      "default": "Create free account",
+      "section": "landing.cta",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "cta.primary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — Bottom CTA primary URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing.cta",
+      "placeholder": "/login"
+    },
+    {
+      "key": "cta.secondary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Bottom CTA secondary label",
+      "required": false,
+      "default": "I already have an account",
+      "section": "landing.cta",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "cta.secondary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — Bottom CTA secondary URL",
+      "required": false,
+      "default": "/login",
+      "section": "landing.cta",
+      "placeholder": "/login"
+    },
+    {
+      "key": "cta.legal.before",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — CTA legal line (before terms link)",
+      "required": false,
+      "default": "You must be 18 or older. See our ",
+      "section": "landing.cta",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "cta.terms.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — CTA terms link label",
+      "required": false,
+      "default": "Terms of Service",
+      "section": "landing.cta",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "cta.terms.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — CTA terms link URL",
+      "required": false,
+      "default": "/terms",
+      "section": "landing.cta",
+      "placeholder": "/terms"
+    },
+    {
+      "key": "cta.legal.after",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — CTA legal line (after terms link)",
+      "required": false,
+      "default": ".",
+      "section": "landing.cta",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "page.title",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — page title",
+      "required": false,
+      "default": "Frequently Asked Questions",
+      "section": "faq.header",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "page.subtitle",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — page subtitle",
+      "required": false,
+      "default": "Find answers about anonymous text and video chat",
+      "section": "faq.header",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "search.placeholder",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — search placeholder",
+      "required": false,
+      "default": "Search FAQs...",
+      "section": "faq.search",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "empty.message",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — no results message",
+      "required": false,
+      "default": "No questions match your search.",
+      "section": "faq.empty",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "empty.clearSearch",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — clear search button",
+      "required": false,
+      "default": "Clear search",
+      "section": "faq.empty",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "contact.title",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — contact card title",
+      "required": false,
+      "default": "Still have questions?",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "contact.subtitle",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — contact card subtitle",
+      "required": false,
+      "default": "We're here to help.",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "contact.body",
+      "page": "faq",
+      "type": "textarea",
+      "label": "FAQ — contact card body",
+      "required": false,
+      "default": "If you can't find what you need, sign in and use inbox support or review our policies below.",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "items",
+      "page": "faq",
+      "type": "repeater",
+      "label": "FAQ — Q&A items",
+      "required": false,
+      "section": "faq.content",
+      "helpText": "Full /faq page list. The /chat hub can show a shorter FAQ card via chat.faq.items.",
+      "itemPresentation": "accordion",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 80
+      },
+      "itemFields": [
+        {
+          "key": "q",
+          "type": "text",
+          "label": "Question",
+          "required": true,
+          "validation": {
+            "maxLength": 200
+          }
+        },
+        {
+          "key": "a",
+          "type": "textarea",
+          "label": "Answer",
+          "required": true,
+          "validation": {
+            "maxLength": 2000
+          }
+        }
+      ],
+      "default": [
+        {
+          "q": "Is Omegle Web free?",
+          "a": "Yes — anonymous chat in your browser, no download required."
+        },
+        {
+          "q": "Do I need an app?",
+          "a": "No. The site works on phones, tablets, and desktops in the browser."
+        },
+        {
+          "q": "How do interests work?",
+          "a": "Add topics you care about; we use them to help you meet strangers with similar interests."
+        },
+        {
+          "q": "Is it really anonymous?",
+          "a": "We aim for a simple, no-sign-up flow so you can chat without creating an account."
+        },
+        {
+          "q": "What if someone makes me uncomfortable?",
+          "a": "Skip the chat and stop anytime. Use safer modes if you prefer text only."
+        },
+        {
+          "q": "What is the difference between moderated and unmoderated video?",
+          "a": "Moderated video chat follows site rules and monitoring. Unmoderated video requires accepting terms and is intended for adults."
+        },
+        {
+          "q": "How do I start text or video chat?",
+          "a": "Sign in, open the chat hub at /chat, then choose Text or Video. Text goes to /chat/text; video goes to /chat/video."
+        }
+      ]
+    },
+    {
+      "key": "rightsText",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — rights suffix",
+      "required": false,
+      "default": "All rights reserved.",
+      "section": "footer.copyright",
+      "helpText": "Rendered as © {year} StrangoX. All rights reserved.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "links.login.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — log in link",
+      "required": false,
+      "default": "Log in",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.login.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — log in URL",
+      "required": false,
+      "default": "/login",
+      "section": "footer.links",
+      "placeholder": "/login"
+    },
+    {
+      "key": "links.signup.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — sign up link",
+      "required": false,
+      "default": "Sign up",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.signup.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — sign up URL",
+      "required": false,
+      "default": "/signup",
+      "section": "footer.links",
+      "placeholder": "/signup"
+    },
+    {
+      "key": "links.faq.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — FAQ link",
+      "required": false,
+      "default": "FAQ",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.faq.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — FAQ URL",
+      "required": false,
+      "default": "/faq",
+      "section": "footer.links",
+      "placeholder": "/faq"
+    },
+    {
+      "key": "links.privacy.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — privacy link",
+      "required": false,
+      "default": "Privacy Policy",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.privacy.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — privacy URL",
+      "required": false,
+      "default": "/privacy",
+      "section": "footer.links",
+      "placeholder": "/privacy"
+    },
+    {
+      "key": "links.terms.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — terms link",
+      "required": false,
+      "default": "Terms of Service",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 50
+      }
+    },
+    {
+      "key": "links.terms.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — terms URL",
+      "required": false,
+      "default": "/terms",
+      "section": "footer.links",
+      "placeholder": "/terms"
+    },
+    {
+      "key": "mobile.notice",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — Mobile notice",
+      "required": false,
+      "default": "You don't need an app to use Omegle on your phone or tablet! The web site works great on mobile.",
+      "section": "landing.hero",
+      "validation": {
+        "maxLength": 220
+      }
+    },
+    {
+      "key": "hero.tagline",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Hero tagline (kicker)",
+      "required": false,
+      "default": "Meet strangers with your interests!",
+      "section": "landing.hero",
+      "validation": {
+        "maxLength": 80
+      }
+    }
+  ]
+}
