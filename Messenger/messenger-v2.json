@@ -1733,7 +1733,7 @@
       "type": "text",
       "label": "Landing — footer copyright line",
       "required": false,
-      "default": "© 2025 Chaterio. All rights reserved.",
+      "default": "© 2026 2YU. All rights reserved.",
       "section": "footer",
       "helpText": "App currently uses HTML entity in JSX; use plain text or entities per your renderer.",
       "validation": {
