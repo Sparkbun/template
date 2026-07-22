@@ -2,7 +2,7 @@
   "templateId": "messenger",
   "version": 12,
   "name": "Messenger",
-  "description": "Landing layouts (classic, centered, split) for /, Cygnus editorial at /landing, plus /chat, /faq, and global site footer. Layouts share landing content fields; Cygnus-specific hero fields override when set.",
+  "description": "Landing layouts (classic, centered, split,bold) for /, Cygnus editorial at /landing, plus /chat, /faq, and global site footer. Layouts share landing content fields; Cygnus-specific hero fields override when set.",
   "pages": [
     {
       "key": "landing",
@@ -30,11 +30,11 @@
       "key": "layout.active",
       "page": "landing",
       "type": "select",
-      "label": "Active layout (classic, centered, split)",
+      "label": "Active layout (classic, centered, split,bold)",
       "required": false,
       "default": "classic",
       "section": "layout",
-      "helpText": "Layout shown at / for signed-out visitors. Preview: /classic, /centered, /split. /landing always uses the Cygnus editorial layout. All layouts share landing content fields.",
+      "helpText": "Layout shown at / for signed-out visitors. Preview: /classic, /centered, /split, /bold. /landing always uses the Cygnus editorial layout. All layouts share landing content fields.",
       "options": [
         {
           "label": "Classic",
@@ -47,6 +47,10 @@
         {
           "label": "Split",
           "value": "split"
+        },
+        {
+          "label": "Bold",
+          "value": "bold"
         }
       ]
     },
@@ -1008,7 +1012,7 @@
       "required": false,
       "default": "/imagehero.png",
       "section": "hero",
-      "helpText": "Hero image for classic, centered, and split layouts.",
+      "helpText": "Hero image for classic, centered, split, and bold layouts.",
       "validation": {
         "allowedExtensions": [
           "jpg",
@@ -1026,7 +1030,7 @@
       "label": "Landing — hero chat demo bubbles",
       "required": false,
       "section": "chatDemo",
-      "helpText": "Floating chat bubbles on the hero image (centered and split layouts). First three items use preset positions.",
+      "helpText": "Floating chat bubbles on the hero image. First three items use preset positions.",
       "itemPresentation": "expanded",
       "validation": {
         "minItems": 0,
@@ -1158,7 +1162,7 @@
       "required": false,
       "default": "Learn more",
       "section": "features",
-      "helpText": "Used on split layout feature cards.",
+      "helpText": "Used on layout feature cards.",
       "validation": {
         "maxLength": 40
       }
@@ -1171,7 +1175,7 @@
       "required": false,
       "default": "Built for intelligent connection",
       "section": "landing.split",
-      "helpText": "Overrides features.title on the split layout left column when set.",
+      "helpText": "Overrides features.title on the layout left column when set.",
       "validation": {
         "maxLength": 120
       }
@@ -1279,7 +1283,7 @@
       "required": false,
       "default": "The three steps to start chatting",
       "section": "landing.split",
-      "helpText": "Overrides howItWorks.title on the split layout when set.",
+      "helpText": "Overrides howItWorks.title on the layout when set.",
       "validation": {
         "maxLength": 120
       }
@@ -1354,7 +1358,7 @@
       "label": "Landing — safety bullet points",
       "required": false,
       "section": "safety",
-      "helpText": "Checklist under the safety copy (Cygnus and split). Title/description fall back to the Secure & Private feature card.",
+      "helpText": "Checklist under the safety copy. Title/description fall back to the Secure & Private feature card.",
       "itemPresentation": "expanded",
       "validation": {
         "minItems": 0,
