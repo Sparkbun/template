@@ -1,6 +1,6 @@
 {
   "templateId": "messenger",
-  "version": 12,
+  "version": 2,
   "name": "Messenger",
   "description": "Landing layouts (classic, centered, split,bold) for /, Cygnus editorial at /landing, plus /chat, /faq, and global site footer. Layouts share landing content fields; Cygnus-specific hero fields override when set.",
   "pages": [
