@@ -1,0 +1,124 @@
+{
+  "templateId": "vtube",
+  "version": 3,
+  "name": "vTube",
+  "description": "Media watermark for watch player and shorts, and TV series ad unlock.",
+  "pages": [
+    { "key": "watermark", "route": "*", "title": "Media watermark" },
+    { "key": "tv", "route": "/tv", "title": "TV series ads" }
+  ],
+  "fields": [
+    {
+      "key": "watermark.enabled",
+      "page": "watermark",
+      "type": "boolean",
+      "label": "Show site watermark",
+      "required": false,
+      "default": true,
+      "section": "watermark",
+      "helpText": "Shows on watch player and shorts (top-right)."
+    },
+    {
+      "key": "watermark.userEnabled",
+      "page": "watermark",
+      "type": "boolean",
+      "label": "Show creator watermark",
+      "required": false,
+      "default": true,
+      "section": "watermark",
+      "helpText": "Shows @username on watch player and shorts (bottom-center)."
+    },
+    {
+      "key": "watermark.mode",
+      "page": "watermark",
+      "type": "select",
+      "label": "Watermark type",
+      "required": false,
+      "default": "text",
+      "section": "watermark",
+      "options": [
+        { "label": "Text", "value": "text" },
+        { "label": "Image", "value": "image" }
+      ]
+    },
+    {
+      "key": "watermark.text",
+      "page": "watermark",
+      "type": "text",
+      "label": "Watermark text",
+      "required": false,
+      "default": "vTube",
+      "section": "watermark",
+      "visibleIf": { "field": "watermark.mode", "equals": "text" },
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "watermark.image",
+      "page": "watermark",
+      "type": "image",
+      "label": "Watermark image",
+      "required": false,
+      "default": "https://github.com/bunliv/img/blob/main/messenger%20favicon.png",
+      "section": "watermark",
+      "visibleIf": { "field": "watermark.mode", "equals": "image" },
+      "helpText": "PNG/SVG with transparent background works best."
+    },
+    {
+      "key": "watermark.opacity",
+      "page": "watermark",
+      "type": "number",
+      "label": "Opacity",
+      "required": false,
+      "default": 1,
+      "section": "watermark",
+      "helpText": "0.1 – 1.0",
+      "validation": { "min": 0.1, "max": 1 }
+    },
+    {
+      "key": "tv.ads.enabled",
+      "page": "tv",
+      "type": "boolean",
+      "label": "Enable ad unlock popup",
+      "required": false,
+      "default": true,
+      "section": "tv.ads",
+      "helpText": "Show the ad-wall on TV series watch pages until the required ads are viewed."
+    },
+    {
+      "key": "tv.ads.requiredCount",
+      "page": "tv",
+      "type": "number",
+      "label": "Ads required to unlock",
+      "required": false,
+      "default": 1,
+      "section": "tv.ads",
+      "helpText": "Number of ads the viewer must open before the popup hides.",
+      "visibleIf": {
+        "field": "tv.ads.enabled",
+        "equals": true
+      },
+      "validation": {
+        "min": 1,
+        "max": 50
+      }
+    },
+    {
+      "key": "tv.ads.cooldownMinutes",
+      "page": "tv",
+      "type": "number",
+      "label": "Popup disabled for (minutes)",
+      "required": false,
+      "default": 1,
+      "section": "tv.ads",
+      "helpText": "After the required ads are viewed, hide the popup for this many minutes, then show it again.",
+      "visibleIf": {
+        "field": "tv.ads.enabled",
+        "equals": true
+      },
+      "validation": {
+        "min": 1,
+        "max": 1440
+      }
+    }
+  ]
+}
