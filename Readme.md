@@ -58,9 +58,7 @@ secondary-E8EBF2          --bg-card
 accent-EBEFF5            --bg-muted
 
 
-//messenger
-
-
+//omegle
 --backend--               --frontend--
 bg-fff9f2                 --color-page-bg 
 text-111827               --color-text
