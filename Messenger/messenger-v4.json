@@ -1,0 +1,1849 @@
+{
+  "templateId": "messenger",
+  "version": 4,
+  "name": "Messenger",
+  "description": "Landing layouts (classic, centered, split,bold) for /, Cygnus editorial at /landing, plus /chat, /faq, app navbar, and global site footer. Layouts share landing content fields; Cygnus-specific hero fields override when set.",
+  "pages": [
+    {
+      "key": "landing",
+      "route": "/landing",
+      "title": "Landing page"
+    },
+    {
+      "key": "chat",
+      "route": "/chat",
+      "title": "Random chat hub"
+    },
+    {
+      "key": "faq",
+      "route": "/faq",
+      "title": "FAQ"
+    },
+    {
+      "key": "footer",
+      "route": "*",
+      "title": "Site footer (global)"
+    },
+    {
+      "key": "watermark",
+      "route": "*",
+      "title": "Media watermark"
+    },
+    {
+      "key": "navbar",
+      "route": "*",
+      "title": "App navbar (global)"
+    }
+  ],
+  "fields": [
+    {
+      "key": "layout.active",
+      "page": "landing",
+      "type": "select",
+      "label": "Active layout (classic, centered, split,bold)",
+      "required": false,
+      "default": "classic",
+      "section": "layout",
+      "helpText": "Layout shown at / for signed-out visitors. Preview: /classic, /centered, /split, /bold. /landing always uses the Cygnus editorial layout. All layouts share landing content fields.",
+      "options": [
+        {
+          "label": "Classic",
+          "value": "classic"
+        },
+        {
+          "label": "Centered",
+          "value": "centered"
+        },
+        {
+          "label": "Split",
+          "value": "split"
+        },
+        {
+          "label": "Bold",
+          "value": "bold"
+        }
+      ]
+    },
+    {
+      "key": "page.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat hub — header title",
+      "required": false,
+      "default": "Random Chat",
+      "section": "chat.header",
+      "helpText": "Browser tab title and header heading.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "page.subtitle",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat hub — header subtitle",
+      "required": false,
+      "default": "Choose how you want to chat",
+      "section": "chat.header",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "nav.home.label",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat hub — home button",
+      "required": false,
+      "default": "Home",
+      "section": "chat.nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.home.href",
+      "page": "chat",
+      "type": "url",
+      "label": "Chat hub — home button URL",
+      "required": false,
+      "default": "/",
+      "section": "chat.nav"
+    },
+    {
+      "key": "hero.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat hub — hero title",
+      "required": false,
+      "default": "Choose Your Chat Type",
+      "section": "chat.hero",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "hero.subtitle",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Chat hub — hero subtitle",
+      "required": false,
+      "default": "Similar to your other project's chat hub, pick between text, audio, or video random chat.",
+      "section": "chat.hero",
+      "validation": {
+        "maxLength": 300
+      }
+    },
+    {
+      "key": "options.startLabel",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat hub — option card CTA",
+      "required": false,
+      "default": "Start",
+      "section": "chat.options",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "options.items",
+      "page": "chat",
+      "type": "repeater",
+      "label": "Chat hub — chat type cards",
+      "required": false,
+      "section": "chat.options",
+      "itemPresentation": "accordion",
+      "helpText": "Card icon and colors are app-defined. featureKey gates visibility by site plan.",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 6
+      },
+      "itemFields": [
+        {
+          "key": "id",
+          "type": "text",
+          "label": "Stable id",
+          "required": true,
+          "validation": {
+            "maxLength": 20
+          }
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Card title",
+          "required": true,
+          "validation": {
+            "maxLength": 80
+          }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Card description",
+          "required": true,
+          "validation": {
+            "maxLength": 300
+          }
+        },
+        {
+          "key": "href",
+          "type": "url",
+          "label": "Card link URL",
+          "required": true
+        },
+        {
+          "key": "features",
+          "type": "textarea",
+          "label": "Feature bullets",
+          "required": false,
+          "helpText": "One feature per line.",
+          "validation": {
+            "maxLength": 400
+          }
+        },
+        {
+          "key": "featureKey",
+          "type": "select",
+          "label": "Plan feature gate",
+          "required": true,
+          "options": [
+            {
+              "label": "Text chat",
+              "value": "text_chat"
+            },
+            {
+              "label": "Audio chat",
+              "value": "audio_chat"
+            },
+            {
+              "label": "Stranger video chat",
+              "value": "stranger_video_chat"
+            }
+          ]
+        }
+      ],
+      "default": [
+        {
+          "id": "text",
+          "title": "Text Chat",
+          "description": "Connect with strangers through instant messaging and have fun conversations.",
+          "href": "/chat/text",
+          "features": "Real-time messaging\nAnonymous\nTyping simulation",
+          "featureKey": "text_chat"
+        },
+        {
+          "id": "audio",
+          "title": "Audio Chat",
+          "description": "Talk with random people using your voice in a simple mock audio room.",
+          "href": "/chat/audio",
+          "features": "Voice-style UI\nQuick matching\nLightweight mock",
+          "featureKey": "audio_chat"
+        },
+        {
+          "id": "video",
+          "title": "Video Chat",
+          "description": "Use the existing random video + text chat mock interface with strangers.",
+          "href": "/chat/video",
+          "features": "Video layout\nText side chat\nSkip to next",
+          "featureKey": "stranger_video_chat"
+        }
+      ]
+    },
+    {
+      "key": "tagline",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — tagline",
+      "required": false,
+      "default": "Connect. Chat. Celebrate.",
+      "section": "footer.brand",
+      "helpText": "Shown under the site name in the footer brand column. Site display name comes from site info.",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "rightsText",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — rights suffix",
+      "required": false,
+      "default": "All rights reserved.",
+      "section": "footer.copyright",
+      "helpText": "Rendered as © {year} Messenger. All rights reserved. Site display name comes from site info, not this field.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "theme.toLightAria",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — theme toggle (switch to light)",
+      "required": false,
+      "default": "Switch to light mode",
+      "section": "footer.theme",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "theme.toDarkAria",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — theme toggle (switch to dark)",
+      "required": false,
+      "default": "Switch to dark mode",
+      "section": "footer.theme",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "links.faq.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — FAQ link text",
+      "required": false,
+      "default": "FAQ",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.faq.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — FAQ link URL",
+      "required": false,
+      "default": "/faq",
+      "section": "footer.links"
+    },
+    {
+      "key": "links.contact.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — Contact link text",
+      "required": false,
+      "default": "Contact",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.contact.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — Contact link URL",
+      "required": false,
+      "default": "/contact",
+      "section": "footer.links"
+    },
+    {
+      "key": "links.privacy.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — privacy link text",
+      "required": false,
+      "default": "Privacy Policy",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.privacy.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — privacy link URL",
+      "required": false,
+      "default": "/legal?tab=privacy",
+      "section": "footer.links",
+      "placeholder": "/legal?tab=privacy"
+    },
+    {
+      "key": "links.terms.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — terms link text",
+      "required": false,
+      "default": "Terms & Conditions",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 50
+      }
+    },
+    {
+      "key": "links.terms.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — terms link URL",
+      "required": false,
+      "default": "/legal?tab=terms",
+      "section": "footer.links",
+      "placeholder": "/legal?tab=terms"
+    },
+    {
+      "key": "page.title",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — page title",
+      "required": false,
+      "default": "Frequently Asked Questions",
+      "section": "faq.header",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "page.subtitle",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — page subtitle",
+      "required": false,
+      "default": "Find answers to common questions",
+      "section": "faq.header",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "search.placeholder",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — search placeholder",
+      "required": false,
+      "default": "Search FAQs...",
+      "section": "faq.search",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "category.questionsSuffix",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — category card count suffix",
+      "required": false,
+      "default": "questions",
+      "section": "faq.category",
+      "helpText": "Rendered as \"{count} {questionsSuffix}\" under each category title.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "empty.message",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — no results message",
+      "required": false,
+      "default": "No FAQ articles found matching your search.",
+      "section": "faq.empty",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "empty.clearSearch",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — clear search button",
+      "required": false,
+      "default": "Clear Search",
+      "section": "faq.empty",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "contact.title",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — contact card title",
+      "required": false,
+      "default": "Still Have Questions?",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "contact.subtitle",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — contact card subtitle",
+      "required": false,
+      "default": "We're here to help!",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "contact.body",
+      "page": "faq",
+      "type": "textarea",
+      "label": "FAQ — contact card body",
+      "required": false,
+      "default": "If you can't find the answer you're looking for, please reach out to our support team.",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "contact.email.label",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — email support (button)",
+      "required": false,
+      "default": "Email Support",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "contact.email.href",
+      "page": "faq",
+      "type": "url",
+      "label": "FAQ — email support (mailto URL)",
+      "required": false,
+      "default": "mailto:support@chaterio.com",
+      "section": "faq.contact",
+      "placeholder": "mailto:support@example.com"
+    },
+    {
+      "key": "contact.form.label",
+      "page": "faq",
+      "type": "text",
+      "label": "FAQ — contact form (button)",
+      "required": false,
+      "default": "Contact Form",
+      "section": "faq.contact",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "contact.form.href",
+      "page": "faq",
+      "type": "url",
+      "label": "FAQ — contact form (URL)",
+      "required": false,
+      "default": "/contact",
+      "section": "faq.contact",
+      "placeholder": "/contact"
+    },
+    {
+      "key": "items",
+      "page": "faq",
+      "type": "repeater",
+      "label": "FAQ — Q&A items",
+      "required": false,
+      "section": "faq.content",
+      "helpText": "Flat list: group consecutive rows with the same category in the UI to match category cards. Icon per category is app-defined unless you extend the manifest.",
+      "itemPresentation": "accordion",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 80
+      },
+      "itemFields": [
+        {
+          "key": "category",
+          "type": "text",
+          "label": "Category",
+          "required": true,
+          "validation": {
+            "maxLength": 80
+          }
+        },
+        {
+          "key": "id",
+          "type": "text",
+          "label": "Stable id (accordion value)",
+          "required": false,
+          "validation": {
+            "maxLength": 40
+          },
+          "helpText": "Optional slug like gs-1; app may fall back to index if empty."
+        },
+        {
+          "key": "question",
+          "type": "text",
+          "label": "Question",
+          "required": true,
+          "validation": {
+            "maxLength": 300
+          }
+        },
+        {
+          "key": "answer",
+          "type": "textarea",
+          "label": "Answer",
+          "required": true,
+          "validation": {
+            "maxLength": 2000
+          }
+        }
+      ],
+      "default": [
+        {
+          "category": "Getting Started",
+          "id": "gs-1",
+          "question": "How do I create an account?",
+          "answer": "Visit our login page and click 'Sign Up'. Fill in your email address, create a password, and provide your profile information. You'll receive a confirmation email to verify your account."
+        },
+        {
+          "category": "Getting Started",
+          "id": "gs-2",
+          "question": "How do I find chat rooms?",
+          "answer": "From the home page, you can browse public rooms or use the search feature to find specific topics. You can also join rooms recommended based on your interests."
+        },
+        {
+          "category": "Getting Started",
+          "id": "gs-3",
+          "question": "What is the difference between public and private rooms?",
+          "answer": "Public rooms are open to everyone and appear in search results. Private rooms require an invitation or approval from the room owner to join."
+        },
+        {
+          "category": "Chat Features",
+          "id": "cf-1",
+          "question": "Can I send files and media in chat rooms?",
+          "answer": "Yes, you can share images, videos, documents, and other files in both group chats and direct messages. Simply click the attachment button and select your file."
+        },
+        {
+          "category": "Chat Features",
+          "id": "cf-2",
+          "question": "How do I pin important messages?",
+          "answer": "In any chat room, hover over a message and click the menu icon. Select 'Pin Message' to pin it to the top of the room. Only room moderators can pin/unpin messages."
+        },
+        {
+          "category": "Chat Features",
+          "id": "cf-3",
+          "question": "What are reactions?",
+          "answer": "Reactions let you quickly respond to messages with emojis. Hover over any message and click the emoji icon to add a reaction. This is a non-intrusive way to acknowledge messages."
+        },
+        {
+          "category": "Room Management",
+          "id": "rm-1",
+          "question": "How do I create my own room?",
+          "answer": "Click the 'Create Room' button on the home page. Fill in your room name, description, select privacy settings, and configure optional features like password protection."
+        },
+        {
+          "category": "Room Management",
+          "id": "rm-2",
+          "question": "How do I manage room members?",
+          "answer": "Room owners can access member management through the room settings. You can approve pending members, assign roles, kick users, or ban problematic members."
+        },
+        {
+          "category": "Room Management",
+          "id": "rm-3",
+          "question": "Can I delete messages in my room?",
+          "answer": "Room moderators can delete any message in the room. Regular members can only delete their own messages within a limited time after posting."
+        },
+        {
+          "category": "Privacy & Security",
+          "id": "ps-1",
+          "question": "Is my chat history encrypted?",
+          "answer": "Yes, all messages are encrypted in transit using SSL/TLS encryption. We also encrypt stored data to protect your privacy and security."
+        },
+        {
+          "category": "Privacy & Security",
+          "id": "ps-2",
+          "question": "Can I block a user?",
+          "answer": "Yes, you can block users from their profile or your inbox. Blocked users cannot send you direct messages or see your status."
+        },
+        {
+          "category": "Privacy & Security",
+          "id": "ps-3",
+          "question": "How do I report inappropriate content?",
+          "answer": "Use the report button on any message or user profile. Our moderation team reviews reports and takes appropriate action, including removing content or banning users."
+        },
+        {
+          "category": "Direct Messages & Calls",
+          "id": "dm-1",
+          "question": "How do I start a direct message with someone?",
+          "answer": "Click the 'Inbox' button and start a new conversation, or visit someone's profile and click the message icon. Your conversations are private and only visible to both of you."
+        },
+        {
+          "category": "Direct Messages & Calls",
+          "id": "dm-2",
+          "question": "Can I make video or audio calls?",
+          "answer": "Yes, you can initiate video or audio calls from your inbox or someone's profile. Both users must accept the call request to connect."
+        },
+        {
+          "category": "Direct Messages & Calls",
+          "id": "dm-3",
+          "question": "What is Random Chat?",
+          "answer": "Random Chat connects you with random strangers for 1-to-1 video conversations, similar to Omegle. You can text and video chat with each new connection."
+        },
+        {
+          "category": "Account & Settings",
+          "id": "as-1",
+          "question": "How do I change my profile picture?",
+          "answer": "Go to your profile settings and click on your avatar. Upload a new image from your device. Changes are saved automatically."
+        },
+        {
+          "category": "Account & Settings",
+          "id": "as-2",
+          "question": "Can I delete my account?",
+          "answer": "Yes, you can permanently delete your account from the 'Danger Zone' section in profile settings. This action is irreversible and will remove all your data."
+        },
+        {
+          "category": "Account & Settings",
+          "id": "as-3",
+          "question": "How do I download my data?",
+          "answer": "You can request a backup of your data from the 'Danger Zone' section in profile settings. We'll prepare a file containing all your personal information."
+        }
+      ]
+    },
+    {
+      "key": "nav.brandName",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav brand name",
+      "required": false,
+      "default": "Chaterio",
+      "section": "nav",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "nav.homeHref",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav brand link",
+      "required": false,
+      "default": "/",
+      "section": "nav"
+    },
+    {
+      "key": "nav.features.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav Features",
+      "required": false,
+      "default": "Features",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.features.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav Features URL",
+      "required": false,
+      "default": "#features",
+      "section": "nav",
+      "helpText": "In-app anchor or path."
+    },
+    {
+      "key": "nav.howItWorks.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav How it Works",
+      "required": false,
+      "default": "How it Works",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.howItWorks.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav How it Works URL",
+      "required": false,
+      "default": "#how-it-works",
+      "section": "nav"
+    },
+    {
+      "key": "nav.faq.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav FAQ",
+      "required": false,
+      "default": "FAQ",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.faq.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav FAQ URL",
+      "required": false,
+      "default": "/faq",
+      "section": "nav"
+    },
+    {
+      "key": "nav.signIn.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav Sign In",
+      "required": false,
+      "default": "Sign In",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.signIn.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav Sign In URL",
+      "required": false,
+      "default": "/login",
+      "section": "nav"
+    },
+    {
+      "key": "nav.getStarted.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav Get Started",
+      "required": false,
+      "default": "Get Started",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.getStarted.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav Get Started URL",
+      "required": false,
+      "default": "/login",
+      "section": "nav"
+    },
+    {
+      "key": "nav.safety.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav Safety",
+      "required": false,
+      "default": "Safety",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.safety.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav Safety URL",
+      "required": false,
+      "default": "#safety",
+      "section": "nav"
+    },
+    {
+      "key": "nav.community.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav Community",
+      "required": false,
+      "default": "Community",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.community.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav Community URL",
+      "required": false,
+      "default": "#community",
+      "section": "nav"
+    },
+    {
+      "key": "classic.hero.eyebrow",
+      "page": "landing",
+      "type": "text",
+      "label": "classic — hero eyebrow",
+      "required": false,
+      "default": "Create & connect",
+      "section": "landing.classic",
+      "helpText": "Uppercase label above the classic hero title.",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "centered.hero.badge",
+      "page": "landing",
+      "type": "text",
+      "label": "centered — hero badge",
+      "required": false,
+      "default": "Live conversations, anytime",
+      "section": "landing.centered",
+      "helpText": "Pill badge above the centered hero title.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "cygnus.hero.badge",
+      "page": "landing",
+      "type": "text",
+      "label": "cygnus — hero badge",
+      "required": false,
+      "default": "Join Messenger waitlist",
+      "section": "landing.cygnus",
+      "helpText": "Pill badge on /landing (Cygnus). Use Messenger for the site display name.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "cygnus.hero.titlePrefix",
+      "page": "landing",
+      "type": "text",
+      "label": "cygnus — hero title (before accent)",
+      "required": false,
+      "default": "Never miss a moment to",
+      "section": "landing.cygnus",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "cygnus.hero.titleAccent",
+      "page": "landing",
+      "type": "text",
+      "label": "cygnus — hero title accent",
+      "required": false,
+      "default": "connect & chat",
+      "section": "landing.cygnus",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "hero.titlePrefix",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero title (before accent)",
+      "required": false,
+      "default": "Connect. Chat.",
+      "section": "hero",
+      "helpText": "Shown before the accent word; keep trailing punctuation/spacing as desired.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "hero.titleAccent",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero title accent",
+      "required": false,
+      "default": "Celebrate.",
+      "section": "hero",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "hero.subtitle",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — hero subtitle",
+      "required": false,
+      "default": "Join millions of users in real-time conversations. Create rooms, chat with friends, video call strangers, and build your community.",
+      "section": "hero",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "hero.cta.primary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero primary CTA",
+      "required": false,
+      "default": "Start Chatting Now",
+      "section": "hero",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "hero.cta.primary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — hero primary CTA URL",
+      "required": false,
+      "default": "/login",
+      "section": "hero"
+    },
+    {
+      "key": "hero.cta.secondary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero secondary CTA",
+      "required": false,
+      "default": "Learn More",
+      "section": "hero",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "hero.cta.secondary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — hero secondary CTA URL",
+      "required": false,
+      "default": "#features",
+      "section": "hero"
+    },
+    {
+      "key": "images.hero",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — hero image",
+      "required": false,
+      "default": "/imagehero.png",
+      "section": "hero",
+      "helpText": "Hero image for classic, centered, split, and bold layouts.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "chatDemo.bubbles",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — hero chat demo bubbles",
+      "required": false,
+      "section": "chatDemo",
+      "helpText": "Floating chat bubbles on the hero image. First three items use preset positions.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 6
+      },
+      "itemFields": [
+        {
+          "key": "text",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "validation": {
+            "maxLength": 280
+          }
+        }
+      ],
+      "default": [
+        {
+          "text": "Hey! How's your day going? 😊"
+        },
+        {
+          "text": "Pretty good! Just chillin. You?"
+        },
+        {
+          "text": "Same here. Nice to meet you! 👋"
+        }
+      ]
+    },
+    {
+      "key": "features.eyebrow",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — features section eyebrow",
+      "required": false,
+      "default": "Features",
+      "section": "features",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "features.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — features section title",
+      "required": false,
+      "default": "Powerful Features",
+      "section": "features",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "features.subtitle",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — features section subtitle",
+      "required": false,
+      "default": "Everything you need for modern communication",
+      "section": "features",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "features.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — feature cards",
+      "required": false,
+      "section": "features",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 12
+      },
+      "itemFields": [
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "maxLength": 120
+          }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": {
+            "maxLength": 400
+          }
+        }
+      ],
+      "default": [
+        {
+          "title": "Group Chat Rooms",
+          "description": "Create and join thousands of chat rooms organized by category. Connect with like-minded people in real-time."
+        },
+        {
+          "title": "Direct Messaging",
+          "description": "Private 1-to-1 conversations with text, voice, and video calls. Your messages stay secure and encrypted."
+        },
+        {
+          "title": "Random Video Chat",
+          "description": "Meet strangers from around the world with our Omegle-style random video chat feature. New connections every time."
+        },
+        {
+          "title": "Secure & Private",
+          "description": "End-to-end encryption protects all your conversations. Your data is yours and stays private."
+        },
+        {
+          "title": "Advanced Moderation",
+          "description": "Room owners have full control with moderation tools, user management, and content filtering."
+        },
+        {
+          "title": "Rich Media Support",
+          "description": "Share images, videos, files, and reactions. Express yourself with emoji reactions and pins."
+        }
+      ]
+    },
+    {
+      "key": "features.learnMoreLabel",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — feature card learn-more label",
+      "required": false,
+      "default": "Learn more",
+      "section": "features",
+      "helpText": "Used on layout feature cards.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "split.features.title",
+      "page": "landing",
+      "type": "text",
+      "label": "split — features column title",
+      "required": false,
+      "default": "Built for intelligent connection",
+      "section": "landing.split",
+      "helpText": "Overrides features.title on the layout left column when set.",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "howItWorks.eyebrow",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — how it works eyebrow",
+      "required": false,
+      "default": "How it works",
+      "section": "howItWorks",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "howItWorks.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — how it works title",
+      "required": false,
+      "default": "How It Works",
+      "section": "howItWorks",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "howItWorks.subtitle",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — how it works subtitle",
+      "required": false,
+      "default": "Get started in three simple steps",
+      "section": "howItWorks",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "key": "howItWorks.steps",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — steps",
+      "required": false,
+      "section": "howItWorks",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "step",
+          "type": "text",
+          "label": "Step number",
+          "required": true,
+          "validation": {
+            "maxLength": 8
+          }
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "maxLength": 80
+          }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": {
+            "maxLength": 300
+          }
+        }
+      ],
+      "default": [
+        {
+          "step": "1",
+          "title": "Sign Up",
+          "description": "Create your account in seconds with just an email and password."
+        },
+        {
+          "step": "2",
+          "title": "Explore",
+          "description": "Browse and join rooms that match your interests or start a direct message."
+        },
+        {
+          "step": "3",
+          "title": "Connect",
+          "description": "Start chatting, make friends, and build your community today."
+        }
+      ]
+    },
+    {
+      "key": "split.howItWorks.title",
+      "page": "landing",
+      "type": "text",
+      "label": "split — how it works title",
+      "required": false,
+      "default": "The three steps to start chatting",
+      "section": "landing.split",
+      "helpText": "Overrides howItWorks.title on the layout when set.",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "stats.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — stats row",
+      "required": false,
+      "section": "stats",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "value",
+          "type": "text",
+          "label": "Value",
+          "required": true,
+          "validation": {
+            "maxLength": 20
+          }
+        },
+        {
+          "key": "label",
+          "type": "text",
+          "label": "Label",
+          "required": true,
+          "validation": {
+            "maxLength": 60
+          }
+        }
+      ],
+      "default": [
+        {
+          "value": "2M+",
+          "label": "Active Users"
+        },
+        {
+          "value": "50K+",
+          "label": "Chat Rooms"
+        },
+        {
+          "value": "100M+",
+          "label": "Messages Daily"
+        },
+        {
+          "value": "24/7",
+          "label": "Support"
+        }
+      ]
+    },
+    {
+      "key": "safety.eyebrow",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — safety section eyebrow",
+      "required": false,
+      "default": "Your safety matters",
+      "section": "safety",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "safety.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — safety bullet points",
+      "required": false,
+      "section": "safety",
+      "helpText": "Checklist under the safety copy. Title/description fall back to the Secure & Private feature card.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "text",
+          "type": "text",
+          "label": "Bullet text",
+          "required": true,
+          "validation": {
+            "maxLength": 80
+          }
+        }
+      ],
+      "default": [
+        {
+          "text": "End-to-end encryption"
+        },
+        {
+          "text": "Private by default"
+        },
+        {
+          "text": "You control your data"
+        },
+        {
+          "text": "No third-party tracking"
+        }
+      ]
+    },
+    {
+      "key": "safety.images.primary",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — safety image (primary)",
+      "required": false,
+      "default": "/image1.jpg",
+      "section": "safety",
+      "helpText": "Classic layout safety tile image.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "safety.images.secondary",
+      "page": "landing",
+      "type": "image",
+      "label": "Landing — safety image (secondary)",
+      "required": false,
+      "default": "/image2.jpg",
+      "section": "safety",
+      "helpText": "Classic layout safety overlay tile.",
+      "validation": {
+        "allowedExtensions": [
+          "jpg",
+          "jpeg",
+          "png",
+          "webp",
+          "gif"
+        ]
+      }
+    },
+    {
+      "key": "safety.tile.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — safety tile title",
+      "required": false,
+      "default": "End-to-end",
+      "section": "safety",
+      "helpText": "Classic layout overlay on the secondary safety image.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "safety.tile.subtitle",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — safety tile subtitle",
+      "required": false,
+      "default": "Encrypted by default",
+      "section": "safety",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "cta.footnote",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — bottom CTA footnote",
+      "required": false,
+      "default": "No credit card required",
+      "section": "cta",
+      "helpText": "Shown under CTAs on Cygnus /landing.",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "cta.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — bottom CTA title",
+      "required": false,
+      "default": "Ready to Connect?",
+      "section": "cta",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "cta.subtitle",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — bottom CTA subtitle",
+      "required": false,
+      "default": "Join millions of users communicating on Chaterio. Sign up today and start building your community.",
+      "section": "cta",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "cta.primary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — bottom CTA primary",
+      "required": false,
+      "default": "Get Started Free",
+      "section": "cta",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "cta.primary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — bottom CTA primary URL",
+      "required": false,
+      "default": "/login",
+      "section": "cta"
+    },
+    {
+      "key": "cta.secondary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — bottom CTA secondary",
+      "required": false,
+      "default": "Learn More",
+      "section": "cta",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "cta.secondary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — bottom CTA secondary URL",
+      "required": false,
+      "default": "/faq",
+      "section": "cta"
+    },
+    {
+      "key": "footer.brandName",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer brand",
+      "required": false,
+      "default": "Chaterio",
+      "section": "footer",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "footer.brandHref",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — footer brand URL",
+      "required": false,
+      "default": "/",
+      "section": "footer"
+    },
+    {
+      "key": "footer.tagline",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer tagline",
+      "required": false,
+      "default": "Connect. Chat. Celebrate.",
+      "section": "footer",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "footer.column.product.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer Product column title",
+      "required": false,
+      "default": "Product",
+      "section": "footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.features.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer Features link",
+      "required": false,
+      "default": "Features",
+      "section": "footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.features.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — footer Features URL",
+      "required": false,
+      "default": "/",
+      "section": "footer"
+    },
+    {
+      "key": "footer.links.faq.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer FAQ link",
+      "required": false,
+      "default": "FAQ",
+      "section": "footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.faq.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — footer FAQ URL",
+      "required": false,
+      "default": "/faq",
+      "section": "footer"
+    },
+    {
+      "key": "footer.column.company.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer Company column title",
+      "required": false,
+      "default": "Company",
+      "section": "footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.privacy.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer Privacy link",
+      "required": false,
+      "default": "Privacy",
+      "section": "footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.privacy.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — footer Privacy URL",
+      "required": false,
+      "default": "/legal",
+      "section": "footer"
+    },
+    {
+      "key": "footer.links.terms.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer Terms link",
+      "required": false,
+      "default": "Terms",
+      "section": "footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.terms.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — footer Terms URL",
+      "required": false,
+      "default": "/legal",
+      "section": "footer"
+    },
+    {
+      "key": "footer.column.connect.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer Connect column title",
+      "required": false,
+      "default": "Connect",
+      "section": "footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.support.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer Support link",
+      "required": false,
+      "default": "Support",
+      "section": "footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.support.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — footer Support URL",
+      "required": false,
+      "default": "mailto:support@chaterio.com",
+      "section": "footer"
+    },
+    {
+      "key": "footer.links.contact.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer Contact link",
+      "required": false,
+      "default": "Contact",
+      "section": "footer",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "footer.links.contact.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — footer Contact URL",
+      "required": false,
+      "default": "/contact",
+      "section": "footer"
+    },
+    {
+      "key": "footer.copyright",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer copyright line",
+      "required": false,
+      "default": "© 2026 2YU. All rights reserved.",
+      "section": "footer",
+      "helpText": "App currently uses HTML entity in JSX; use plain text or entities per your renderer.",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "watermark.enabled",
+      "page": "watermark",
+      "type": "boolean",
+      "label": "Show watermark",
+      "required": false,
+      "default": false,
+      "section": "watermark",
+      "helpText": "Shows on video surfaces (top-right)."
+    },
+    {
+      "key": "watermark.mode",
+      "page": "watermark",
+      "type": "select",
+      "label": "Watermark type",
+      "required": false,
+      "default": "text",
+      "section": "watermark",
+      "options": [
+        {
+          "label": "Text",
+          "value": "text"
+        },
+        {
+          "label": "Image",
+          "value": "image"
+        }
+      ]
+    },
+    {
+      "key": "watermark.text",
+      "page": "watermark",
+      "type": "text",
+      "label": "Watermark text",
+      "required": false,
+      "default": "",
+      "section": "watermark",
+      "visibleIf": {
+        "field": "watermark.mode",
+        "equals": "text"
+      },
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "watermark.image",
+      "page": "watermark",
+      "type": "image",
+      "label": "Watermark image",
+      "required": false,
+      "default": "",
+      "section": "watermark",
+      "visibleIf": {
+        "field": "watermark.mode",
+        "equals": "image"
+      },
+      "helpText": "PNG/SVG with transparent background works best."
+    },
+    {
+      "key": "watermark.opacity",
+      "page": "watermark",
+      "type": "number",
+      "label": "Opacity",
+      "required": false,
+      "default": 0.75,
+      "section": "watermark",
+      "helpText": "0.1 – 1.0",
+      "validation": {
+        "min": 0.1,
+        "max": 1
+      }
+    },
+    {
+      "key": "nav.embed.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Embed — label",
+      "required": false,
+      "default": "Embed",
+      "section": "navbar.items",
+      "helpText": "App header button. Shown when chat or rooms features are enabled.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.embed.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Embed — URL",
+      "required": false,
+      "default": "/embed",
+      "section": "navbar.items"
+    }
+  ]
+}
