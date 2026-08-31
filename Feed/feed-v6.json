@@ -1,0 +1,465 @@
+{
+  "templateId": "feed",
+  "version": 7,
+  "name": "Feed",
+  "description": "Global navbar labels and destinations, chat hub copy, media watermark, TV series ad unlock, and Coomeet sponsor embed.",
+  "pages": [
+    {
+      "key": "navbar",
+      "route": "*",
+      "title": "Site navbar (global)"
+    },
+    {
+      "key": "chat",
+      "route": "/chat",
+      "title": "Chat hub"
+    },
+    {
+      "key": "watermark",
+      "route": "*",
+      "title": "Media watermark"
+    },
+    {
+      "key": "tv",
+      "route": "/tv",
+      "title": "TV series ads"
+    },
+    {
+      "key": "coomeet",
+      "route": "*",
+      "title": "Coomeet sponsor embed"
+    }
+  ],
+  "fields": [
+    {
+      "key": "nav.home.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Home — label",
+      "required": false,
+      "default": "Home",
+      "section": "navbar.items",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.home.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Home — URL",
+      "required": false,
+      "default": "/",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.reels.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Reels — label",
+      "required": false,
+      "default": "Reels",
+      "section": "navbar.items",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.reels.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Reels — URL",
+      "required": false,
+      "default": "/reel",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.chat.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Chat — label",
+      "required": false,
+      "default": "Chat",
+      "section": "navbar.items",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.chat.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Chat — URL",
+      "required": false,
+      "default": "/chat/inbox",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.search.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Search — label",
+      "required": false,
+      "default": "Search",
+      "section": "navbar.items",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.search.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Search — URL",
+      "required": false,
+      "default": "/search",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.rooms.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Rooms — label",
+      "required": false,
+      "default": "Rooms",
+      "section": "navbar.items",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.rooms.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Rooms — URL",
+      "required": false,
+      "default": "/chat/rooms",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.embed.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Embed — label",
+      "required": false,
+      "default": "Embed",
+      "section": "navbar.items",
+      "helpText": "Desktop navbar only. Shown when posts, reels, rooms, or chat features are enabled.",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.embed.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Embed — URL",
+      "required": false,
+      "default": "/embed",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.notifications.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Notifications — label",
+      "required": false,
+      "default": "Notifications",
+      "section": "navbar.actions",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.menu.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Menu — label",
+      "required": false,
+      "default": "Menu",
+      "section": "navbar.actions",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.profile.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Profile — label",
+      "required": false,
+      "default": "Profile",
+      "section": "navbar.actions",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.login.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Log in — label",
+      "required": false,
+      "default": "Log in",
+      "section": "navbar.actions",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "meta.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat hub — browser tab title",
+      "required": false,
+      "default": "Talk to Strangers",
+      "section": "chat.seo",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "meta.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Chat hub — meta description",
+      "required": false,
+      "default": "Choose how you want to connect with a stranger: text, audio, video, or group chat rooms.",
+      "section": "chat.seo",
+      "validation": { "maxLength": 300 }
+    },
+    {
+      "key": "page.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat hub — heading",
+      "required": false,
+      "default": "Talk to Strangers",
+      "section": "chat.header",
+      "validation": { "maxLength": 80 }
+    },
+    {
+      "key": "page.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Chat hub — body",
+      "required": false,
+      "default": "Choose how you want to connect with a stranger: text, audio, video, or group chat rooms.",
+      "section": "chat.header",
+      "validation": { "maxLength": 500 }
+    },
+    {
+      "key": "actions.text.label",
+      "page": "chat",
+      "type": "text",
+      "label": "Text chat — label",
+      "required": false,
+      "default": "Text Chat",
+      "section": "chat.actions",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "actions.text.href",
+      "page": "chat",
+      "type": "url",
+      "label": "Text chat — URL",
+      "required": false,
+      "default": "/chat/text",
+      "section": "chat.actions"
+    },
+    {
+      "key": "actions.audio.label",
+      "page": "chat",
+      "type": "text",
+      "label": "Audio chat — label",
+      "required": false,
+      "default": "Audio Chat",
+      "section": "chat.actions",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "actions.audio.href",
+      "page": "chat",
+      "type": "url",
+      "label": "Audio chat — URL",
+      "required": false,
+      "default": "/chat/audio",
+      "section": "chat.actions"
+    },
+    {
+      "key": "actions.video.label",
+      "page": "chat",
+      "type": "text",
+      "label": "Video chat — label",
+      "required": false,
+      "default": "Video Chat",
+      "section": "chat.actions",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "actions.video.href",
+      "page": "chat",
+      "type": "url",
+      "label": "Video chat — URL",
+      "required": false,
+      "default": "/chat/video",
+      "section": "chat.actions"
+    },
+    {
+      "key": "actions.group.label",
+      "page": "chat",
+      "type": "text",
+      "label": "Group chat — label",
+      "required": false,
+      "default": "Chat Rooms",
+      "section": "chat.actions",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "actions.group.href",
+      "page": "chat",
+      "type": "url",
+      "label": "Group chat — URL",
+      "required": false,
+      "default": "/chat/groupchat",
+      "section": "chat.actions"
+    },
+    {
+      "key": "watermark.enabled",
+      "page": "watermark",
+      "type": "boolean",
+      "label": "Show site watermark",
+      "required": false,
+      "default": true,
+      "section": "watermark",
+      "helpText": "Shows on reels/shorts, TV player, and video calls (top-right)."
+    },
+    {
+      "key": "watermark.userEnabled",
+      "page": "watermark",
+      "type": "boolean",
+      "label": "Show creator watermark",
+      "required": false,
+      "default": true,
+      "section": "watermark",
+      "helpText": "Shows @username on posts, reels, and videos (bottom-center)."
+    },
+    {
+      "key": "watermark.mode",
+      "page": "watermark",
+      "type": "select",
+      "label": "Watermark type",
+      "required": false,
+      "default": "text",
+      "section": "watermark",
+      "options": [{ "label": "Text", "value": "text" }, { "label": "Image", "value": "image" }]
+    },
+    {
+      "key": "watermark.text",
+      "page": "watermark",
+      "type": "text",
+      "label": "Watermark text",
+      "required": false,
+      "default": "feed",
+      "section": "watermark",
+      "visibleIf": { "field": "watermark.mode", "equals": "text" },
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "watermark.image",
+      "page": "watermark",
+      "type": "image",
+      "label": "Watermark image",
+      "required": false,
+      "default": "https://github.com/bunliv/img/blob/main/messenger%20favicon.png",
+      "section": "watermark",
+      "visibleIf": { "field": "watermark.mode", "equals": "image" },
+      "helpText": "PNG/SVG with transparent background works best."
+    },
+    {
+      "key": "watermark.opacity",
+      "page": "watermark",
+      "type": "number",
+      "label": "Opacity",
+      "required": false,
+      "default": 1,
+      "section": "watermark",
+      "helpText": "0.1 – 1.0",
+      "validation": { "min": 0.1, "max": 1 }
+    },
+    {
+      "key": "tv.ads.enabled",
+      "page": "tv",
+      "type": "boolean",
+      "label": "Enable ad unlock popup",
+      "required": false,
+      "default": false,
+      "section": "tv.ads",
+      "helpText": "Show the ad-wall on TV series watch pages until the required ads are viewed."
+    },
+    {
+      "key": "tv.ads.requiredCount",
+      "page": "tv",
+      "type": "number",
+      "label": "Ads required to unlock",
+      "required": false,
+      "default": 1,
+      "section": "tv.ads",
+      "helpText": "Number of ads the viewer must open before the popup hides.",
+      "visibleIf": {
+        "field": "tv.ads.enabled",
+        "equals": true
+      },
+      "validation": {
+        "min": 1,
+        "max": 50
+      }
+    },
+    {
+      "key": "tv.ads.cooldownMinutes",
+      "page": "tv",
+      "type": "number",
+      "label": "Popup disabled for (minutes)",
+      "required": false,
+      "default": 1,
+      "section": "tv.ads",
+      "helpText": "After the required ads are viewed, hide the popup for this many minutes, then show it again.",
+      "visibleIf": {
+        "field": "tv.ads.enabled",
+        "equals": true
+      },
+      "validation": {
+        "min": 1,
+        "max": 1440
+      }
+    },
+    {
+      "key": "embed.site_lang",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — site_lang",
+      "required": false,
+      "default": "en",
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.site_lang",
+      "validation": {
+        "maxLength": 12
+      }
+    },
+    {
+      "key": "embed.partnerId",
+      "page": "coomeet",
+      "type": "number",
+      "label": "Coomeet — PartnerId",
+      "required": false,
+      "default": 16222069095837,
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.PartnerId",
+      "validation": {
+        "min": 1
+      }
+    },
+    {
+      "key": "embed.channelName",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — ChannelName",
+      "required": false,
+      "default": "omegletv_chat",
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.ChannelName",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "embed.webmasterUrl",
+      "page": "coomeet",
+      "type": "url",
+      "label": "Coomeet — Join sponsor URL",
+      "required": false,
+      "default": "https://webmasters.coomeet.com",
+      "section": "coomeet.embed",
+      "helpText": "Opens from the Join sponsor button on /embed.",
+      "placeholder": "https://webmasters.coomeet.com"
+    }
+  ]
+}

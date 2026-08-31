@@ -327,6 +327,17 @@
       }
     },
     {
+      "key": "embed.webmasterUrl",
+      "page": "coomeet",
+      "type": "url",
+      "label": "Coomeet — Join sponsor URL",
+      "required": false,
+      "default": "https://webmasters.coomeet.com",
+      "section": "coomeet.embed",
+      "helpText": "Opens from the Join sponsor button on /embed.",
+      "placeholder": "https://webmasters.coomeet.com"
+    },
+    {
       "key": "article.welcome.paragraph1",
       "page": "chat",
       "type": "textarea",
