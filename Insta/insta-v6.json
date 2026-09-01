@@ -1,8 +1,8 @@
 {
   "templateId": "insta",
-  "version": 7,
+  "version": 8,
   "name": "Insta",
-  "description": "Global navbar labels and destinations (including TV and Embed), chat hub copy, media watermark, TV series ad unlock, and Coomeet sponsor embed.",
+  "description": "Global navbar labels and destinations, quick menu and profile menu (including TV and Embed), chat hub copy, media watermark, TV series ad unlock, and Coomeet sponsor embed.",
   "pages": [
     {
       "key": "navbar",
@@ -167,8 +167,8 @@
       "label": "Embed — label",
       "required": false,
       "default": "Embed",
-      "section": "navbar.items",
-      "helpText": "Desktop navbar only. Shown when posts, reels, rooms, or chat features are enabled.",
+      "section": "navbar.actions",
+      "helpText": "Quick Access Menu and profile menu. Shown when posts, reels, rooms, or chat features are enabled.",
       "validation": {
         "maxLength": 40
       }
@@ -180,7 +180,7 @@
       "label": "Embed — URL",
       "required": false,
       "default": "/embed",
-      "section": "navbar.items"
+      "section": "navbar.actions"
     },
     {
       "key": "nav.create.label",

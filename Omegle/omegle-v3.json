@@ -1,6 +1,6 @@
 {
   "templateId": "omegle-site",
-  "version": 3,
+  "version": 4,
   "name": "Omegle Site Template",
   "description": "Landing layouts (/classic, /centered, /split, /colorful, /bold), /chat hub, /coomeet, /faq, and site footer.",
   "pages": [
@@ -1691,6 +1691,28 @@
           "a": "Sign in, open the chat hub at /chat, then choose Text or Video. Text goes to /chat/text; video goes to /chat/video."
         }
       ]
+    },
+    {
+      "key": "nav.embed.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Embed — label",
+      "required": false,
+      "default": "Embed",
+      "section": "navbar.actions",
+      "helpText": "Profile menu. Shown when text or video chat features are enabled.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.embed.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Embed — URL",
+      "required": false,
+      "default": "/embed",
+      "section": "navbar.actions"
     },
     {
       "key": "rightsText",

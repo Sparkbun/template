@@ -1,6 +1,6 @@
 {
   "templateId": "messenger",
-  "version": 19,
+  "version": 20,
   "name": "Messenger",
   "description": "Landing page content and layout picker, plus /chat, /faq, app navbar, global site footer, and Coomeet sponsor embed.",
   "pages": [
@@ -1540,8 +1540,8 @@
       "label": "Embed — label",
       "required": false,
       "default": "Embed",
-      "section": "navbar.items",
-      "helpText": "App header button. Shown when chat or rooms features are enabled.",
+      "section": "navbar.actions",
+      "helpText": "Profile menu. Shown when chat or rooms features are enabled.",
       "validation": {
         "maxLength": 40
       }
@@ -1553,7 +1553,7 @@
       "label": "Embed — URL",
       "required": false,
       "default": "/embed",
-      "section": "navbar.items"
+      "section": "navbar.actions"
     },
     {
       "key": "embed.site_lang",
