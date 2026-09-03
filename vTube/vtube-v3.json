@@ -2,12 +2,109 @@
   "templateId": "vtube",
   "version": 3,
   "name": "vTube",
-  "description": "Media watermark for watch player and shorts, and TV series ad unlock.",
+  "description": "Site navbar (sidebar + profile Embed), media watermark for watch player and shorts, and TV series ad unlock.",
   "pages": [
+    { "key": "navbar", "route": "*", "title": "Site navbar (global)" },
     { "key": "watermark", "route": "*", "title": "Media watermark" },
     { "key": "tv", "route": "/tv", "title": "TV series ads" }
   ],
   "fields": [
+    {
+      "key": "nav.home.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Home — label",
+      "required": false,
+      "default": "Home",
+      "section": "navbar.items",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.home.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Home — URL",
+      "required": false,
+      "default": "/",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.trending.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Trending — label",
+      "required": false,
+      "default": "Trending",
+      "section": "navbar.items",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.trending.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Trending — URL",
+      "required": false,
+      "default": "/trending",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.shorts.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Shorts — label",
+      "required": false,
+      "default": "Shorts",
+      "section": "navbar.items",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.shorts.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Shorts — URL",
+      "required": false,
+      "default": "/shorts",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.tv.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "TV — label",
+      "required": false,
+      "default": "TV",
+      "section": "navbar.items",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.tv.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "TV — URL",
+      "required": false,
+      "default": "/tv",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.embed.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Embed — label",
+      "required": false,
+      "default": "Embed",
+      "section": "navbar.actions",
+      "helpText": "Profile menu link to the webmaster embed tools (/embed).",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.embed.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Embed — URL",
+      "required": false,
+      "default": "/embed",
+      "section": "navbar.actions"
+    },
     {
       "key": "watermark.enabled",
       "page": "watermark",
