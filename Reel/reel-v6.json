@@ -1,6 +1,6 @@
 {
   "templateId": "reel",
-  "version": 8,
+  "version": 9,
   "name": "Reel",
   "description": "Global navbar labels and destinations, profile menu (including Embed), chat hub copy, media watermark, TV series ad unlock, and Coomeet sponsor embed.",
   "pages": [
@@ -39,7 +39,9 @@
       "required": false,
       "default": "Home",
       "section": "navbar.items",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "nav.home.href",
@@ -59,7 +61,9 @@
       "required": false,
       "default": "Search",
       "section": "navbar.items",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "nav.search.href",
@@ -78,7 +82,9 @@
       "required": false,
       "default": "Chat",
       "section": "navbar.items",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "nav.chat.href",
@@ -98,7 +104,9 @@
       "required": false,
       "default": "Inbox",
       "section": "navbar.items",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "nav.inbox.href",
@@ -119,7 +127,9 @@
       "default": "Embed",
       "section": "navbar.actions",
       "helpText": "Profile menu. Shown when reels, rooms, or chat features are enabled.",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "nav.embed.href",
@@ -138,7 +148,9 @@
       "required": false,
       "default": "Create",
       "section": "navbar.actions",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "nav.create.href",
@@ -157,7 +169,9 @@
       "required": false,
       "default": "Notifications",
       "section": "navbar.actions",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "nav.profile.label",
@@ -168,7 +182,9 @@
       "default": "Profile",
       "section": "navbar.actions",
       "helpText": "Label shown for signed-out users. Authenticated profile routing stays dynamic.",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "meta.title",
@@ -178,7 +194,9 @@
       "required": false,
       "default": "Talk Stranger",
       "section": "chat.seo",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "meta.description",
@@ -188,7 +206,9 @@
       "required": false,
       "default": "Choose how you want to chat with strangers — text, audio, video, or group rooms.",
       "section": "chat.seo",
-      "validation": { "maxLength": 300 }
+      "validation": {
+        "maxLength": 300
+      }
     },
     {
       "key": "page.title",
@@ -198,7 +218,9 @@
       "required": false,
       "default": "Talk Stranger",
       "section": "chat.header",
-      "validation": { "maxLength": 80 }
+      "validation": {
+        "maxLength": 80
+      }
     },
     {
       "key": "page.description",
@@ -208,7 +230,9 @@
       "required": false,
       "default": "Choose how you want to chat with strangers — text, audio, video, or group rooms.",
       "section": "chat.header",
-      "validation": { "maxLength": 500 }
+      "validation": {
+        "maxLength": 500
+      }
     },
     {
       "key": "actions.text.label",
@@ -218,7 +242,9 @@
       "required": false,
       "default": "Text Chat",
       "section": "chat.actions",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "actions.text.href",
@@ -237,7 +263,9 @@
       "required": false,
       "default": "Audio Chat",
       "section": "chat.actions",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "actions.audio.href",
@@ -256,7 +284,9 @@
       "required": false,
       "default": "Video Chat",
       "section": "chat.actions",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "actions.video.href",
@@ -275,7 +305,9 @@
       "required": false,
       "default": "Group Chat",
       "section": "chat.actions",
-      "validation": { "maxLength": 40 }
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "actions.group.href",
@@ -315,7 +347,16 @@
       "required": false,
       "default": "image",
       "section": "watermark",
-      "options": [{ "label": "Text", "value": "text" }, { "label": "Image", "value": "image" }]
+      "options": [
+        {
+          "label": "Text",
+          "value": "text"
+        },
+        {
+          "label": "Image",
+          "value": "image"
+        }
+      ]
     },
     {
       "key": "watermark.text",
@@ -325,8 +366,13 @@
       "required": false,
       "default": "reel",
       "section": "watermark",
-      "visibleIf": { "field": "watermark.mode", "equals": "text" },
-      "validation": { "maxLength": 40 }
+      "visibleIf": {
+        "field": "watermark.mode",
+        "equals": "text"
+      },
+      "validation": {
+        "maxLength": 40
+      }
     },
     {
       "key": "watermark.image",
@@ -336,7 +382,10 @@
       "required": false,
       "default": "https://img.magnific.com/premium-vector/eqh-logo-design-initial-letter-eqh-monogram-logo-using-hexagon-shape_1101554-16445.jpg?semt=ais_test_b&w=740&q=80",
       "section": "watermark",
-      "visibleIf": { "field": "watermark.mode", "equals": "image" },
+      "visibleIf": {
+        "field": "watermark.mode",
+        "equals": "image"
+      },
       "helpText": "PNG/SVG with transparent background works best."
     },
     {
@@ -348,7 +397,10 @@
       "default": 1,
       "section": "watermark",
       "helpText": "0.1 – 1.0",
-      "validation": { "min": 0.1, "max": 1 }
+      "validation": {
+        "min": 0.1,
+        "max": 1
+      }
     },
     {
       "key": "tv.ads.enabled",
@@ -439,12 +491,25 @@
       "key": "embed.webmasterUrl",
       "page": "coomeet",
       "type": "url",
-      "label": "Coomeet — Join sponsor URL",
+      "label": "Coomeet — Join Affiliate URL",
       "required": false,
       "default": "https://webmasters.coomeet.com",
       "section": "coomeet.embed",
-      "helpText": "Opens from the Join sponsor button on /embed.",
+      "helpText": "Opens from the Join Affiliate button on /embed.",
       "placeholder": "https://webmasters.coomeet.com"
+    },
+    {
+      "key": "embed.joinAffiliateLabel",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — Join Affiliate Button Text",
+      "required": false,
+      "default": "Join Affiliate",
+      "section": "coomeet.embed",
+      "helpText": "Label on the Join Affiliate button on /embed.",
+      "validation": {
+        "maxLength": 60
+      }
     }
   ]
 }

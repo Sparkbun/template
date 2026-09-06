@@ -1,6 +1,6 @@
 {
   "templateId": "omegle-site",
-  "version": 4,
+  "version": 5,
   "name": "Omegle Site Template",
   "description": "Landing layouts (/classic, /centered, /split, /colorful, /bold), /chat hub, /coomeet, /faq, and site footer.",
   "pages": [
@@ -330,12 +330,25 @@
       "key": "embed.webmasterUrl",
       "page": "coomeet",
       "type": "url",
-      "label": "Coomeet — Join sponsor URL",
+      "label": "Coomeet — Join Affiliate URL",
       "required": false,
       "default": "https://webmasters.coomeet.com",
       "section": "coomeet.embed",
-      "helpText": "Opens from the Join sponsor button on /embed.",
+      "helpText": "Opens from the Join Affiliate button on /embed.",
       "placeholder": "https://webmasters.coomeet.com"
+    },
+    {
+      "key": "embed.joinAffiliateLabel",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — Join Affiliate Button Text",
+      "required": false,
+      "default": "Join Affiliate",
+      "section": "coomeet.embed",
+      "helpText": "Label on the Join Affiliate button on /embed.",
+      "validation": {
+        "maxLength": 60
+      }
     },
     {
       "key": "article.welcome.paragraph1",

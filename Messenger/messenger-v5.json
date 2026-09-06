@@ -1,6 +1,6 @@
 {
   "templateId": "messenger",
-  "version": 20,
+  "version": 21,
   "name": "Messenger",
   "description": "Landing page content and layout picker, plus /chat, /faq, app navbar, global site footer, and Coomeet sponsor embed.",
   "pages": [
@@ -1598,12 +1598,25 @@
       "key": "embed.webmasterUrl",
       "page": "coomeet",
       "type": "url",
-      "label": "Coomeet — Join sponsor URL",
+      "label": "Coomeet — Join Affiliate URL",
       "required": false,
       "default": "https://webmasters.coomeet.com",
       "section": "coomeet.embed",
-      "helpText": "Opens from the Join sponsor button on /embed.",
+      "helpText": "Opens from the Join Affiliate button on /embed.",
       "placeholder": "https://webmasters.coomeet.com"
+    },
+    {
+      "key": "embed.joinAffiliateLabel",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — Join Affiliate Button Text",
+      "required": false,
+      "default": "Join Affiliate",
+      "section": "coomeet.embed",
+      "helpText": "Label on the Join Affiliate button on /embed.",
+      "validation": {
+        "maxLength": 60
+      }
     }
   ]
 }

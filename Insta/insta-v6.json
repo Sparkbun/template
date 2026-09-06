@@ -1,6 +1,6 @@
 {
   "templateId": "insta",
-  "version": 8,
+  "version": 9,
   "name": "Insta",
   "description": "Global navbar labels and destinations, quick menu and profile menu (including TV and Embed), chat hub copy, media watermark, TV series ad unlock, and Coomeet sponsor embed.",
   "pages": [
@@ -525,12 +525,25 @@
       "key": "embed.webmasterUrl",
       "page": "coomeet",
       "type": "url",
-      "label": "Coomeet — Join sponsor URL",
+      "label": "Coomeet — Join Affiliate URL",
       "required": false,
       "default": "https://webmasters.coomeet.com",
       "section": "coomeet.embed",
-      "helpText": "Opens from the Join sponsor button on /embed.",
+      "helpText": "Opens from the Join Affiliate button on /embed.",
       "placeholder": "https://webmasters.coomeet.com"
+    },
+    {
+      "key": "embed.joinAffiliateLabel",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — Join Affiliate Button Text",
+      "required": false,
+      "default": "Join Affiliate",
+      "section": "coomeet.embed",
+      "helpText": "Label on the Join Affiliate button on /embed.",
+      "validation": {
+        "maxLength": 60
+      }
     }
   ]
 }
