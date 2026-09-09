@@ -1,6 +1,6 @@
 {
   "templateId": "insta",
-  "version": 9,
+  "version": 10,
   "name": "Insta",
   "description": "Global navbar labels and destinations, quick menu and profile menu (including TV and Embed), chat hub copy, media watermark, TV series ad unlock, and Coomeet sponsor embed.",
   "pages": [
@@ -544,6 +544,77 @@
       "validation": {
         "maxLength": 60
       }
+    },
+    {
+      "key": "embed.nav.backLabel",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet nav — Back label",
+      "required": false,
+      "default": "Back",
+      "section": "coomeet.nav",
+      "helpText": "Label for the back control on the Coomeet embed top bar.",
+      "validation": { "maxLength": 24 }
+    },
+    {
+      "key": "embed.nav.legal.label",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet nav — Legal label",
+      "required": false,
+      "default": "Legal",
+      "section": "coomeet.nav",
+      "validation": { "maxLength": 24 }
+    },
+    {
+      "key": "embed.nav.legal.href",
+      "page": "coomeet",
+      "type": "url",
+      "label": "Coomeet nav — Legal URL",
+      "required": false,
+      "default": "https://www.coomeet.com/legal",
+      "section": "coomeet.nav",
+      "placeholder": "https://www.coomeet.com/legal"
+    },
+    {
+      "key": "embed.nav.rules.label",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet nav — Rules label",
+      "required": false,
+      "default": "Rules",
+      "section": "coomeet.nav",
+      "validation": { "maxLength": 24 }
+    },
+    {
+      "key": "embed.nav.rules.href",
+      "page": "coomeet",
+      "type": "url",
+      "label": "Coomeet nav — Rules URL",
+      "required": false,
+      "default": "https://www.coomeet.com/chatrules",
+      "section": "coomeet.nav",
+      "placeholder": "https://www.coomeet.com/chatrules"
+    },
+    {
+      "key": "embed.nav.support.label",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet nav — Support label",
+      "required": false,
+      "default": "Support",
+      "section": "coomeet.nav",
+      "validation": { "maxLength": 24 }
+    },
+    {
+      "key": "embed.nav.support.href",
+      "page": "coomeet",
+      "type": "url",
+      "label": "Coomeet nav — Support URL",
+      "required": false,
+      "default": "https://comewel.com/index.html",
+      "section": "coomeet.nav",
+      "placeholder": "https://comewel.com/index.html"
     }
   ]
 }
