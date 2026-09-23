@@ -1,8 +1,8 @@
 {
   "templateId": "messenger",
-  "version": 22,
+  "version": 23,
   "name": "Messenger",
-  "description": "Landing page content and layout picker, plus /chat, /faq, app navbar, global site footer, and Coomeet sponsor embed.",
+  "description": "Landing page content and layout picker, plus /chat, /faq, /blog, app navbar, global site footer, and Coomeet sponsor embed.",
   "pages": [
     {
       "key": "landing",
@@ -347,6 +347,28 @@
       "required": false,
       "default": "/contact",
       "section": "footer.links"
+    },
+    {
+      "key": "links.blog.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — blog link text",
+      "required": false,
+      "default": "Blog",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.blog.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — blog link URL",
+      "required": false,
+      "default": "/blog",
+      "section": "footer.links",
+      "placeholder": "/blog"
     },
     {
       "key": "links.privacy.label",
@@ -1553,6 +1575,50 @@
       "label": "Embed — URL",
       "required": false,
       "default": "/embed",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.blog.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Blog — label",
+      "required": false,
+      "default": "Blog",
+      "section": "navbar.actions",
+      "helpText": "Profile menu blog link.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.blog.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Blog — URL",
+      "required": false,
+      "default": "/blog",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.legal.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Privacy & Terms — label",
+      "required": false,
+      "default": "Privacy & Terms",
+      "section": "navbar.actions",
+      "helpText": "Combined legal link in the profile menu.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.legal.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Privacy & Terms — URL",
+      "required": false,
+      "default": "/legal",
       "section": "navbar.actions"
     },
     {

@@ -1,8 +1,8 @@
 {
   "templateId": "omegle-site",
-  "version": 6,
+  "version": 29,
   "name": "Omegle Site Template",
-  "description": "Landing layouts (/classic, /centered, /split, /colorful, /bold), /chat hub, /coomeet, /faq, and site footer.",
+  "description": "Landing layouts (/classic, /centered, /split, /colorful, /bold), /chat hub, /coomeet, /faq, /blog, and site footer.",
   "pages": [
     {
       "key": "landing",
@@ -1884,6 +1884,28 @@
       "default": "/faq",
       "section": "footer.links",
       "placeholder": "/faq"
+    },
+    {
+      "key": "links.blog.label",
+      "page": "footer",
+      "type": "text",
+      "label": "Footer — blog link",
+      "required": false,
+      "default": "Blog",
+      "section": "footer.links",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "links.blog.href",
+      "page": "footer",
+      "type": "url",
+      "label": "Footer — blog URL",
+      "required": false,
+      "default": "/blog",
+      "section": "footer.links",
+      "placeholder": "/blog"
     },
     {
       "key": "links.privacy.label",

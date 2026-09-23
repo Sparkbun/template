@@ -1,8 +1,8 @@
 {
   "templateId": "vtube",
-  "version": 3,
+  "version": 4,
   "name": "vTube",
-  "description": "Site navbar (sidebar + profile Embed), media watermark for watch player and shorts, and TV series ad unlock.",
+  "description": "Site navbar (sidebar, profile Embed, Blog, Privacy & Terms), media watermark for watch player and shorts, and TV series ad unlock.",
   "pages": [
     { "key": "navbar", "route": "*", "title": "Site navbar (global)" },
     { "key": "watermark", "route": "*", "title": "Media watermark" },
@@ -103,6 +103,84 @@
       "label": "Embed — URL",
       "required": false,
       "default": "/embed",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.blog.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Blog — label",
+      "required": false,
+      "default": "Blog",
+      "section": "navbar.actions",
+      "helpText": "Profile menu blog link.",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.blog.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Blog — URL",
+      "required": false,
+      "default": "/blog",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.legal.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Privacy & Terms — label",
+      "required": false,
+      "default": "Privacy & Terms",
+      "section": "navbar.actions",
+      "helpText": "Combined legal link in the profile menu.",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.legal.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Privacy & Terms — URL",
+      "required": false,
+      "default": "/legal",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.privacy.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Privacy Policy — label",
+      "required": false,
+      "default": "Privacy Policy",
+      "section": "navbar.actions",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.privacy.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Privacy Policy — URL",
+      "required": false,
+      "default": "/legal?tab=privacy",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.terms.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Terms of Service — label",
+      "required": false,
+      "default": "Terms of Service",
+      "section": "navbar.actions",
+      "validation": { "maxLength": 40 }
+    },
+    {
+      "key": "nav.terms.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Terms of Service — URL",
+      "required": false,
+      "default": "/legal?tab=terms",
       "section": "navbar.actions"
     },
     {
