@@ -1,0 +1,346 @@
+{
+  "templateId": "vtube",
+  "version": 4,
+  "name": "vTube",
+  "description": "Site navbar (sidebar, profile Embed, Blog, Privacy & Terms), media watermark for watch player and shorts, and TV series ad unlock.",
+  "pages": [
+    {
+      "key": "navbar",
+      "route": "*",
+      "title": "Site navbar (global)"
+    },
+    {
+      "key": "watermark",
+      "route": "*",
+      "title": "Media watermark"
+    },
+    {
+      "key": "tv",
+      "route": "/tv",
+      "title": "TV series ads"
+    }
+  ],
+  "fields": [
+    {
+      "key": "nav.home.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Home — label",
+      "required": false,
+      "default": "Home",
+      "section": "navbar.items",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.home.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Home — URL",
+      "required": false,
+      "default": "/",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.trending.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Trending — label",
+      "required": false,
+      "default": "Trending",
+      "section": "navbar.items",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.trending.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Trending — URL",
+      "required": false,
+      "default": "/trending",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.shorts.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Shorts — label",
+      "required": false,
+      "default": "Shorts",
+      "section": "navbar.items",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.shorts.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Shorts — URL",
+      "required": false,
+      "default": "/shorts",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.tv.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "TV — label",
+      "required": false,
+      "default": "TV",
+      "section": "navbar.items",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.tv.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "TV — URL",
+      "required": false,
+      "default": "/tv",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.embed.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Embed — label",
+      "required": false,
+      "default": "Embed",
+      "section": "navbar.actions",
+      "helpText": "Profile menu link to the webmaster embed tools (/embed).",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.embed.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Embed — URL",
+      "required": false,
+      "default": "/embed",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.blog.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Blog — label",
+      "required": false,
+      "default": "Blog",
+      "section": "navbar.actions",
+      "helpText": "Profile menu blog link.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.blog.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Blog — URL",
+      "required": false,
+      "default": "/blog",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.legal.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Privacy & Terms — label",
+      "required": false,
+      "default": "Privacy & Terms",
+      "section": "navbar.actions",
+      "helpText": "Combined legal link in the profile menu.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.legal.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Privacy & Terms — URL",
+      "required": false,
+      "default": "/legal",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.privacy.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Privacy Policy — label",
+      "required": false,
+      "default": "Privacy Policy",
+      "section": "navbar.actions",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.privacy.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Privacy Policy — URL",
+      "required": false,
+      "default": "/legal",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.terms.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Terms of Service — label",
+      "required": false,
+      "default": "Terms of Service",
+      "section": "navbar.actions",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.terms.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Terms of Service — URL",
+      "required": false,
+      "default": "/legal",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "watermark.enabled",
+      "page": "watermark",
+      "type": "boolean",
+      "label": "Show site watermark",
+      "required": false,
+      "default": true,
+      "section": "watermark",
+      "helpText": "Shows on watch player and shorts (top-right)."
+    },
+    {
+      "key": "watermark.userEnabled",
+      "page": "watermark",
+      "type": "boolean",
+      "label": "Show creator watermark",
+      "required": false,
+      "default": true,
+      "section": "watermark",
+      "helpText": "Shows @username on watch player and shorts (bottom-center)."
+    },
+    {
+      "key": "watermark.mode",
+      "page": "watermark",
+      "type": "select",
+      "label": "Watermark type",
+      "required": false,
+      "default": "text",
+      "section": "watermark",
+      "options": [
+        {
+          "label": "Text",
+          "value": "text"
+        },
+        {
+          "label": "Image",
+          "value": "image"
+        }
+      ]
+    },
+    {
+      "key": "watermark.text",
+      "page": "watermark",
+      "type": "text",
+      "label": "Watermark text",
+      "required": false,
+      "default": "vTube",
+      "section": "watermark",
+      "visibleIf": {
+        "field": "watermark.mode",
+        "equals": "text"
+      },
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "watermark.image",
+      "page": "watermark",
+      "type": "image",
+      "label": "Watermark image",
+      "required": false,
+      "default": "https://github.com/bunliv/img/blob/main/messenger%20favicon.png",
+      "section": "watermark",
+      "visibleIf": {
+        "field": "watermark.mode",
+        "equals": "image"
+      },
+      "helpText": "PNG/SVG with transparent background works best."
+    },
+    {
+      "key": "watermark.opacity",
+      "page": "watermark",
+      "type": "number",
+      "label": "Opacity",
+      "required": false,
+      "default": 1,
+      "section": "watermark",
+      "helpText": "0.1 – 1.0",
+      "validation": {
+        "min": 0.1,
+        "max": 1
+      }
+    },
+    {
+      "key": "tv.ads.enabled",
+      "page": "tv",
+      "type": "boolean",
+      "label": "Enable ad unlock popup",
+      "required": false,
+      "default": true,
+      "section": "tv.ads",
+      "helpText": "Show the ad-wall on TV series watch pages until the required ads are viewed."
+    },
+    {
+      "key": "tv.ads.requiredCount",
+      "page": "tv",
+      "type": "number",
+      "label": "Ads required to unlock",
+      "required": false,
+      "default": 1,
+      "section": "tv.ads",
+      "helpText": "Number of ads the viewer must open before the popup hides.",
+      "visibleIf": {
+        "field": "tv.ads.enabled",
+        "equals": true
+      },
+      "validation": {
+        "min": 1,
+        "max": 50
+      }
+    },
+    {
+      "key": "tv.ads.cooldownMinutes",
+      "page": "tv",
+      "type": "number",
+      "label": "Popup disabled for (minutes)",
+      "required": false,
+      "default": 1,
+      "section": "tv.ads",
+      "helpText": "After the required ads are viewed, hide the popup for this many minutes, then show it again.",
+      "visibleIf": {
+        "field": "tv.ads.enabled",
+        "equals": true
+      },
+      "validation": {
+        "min": 1,
+        "max": 1440
+      }
+    }
+  ]
+}
