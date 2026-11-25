@@ -1,0 +1,1507 @@
+{
+  "templateId": "feed",
+  "version": 14,
+  "name": "Feed",
+  "description": "Global navbar, chat hub, watermark, TV ads, Coomeet embed, and marketing landing page copy.",
+  "pages": [
+    {
+      "key": "navbar",
+      "route": "*",
+      "title": "Site navbar (global)"
+    },
+    {
+      "key": "chat",
+      "route": "/chat",
+      "title": "Chat hub"
+    },
+    {
+      "key": "watermark",
+      "route": "*",
+      "title": "Media watermark"
+    },
+    {
+      "key": "tv",
+      "route": "/tv",
+      "title": "TV series ads"
+    },
+    {
+      "key": "coomeet",
+      "route": "*",
+      "title": "Coomeet sponsor embed"
+    },
+    {
+      "key": "landing",
+      "route": "/",
+      "title": "Marketing landing"
+    }
+  ],
+  "fields": [
+    {
+      "key": "nav.home.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Home — label",
+      "required": false,
+      "default": "Home",
+      "section": "navbar.items",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.home.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Home — URL",
+      "required": false,
+      "default": "/",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.reels.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Reels — label",
+      "required": false,
+      "default": "Reels",
+      "section": "navbar.items",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.reels.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Reels — URL",
+      "required": false,
+      "default": "/reel",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.chat.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Inbox — label",
+      "required": false,
+      "default": "Inbox",
+      "section": "navbar.items",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.chat.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Chat — URL",
+      "required": false,
+      "default": "/chat/inbox",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.search.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Search — label",
+      "required": false,
+      "default": "Search",
+      "section": "navbar.items",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.search.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Search — URL",
+      "required": false,
+      "default": "/search",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.rooms.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Rooms — label",
+      "required": false,
+      "default": "Rooms",
+      "section": "navbar.items",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.rooms.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Rooms — URL",
+      "required": false,
+      "default": "/chat/rooms",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.tv.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "TV — label",
+      "required": false,
+      "default": "TV",
+      "section": "navbar.items",
+      "helpText": "Sidebar and Quick Access Menu (drama / series catalog).",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.tv.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "TV — URL",
+      "required": false,
+      "default": "/tv",
+      "section": "navbar.items"
+    },
+    {
+      "key": "nav.embed.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Embed — label",
+      "required": false,
+      "default": "Embed",
+      "section": "navbar.actions",
+      "helpText": "Quick Access Menu and profile menu. Shown when posts, reels, rooms, or chat features are enabled.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.embed.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Embed — URL",
+      "required": false,
+      "default": "/embed",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.blog.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Blog — label",
+      "required": false,
+      "default": "Blog",
+      "section": "navbar.actions",
+      "helpText": "Profile menu and Quick Access Menu.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.blog.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Blog — URL",
+      "required": false,
+      "default": "/blog",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.legal.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Privacy & Terms — label",
+      "required": false,
+      "default": "Privacy & Terms",
+      "section": "navbar.actions",
+      "helpText": "Combined legal link in the profile menu.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.legal.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Privacy & Terms — URL",
+      "required": false,
+      "default": "/legal",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.privacy.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Privacy Policy — label",
+      "required": false,
+      "default": "Privacy Policy",
+      "section": "navbar.actions",
+      "helpText": "Quick Access Menu privacy link.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.privacy.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Privacy Policy — URL",
+      "required": false,
+      "default": "/legal",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.terms.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Terms of Service — label",
+      "required": false,
+      "default": "Terms of Service",
+      "section": "navbar.actions",
+      "helpText": "Quick Access Menu terms link.",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.terms.href",
+      "page": "navbar",
+      "type": "url",
+      "label": "Terms of Service — URL",
+      "required": false,
+      "default": "/legal",
+      "section": "navbar.actions"
+    },
+    {
+      "key": "nav.notifications.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Notifications — label",
+      "required": false,
+      "default": "Notifications",
+      "section": "navbar.actions",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.menu.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Menu — label",
+      "required": false,
+      "default": "Menu",
+      "section": "navbar.actions",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.profile.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Profile — label",
+      "required": false,
+      "default": "Profile",
+      "section": "navbar.actions",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.login.label",
+      "page": "navbar",
+      "type": "text",
+      "label": "Log in — label",
+      "required": false,
+      "default": "Log in",
+      "section": "navbar.actions",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "meta.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat hub — browser tab title",
+      "required": false,
+      "default": "Talk to Strangers",
+      "section": "chat.seo",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "meta.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Chat hub — meta description",
+      "required": false,
+      "default": "Choose how you want to connect with a stranger: text, audio, or video.",
+      "section": "chat.seo",
+      "validation": {
+        "maxLength": 300
+      }
+    },
+    {
+      "key": "page.title",
+      "page": "chat",
+      "type": "text",
+      "label": "Chat hub — heading",
+      "required": false,
+      "default": "Talk to Strangers",
+      "section": "chat.header",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "page.description",
+      "page": "chat",
+      "type": "textarea",
+      "label": "Chat hub — body",
+      "required": false,
+      "default": "Choose how you want to connect with a stranger: text, audio, or video.",
+      "section": "chat.header",
+      "validation": {
+        "maxLength": 500
+      }
+    },
+    {
+      "key": "actions.text.label",
+      "page": "chat",
+      "type": "text",
+      "label": "Text chat — label",
+      "required": false,
+      "default": "Text Chat",
+      "section": "chat.actions",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "actions.text.href",
+      "page": "chat",
+      "type": "url",
+      "label": "Text chat — URL",
+      "required": false,
+      "default": "/chat/text",
+      "section": "chat.actions"
+    },
+    {
+      "key": "actions.audio.label",
+      "page": "chat",
+      "type": "text",
+      "label": "Audio chat — label",
+      "required": false,
+      "default": "Audio Chat",
+      "section": "chat.actions",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "actions.audio.href",
+      "page": "chat",
+      "type": "url",
+      "label": "Audio chat — URL",
+      "required": false,
+      "default": "/chat/audio",
+      "section": "chat.actions"
+    },
+    {
+      "key": "actions.video.label",
+      "page": "chat",
+      "type": "text",
+      "label": "Video chat — label",
+      "required": false,
+      "default": "Video Chat",
+      "section": "chat.actions",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "actions.video.href",
+      "page": "chat",
+      "type": "url",
+      "label": "Video chat — URL",
+      "required": false,
+      "default": "/chat/video",
+      "section": "chat.actions"
+    },
+    {
+      "key": "watermark.enabled",
+      "page": "watermark",
+      "type": "boolean",
+      "label": "Show site watermark",
+      "required": false,
+      "default": true,
+      "section": "watermark",
+      "helpText": "Shows on reels/shorts, TV player, and video calls (top-right)."
+    },
+    {
+      "key": "watermark.userEnabled",
+      "page": "watermark",
+      "type": "boolean",
+      "label": "Show creator watermark",
+      "required": false,
+      "default": true,
+      "section": "watermark",
+      "helpText": "Shows @username on posts, reels, and videos (bottom-center)."
+    },
+    {
+      "key": "watermark.mode",
+      "page": "watermark",
+      "type": "select",
+      "label": "Watermark type",
+      "required": false,
+      "default": "text",
+      "section": "watermark",
+      "options": [
+        {
+          "label": "Text",
+          "value": "text"
+        },
+        {
+          "label": "Image",
+          "value": "image"
+        }
+      ]
+    },
+    {
+      "key": "watermark.text",
+      "page": "watermark",
+      "type": "text",
+      "label": "Watermark text",
+      "required": false,
+      "default": "feed",
+      "section": "watermark",
+      "visibleIf": {
+        "field": "watermark.mode",
+        "equals": "text"
+      },
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "watermark.image",
+      "page": "watermark",
+      "type": "image",
+      "label": "Watermark image",
+      "required": false,
+      "default": "https://github.com/bunliv/img/blob/main/messenger%20favicon.png",
+      "section": "watermark",
+      "visibleIf": {
+        "field": "watermark.mode",
+        "equals": "image"
+      },
+      "helpText": "PNG/SVG with transparent background works best."
+    },
+    {
+      "key": "watermark.opacity",
+      "page": "watermark",
+      "type": "number",
+      "label": "Opacity",
+      "required": false,
+      "default": 1,
+      "section": "watermark",
+      "helpText": "0.1 – 1.0",
+      "validation": {
+        "min": 0.1,
+        "max": 1
+      }
+    },
+    {
+      "key": "tv.ads.enabled",
+      "page": "tv",
+      "type": "boolean",
+      "label": "Enable ad unlock popup",
+      "required": false,
+      "default": false,
+      "section": "tv.ads",
+      "helpText": "Show the ad-wall on TV series watch pages until the required ads are viewed."
+    },
+    {
+      "key": "tv.ads.requiredCount",
+      "page": "tv",
+      "type": "number",
+      "label": "Ads required to unlock",
+      "required": false,
+      "default": 1,
+      "section": "tv.ads",
+      "helpText": "Number of ads the viewer must open before the popup hides.",
+      "visibleIf": {
+        "field": "tv.ads.enabled",
+        "equals": true
+      },
+      "validation": {
+        "min": 1,
+        "max": 50
+      }
+    },
+    {
+      "key": "tv.ads.cooldownMinutes",
+      "page": "tv",
+      "type": "number",
+      "label": "Popup disabled for (minutes)",
+      "required": false,
+      "default": 1,
+      "section": "tv.ads",
+      "helpText": "After the required ads are viewed, hide the popup for this many minutes, then show it again.",
+      "visibleIf": {
+        "field": "tv.ads.enabled",
+        "equals": true
+      },
+      "validation": {
+        "min": 1,
+        "max": 1440
+      }
+    },
+    {
+      "key": "embed.site_lang",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — site_lang",
+      "required": false,
+      "default": "en",
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.site_lang",
+      "validation": {
+        "maxLength": 12
+      }
+    },
+    {
+      "key": "embed.partnerId",
+      "page": "coomeet",
+      "type": "number",
+      "label": "Coomeet — PartnerId",
+      "required": false,
+      "default": 16222069095837,
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.PartnerId",
+      "validation": {
+        "min": 1
+      }
+    },
+    {
+      "key": "embed.channelName",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — ChannelName",
+      "required": false,
+      "default": "omegletv_chat",
+      "section": "coomeet.embed",
+      "helpText": "window._coomeet.ChannelName",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "embed.webmasterUrl",
+      "page": "coomeet",
+      "type": "url",
+      "label": "Coomeet — Join Affiliate URL",
+      "required": false,
+      "default": "https://webmasters.coomeet.com",
+      "section": "coomeet.embed",
+      "helpText": "Opens from the Join Affiliate button on /embed.",
+      "placeholder": "https://webmasters.coomeet.com"
+    },
+    {
+      "key": "embed.joinAffiliateLabel",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet — Join Affiliate Button Text",
+      "required": false,
+      "default": "Join Affiliate",
+      "section": "coomeet.embed",
+      "helpText": "Label on the Join Affiliate button on /embed.",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "embed.nav.backLabel",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet nav — Back label",
+      "required": false,
+      "default": "Back",
+      "section": "coomeet.nav",
+      "helpText": "Label for the back control on the Coomeet embed top bar.",
+      "validation": {
+        "maxLength": 24
+      }
+    },
+    {
+      "key": "embed.nav.legal.label",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet nav — Legal label",
+      "required": false,
+      "default": "Legal",
+      "section": "coomeet.nav",
+      "validation": {
+        "maxLength": 24
+      }
+    },
+    {
+      "key": "embed.nav.legal.href",
+      "page": "coomeet",
+      "type": "url",
+      "label": "Coomeet nav — Legal URL",
+      "required": false,
+      "default": "https://www.coomeet.com/legal",
+      "section": "coomeet.nav",
+      "placeholder": "https://www.coomeet.com/legal"
+    },
+    {
+      "key": "embed.nav.rules.label",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet nav — Rules label",
+      "required": false,
+      "default": "Rules",
+      "section": "coomeet.nav",
+      "validation": {
+        "maxLength": 24
+      }
+    },
+    {
+      "key": "embed.nav.rules.href",
+      "page": "coomeet",
+      "type": "url",
+      "label": "Coomeet nav — Rules URL",
+      "required": false,
+      "default": "https://www.coomeet.com/chatrules",
+      "section": "coomeet.nav",
+      "placeholder": "https://www.coomeet.com/chatrules"
+    },
+    {
+      "key": "embed.nav.support.label",
+      "page": "coomeet",
+      "type": "text",
+      "label": "Coomeet nav — Support label",
+      "required": false,
+      "default": "Support",
+      "section": "coomeet.nav",
+      "validation": {
+        "maxLength": 24
+      }
+    },
+    {
+      "key": "embed.nav.support.href",
+      "page": "coomeet",
+      "type": "url",
+      "label": "Coomeet nav — Support URL",
+      "required": false,
+      "default": "https://comewel.com/index.html",
+      "section": "coomeet.nav",
+      "placeholder": "https://comewel.com/index.html"
+    },
+    {
+      "key": "meta.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — browser title suffix",
+      "required": false,
+      "default": "Your feed. Your shows. Your chat.",
+      "section": "meta",
+      "helpText": "Used as \"{siteName} — {this}\".",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "meta.description",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — meta description",
+      "required": false,
+      "default": "Share posts and reels, watch series, message friends, or talk to strangers — all in one modern social app.",
+      "section": "meta",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "nav.features.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav Features",
+      "required": false,
+      "default": "Features",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.features.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav Features URL",
+      "required": false,
+      "default": "/#features",
+      "section": "nav"
+    },
+    {
+      "key": "nav.howItWorks.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav How it works",
+      "required": false,
+      "default": "How it works",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.howItWorks.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav How it works URL",
+      "required": false,
+      "default": "/#how-it-works",
+      "section": "nav"
+    },
+    {
+      "key": "nav.community.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav Community",
+      "required": false,
+      "default": "Community",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.community.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav Community URL",
+      "required": false,
+      "default": "/#community",
+      "section": "nav"
+    },
+    {
+      "key": "nav.signIn.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav Log in",
+      "required": false,
+      "default": "Log in",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.signIn.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav Log in URL",
+      "required": false,
+      "default": "/login",
+      "section": "nav"
+    },
+    {
+      "key": "nav.getStarted.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — nav Get started",
+      "required": false,
+      "default": "Get started",
+      "section": "nav",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "nav.getStarted.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — nav Get started URL",
+      "required": false,
+      "default": "/signup",
+      "section": "nav"
+    },
+    {
+      "key": "hero.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero title",
+      "required": false,
+      "default": "Feed",
+      "section": "hero",
+      "helpText": "Large heading in the hero (not the site-info app name).",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "hero.tagline",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero tagline",
+      "required": false,
+      "default": "Your feed. Your shows. Your chat.",
+      "section": "hero",
+      "helpText": "Line under the large hero title.",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "hero.subtitle",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — hero subtitle",
+      "required": false,
+      "default": "Share posts and reels, watch series, message friends, or talk to strangers — all in one modern social app.",
+      "section": "hero",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "hero.cta.primary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero primary CTA",
+      "required": false,
+      "default": "Get started free",
+      "section": "hero",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "hero.cta.primary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — hero primary CTA URL",
+      "required": false,
+      "default": "/signup",
+      "section": "hero"
+    },
+    {
+      "key": "hero.cta.secondary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — hero secondary CTA",
+      "required": false,
+      "default": "See what's inside",
+      "section": "hero",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "hero.cta.secondary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — hero secondary CTA URL",
+      "required": false,
+      "default": "/#features",
+      "section": "hero"
+    },
+    {
+      "key": "chips.ariaLabel",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — chips aria label",
+      "required": false,
+      "default": "Everything in Feed",
+      "section": "chips",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "chips.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — chip labels",
+      "required": false,
+      "section": "chips",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 12
+      },
+      "itemFields": [
+        {
+          "key": "label",
+          "type": "text",
+          "label": "Label",
+          "required": true,
+          "validation": {
+            "maxLength": 40
+          }
+        }
+      ],
+      "default": [
+        {
+          "label": "Posts"
+        },
+        {
+          "label": "Reels"
+        },
+        {
+          "label": "TV"
+        },
+        {
+          "label": "Rooms"
+        },
+        {
+          "label": "Stranger chat"
+        },
+        {
+          "label": "Messaging"
+        },
+        {
+          "label": "Profiles"
+        }
+      ]
+    },
+    {
+      "key": "features.eyebrow",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — features eyebrow",
+      "required": false,
+      "default": "One app",
+      "section": "features",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "features.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — features title",
+      "required": false,
+      "default": "Everything social, in one place.",
+      "section": "features",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "features.subtitle",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — features subtitle",
+      "required": false,
+      "default": "Stop hopping between five apps. Feed brings the best parts of social together.",
+      "section": "features",
+      "validation": {
+        "maxLength": 300
+      }
+    },
+    {
+      "key": "features.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — feature cards",
+      "required": false,
+      "section": "features",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 12
+      },
+      "itemFields": [
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "maxLength": 80
+          }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": {
+            "maxLength": 300
+          }
+        }
+      ],
+      "default": [
+        {
+          "title": "Posts & stories",
+          "description": "Share photos, thoughts and moments that disappear, or stay for good."
+        },
+        {
+          "title": "Reels",
+          "description": "Swipe through short vertical video from people and creators you follow."
+        },
+        {
+          "title": "TV & series",
+          "description": "Binge original series, pick up where you left off, and follow the makers."
+        },
+        {
+          "title": "Chat rooms",
+          "description": "Hop into live topic rooms or spin up a private one for your crew."
+        },
+        {
+          "title": "Stranger chat",
+          "description": "Text, audio or video with someone new. Skip anytime, report in a tap."
+        },
+        {
+          "title": "Direct messages",
+          "description": "Fast, private conversations with the people who matter most."
+        }
+      ]
+    },
+    {
+      "key": "dives.items",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — deep dive sections",
+      "required": false,
+      "section": "dives",
+      "helpText": "id anchors section (#feed, #reels, #tv, #chat). points = one bullet per line.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "id",
+          "type": "text",
+          "label": "Section id",
+          "required": true,
+          "validation": {
+            "maxLength": 40
+          }
+        },
+        {
+          "key": "eyebrow",
+          "type": "text",
+          "label": "Eyebrow",
+          "required": true,
+          "validation": {
+            "maxLength": 40
+          }
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "maxLength": 120
+          }
+        },
+        {
+          "key": "body",
+          "type": "textarea",
+          "label": "Body",
+          "required": true,
+          "validation": {
+            "maxLength": 500
+          }
+        },
+        {
+          "key": "points",
+          "type": "textarea",
+          "label": "Bullet points",
+          "required": false,
+          "helpText": "One bullet per line.",
+          "validation": {
+            "maxLength": 600
+          }
+        }
+      ],
+      "default": [
+        {
+          "id": "feed",
+          "eyebrow": "Feed",
+          "title": "A home feed that feels like home.",
+          "body": "Post photos, videos and thoughts to people who actually follow you. Stories, likes, comments and notifications are all right where you expect them.",
+          "points": "Photo, video and text posts\nStories that vanish in 24 hours\nComments, likes and saves"
+        },
+        {
+          "id": "reels",
+          "eyebrow": "Reels",
+          "title": "Short video, endless discovery.",
+          "body": "Swipe through vertical clips from creators and friends. Remix the sounds you love and let your own reels find their audience.",
+          "points": "Full-screen vertical player\nThreaded comments in a sheet\nOriginal audio and remixes"
+        },
+        {
+          "id": "tv",
+          "eyebrow": "TV",
+          "title": "Series worth staying in for.",
+          "body": "Binge original series from independent makers. Pick up exactly where you stopped, on any device, and follow the creators behind your favorites.",
+          "points": "Resume on every device\nFollow series and their makers\nTrending and new releases"
+        },
+        {
+          "id": "chat",
+          "eyebrow": "Chat",
+          "title": "Talk to anyone. Or everyone.",
+          "body": "Message friends, join live rooms, or meet a stranger over text, audio or video. You decide who you talk to, and you can skip or report in a tap.",
+          "points": "Text, audio, video and group modes\nLive topic rooms and private inbox\nBuilt-in reporting and blocking"
+        }
+      ]
+    },
+    {
+      "key": "howItWorks.eyebrow",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — how it works eyebrow",
+      "required": false,
+      "default": "Get going",
+      "section": "howItWorks",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "howItWorks.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — how it works title",
+      "required": false,
+      "default": "Up and running in three steps.",
+      "section": "howItWorks",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "howItWorks.steps",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — how it works steps",
+      "required": false,
+      "section": "howItWorks",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "itemFields": [
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "maxLength": 80
+          }
+        },
+        {
+          "key": "description",
+          "type": "textarea",
+          "label": "Description",
+          "required": true,
+          "validation": {
+            "maxLength": 300
+          }
+        }
+      ],
+      "default": [
+        {
+          "title": "Create your profile",
+          "description": "Sign up in under a minute with your email. Add a photo, a handle and a line about you."
+        },
+        {
+          "title": "Follow people and rooms",
+          "description": "Find creators, friends and communities. Your feed and TV shelf fill up with things you love."
+        },
+        {
+          "title": "Post, watch, chat",
+          "description": "Share a moment, binge a series, or say hi to a stranger. Everything lives in one app."
+        }
+      ]
+    },
+    {
+      "key": "community.eyebrow",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — community eyebrow",
+      "required": false,
+      "default": "Community",
+      "section": "community",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "community.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — community title",
+      "required": false,
+      "default": "Find your people.",
+      "section": "community",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "community.subtitle",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — community subtitle",
+      "required": false,
+      "default": "Follow creators you like and drop into rooms that are live right now.",
+      "section": "community",
+      "validation": {
+        "maxLength": 300
+      }
+    },
+    {
+      "key": "community.followLabel",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Follow button",
+      "required": false,
+      "default": "Follow",
+      "section": "community",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "community.joinRoomLabel",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — Join room label",
+      "required": false,
+      "default": "Join room",
+      "section": "community",
+      "validation": {
+        "maxLength": 40
+      }
+    },
+    {
+      "key": "community.cta.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — community CTA",
+      "required": false,
+      "default": "Join the conversation",
+      "section": "community",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "community.cta.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — community CTA URL",
+      "required": false,
+      "default": "/signup",
+      "section": "community"
+    },
+    {
+      "key": "cta.title",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — bottom CTA title",
+      "required": false,
+      "default": "Your people are already here.",
+      "section": "cta",
+      "validation": {
+        "maxLength": 120
+      }
+    },
+    {
+      "key": "cta.subtitle",
+      "page": "landing",
+      "type": "textarea",
+      "label": "Landing — bottom CTA subtitle",
+      "required": false,
+      "default": "Create your free account and start posting, watching and chatting today.",
+      "section": "cta",
+      "validation": {
+        "maxLength": 400
+      }
+    },
+    {
+      "key": "cta.primary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — bottom primary CTA",
+      "required": false,
+      "default": "Get started free",
+      "section": "cta",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "cta.primary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — bottom primary CTA URL",
+      "required": false,
+      "default": "/signup",
+      "section": "cta"
+    },
+    {
+      "key": "cta.secondary.label",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — bottom secondary CTA",
+      "required": false,
+      "default": "Log in",
+      "section": "cta",
+      "validation": {
+        "maxLength": 60
+      }
+    },
+    {
+      "key": "cta.secondary.href",
+      "page": "landing",
+      "type": "url",
+      "label": "Landing — bottom secondary CTA URL",
+      "required": false,
+      "default": "/login",
+      "section": "cta"
+    },
+    {
+      "key": "footer.tagline",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer tagline",
+      "required": false,
+      "default": "Your feed. Your shows. Your chat.",
+      "section": "footer",
+      "validation": {
+        "maxLength": 160
+      }
+    },
+    {
+      "key": "footer.copyright",
+      "page": "landing",
+      "type": "text",
+      "label": "Landing — footer copyright suffix",
+      "required": false,
+      "default": "All rights reserved.",
+      "section": "footer",
+      "validation": {
+        "maxLength": 80
+      }
+    },
+    {
+      "key": "footer.links",
+      "page": "landing",
+      "type": "repeater",
+      "label": "Landing — footer links",
+      "required": false,
+      "section": "footer",
+      "helpText": "Group by matching column title.",
+      "itemPresentation": "expanded",
+      "validation": {
+        "minItems": 0,
+        "maxItems": 24
+      },
+      "itemFields": [
+        {
+          "key": "column",
+          "type": "text",
+          "label": "Column",
+          "required": true,
+          "validation": {
+            "maxLength": 40
+          }
+        },
+        {
+          "key": "label",
+          "type": "text",
+          "label": "Label",
+          "required": true,
+          "validation": {
+            "maxLength": 40
+          }
+        },
+        {
+          "key": "href",
+          "type": "url",
+          "label": "URL",
+          "required": true
+        }
+      ],
+      "default": [
+        {
+          "column": "Product",
+          "label": "Posts",
+          "href": "/#feed"
+        },
+        {
+          "column": "Product",
+          "label": "Reels",
+          "href": "/#reels"
+        },
+        {
+          "column": "Product",
+          "label": "TV",
+          "href": "/#tv"
+        },
+        {
+          "column": "Product",
+          "label": "Chat",
+          "href": "/#chat"
+        },
+        {
+          "column": "Explore",
+          "label": "Home feed",
+          "href": "/"
+        },
+        {
+          "column": "Explore",
+          "label": "TV",
+          "href": "/tv"
+        },
+        {
+          "column": "Explore",
+          "label": "Reels",
+          "href": "/reel"
+        },
+        {
+          "column": "Explore",
+          "label": "Blog",
+          "href": "/blog"
+        },
+        {
+          "column": "Safety",
+          "label": "Legal",
+          "href": "/legal"
+        },
+        {
+          "column": "Safety",
+          "label": "Privacy",
+          "href": "/legal"
+        },
+        {
+          "column": "Safety",
+          "label": "Terms",
+          "href": "/legal"
+        },
+        {
+          "column": "Safety",
+          "label": "Log in",
+          "href": "/login"
+        }
+      ]
+    }
+  ]
+}
