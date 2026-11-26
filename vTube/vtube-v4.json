@@ -4,21 +4,9 @@
   "name": "vTube",
   "description": "Site navbar (sidebar, profile Embed, Blog, Privacy & Terms), media watermark for watch player and shorts, and TV series ad unlock.",
   "pages": [
-    {
-      "key": "navbar",
-      "route": "*",
-      "title": "Site navbar (global)"
-    },
-    {
-      "key": "watermark",
-      "route": "*",
-      "title": "Media watermark"
-    },
-    {
-      "key": "tv",
-      "route": "/tv",
-      "title": "TV series ads"
-    }
+    { "key": "navbar", "route": "*", "title": "Site navbar (global)" },
+    { "key": "watermark", "route": "*", "title": "Media watermark" },
+    { "key": "tv", "route": "/tv", "title": "TV series ads" }
   ],
   "fields": [
     {
@@ -29,9 +17,7 @@
       "required": false,
       "default": "Home",
       "section": "navbar.items",
-      "validation": {
-        "maxLength": 40
-      }
+      "validation": { "maxLength": 40 }
     },
     {
       "key": "nav.home.href",
@@ -50,9 +36,7 @@
       "required": false,
       "default": "Trending",
       "section": "navbar.items",
-      "validation": {
-        "maxLength": 40
-      }
+      "validation": { "maxLength": 40 }
     },
     {
       "key": "nav.trending.href",
@@ -71,9 +55,7 @@
       "required": false,
       "default": "Shorts",
       "section": "navbar.items",
-      "validation": {
-        "maxLength": 40
-      }
+      "validation": { "maxLength": 40 }
     },
     {
       "key": "nav.shorts.href",
@@ -92,9 +74,7 @@
       "required": false,
       "default": "TV",
       "section": "navbar.items",
-      "validation": {
-        "maxLength": 40
-      }
+      "validation": { "maxLength": 40 }
     },
     {
       "key": "nav.tv.href",
@@ -114,9 +94,7 @@
       "default": "Embed",
       "section": "navbar.actions",
       "helpText": "Profile menu link to the webmaster embed tools (/embed).",
-      "validation": {
-        "maxLength": 40
-      }
+      "validation": { "maxLength": 40 }
     },
     {
       "key": "nav.embed.href",
@@ -136,9 +114,7 @@
       "default": "Blog",
       "section": "navbar.actions",
       "helpText": "Profile menu blog link.",
-      "validation": {
-        "maxLength": 40
-      }
+      "validation": { "maxLength": 40 }
     },
     {
       "key": "nav.blog.href",
@@ -158,9 +134,7 @@
       "default": "Privacy & Terms",
       "section": "navbar.actions",
       "helpText": "Combined legal link in the profile menu.",
-      "validation": {
-        "maxLength": 40
-      }
+      "validation": { "maxLength": 40 }
     },
     {
       "key": "nav.legal.href",
@@ -179,9 +153,7 @@
       "required": false,
       "default": "Privacy Policy",
       "section": "navbar.actions",
-      "validation": {
-        "maxLength": 40
-      }
+      "validation": { "maxLength": 40 }
     },
     {
       "key": "nav.privacy.href",
@@ -200,9 +172,7 @@
       "required": false,
       "default": "Terms of Service",
       "section": "navbar.actions",
-      "validation": {
-        "maxLength": 40
-      }
+      "validation": { "maxLength": 40 }
     },
     {
       "key": "nav.terms.href",
@@ -242,14 +212,8 @@
       "default": "text",
       "section": "watermark",
       "options": [
-        {
-          "label": "Text",
-          "value": "text"
-        },
-        {
-          "label": "Image",
-          "value": "image"
-        }
+        { "label": "Text", "value": "text" },
+        { "label": "Image", "value": "image" }
       ]
     },
     {
@@ -260,13 +224,8 @@
       "required": false,
       "default": "vTube",
       "section": "watermark",
-      "visibleIf": {
-        "field": "watermark.mode",
-        "equals": "text"
-      },
-      "validation": {
-        "maxLength": 40
-      }
+      "visibleIf": { "field": "watermark.mode", "equals": "text" },
+      "validation": { "maxLength": 40 }
     },
     {
       "key": "watermark.image",
@@ -276,10 +235,7 @@
       "required": false,
       "default": "https://github.com/bunliv/img/blob/main/messenger%20favicon.png",
       "section": "watermark",
-      "visibleIf": {
-        "field": "watermark.mode",
-        "equals": "image"
-      },
+      "visibleIf": { "field": "watermark.mode", "equals": "image" },
       "helpText": "PNG/SVG with transparent background works best."
     },
     {
@@ -291,10 +247,7 @@
       "default": 1,
       "section": "watermark",
       "helpText": "0.1 – 1.0",
-      "validation": {
-        "min": 0.1,
-        "max": 1
-      }
+      "validation": { "min": 0.1, "max": 1 }
     },
     {
       "key": "tv.ads.enabled",
