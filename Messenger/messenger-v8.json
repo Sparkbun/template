@@ -1713,9 +1713,10 @@
         },
         {
           "key": "image",
-          "type": "image",
-          "label": "Side image (video card)",
-          "required": false
+          "type": "url",
+          "label": "Side image URL (video card)",
+          "required": false,
+          "helpText": "Image path or URL for the video mode card (e.g. /classic-video-chat.jpg)."
         }
       ],
       "default": [
